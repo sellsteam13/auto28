@@ -1,0 +1,111 @@
+/** styles for single pages **/
+
+.page-error {
+    min-height: calc(100vh - 285px);
+    background: $yellow url('../img/backgrounds/error-bg/page-error-bg.svg') no-repeat center;
+    background-size: 1462px 413px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222B2A;
+    @media (max-width: 1170px) {
+        flex-direction: column;
+        min-height: 480px;
+    }
+    @media (max-width: 550px) {
+        height: calc(100vh - 200px);
+        min-height: auto;
+    }
+    &__main {
+        margin-right: 80px;
+        font-weight: 900;
+        font-size: rem(189);
+        line-height: lh(56, 289);
+        @media (max-width: 1170px) {
+            margin-right: 0;
+            margin-bottom: 50px;
+            line-height: 1;
+            font-size: rem(80);
+        }
+        @media (max-width: 550px) {
+            margin-bottom: 25px;
+        }
+    }
+    &__sub {
+        transform: translateY(-13px);
+        @media (max-width: 1170px) {
+            transform: translateY(0);
+        }
+        span {
+            display: block;
+            &:nth-child(1) {
+                margin-bottom: 40px;
+                font-weight: 900;
+                font-size: rem(48);
+                line-height: lh(56, 48);
+                @media (max-width: 1170px) {
+                    font-size: rem(32);
+                }
+                @media (max-width: 550px) {
+                    font-size: rem(26);
+                }
+            }
+            &:nth-child(2) {
+                font-weight: 900;
+                font-size: rem(36);
+                line-height: lh(40, 36);
+                @media (max-width: 1170px) {
+                    font-size: rem(24);
+                    text-align: center;
+                }
+                @media (max-width: 550px) {
+                    font-size: rem(20);
+                }
+                a {
+                    position: relative;
+                    transition: filter $trans;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: -10px;
+                        height: 6px;
+                        background-color: #222B2A;
+                        will-change: transform;
+                        transition: transform $trans;
+                    }
+                    &:hover {
+                        filter: brightness(1.1);
+                        transition: filter $trans;
+                        &:after {
+                            transform: translateY(-4px);
+                            transition: transform $trans;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-text {
+    background-color: #F9F9F9;
+    &-wrap {
+        padding: 40px 0 70px;
+    }
+    &__title {
+        margin-bottom: 25px;
+    }
+    &__content {
+        max-width: 75%;
+        p {
+            font-size: rem(16);
+            line-height: lh(22, 16);
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

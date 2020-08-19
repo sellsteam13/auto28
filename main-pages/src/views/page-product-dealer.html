@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("../blocks/modules/header/head.html")
+
+<body>
+
+    <!-- begin of page -->
+    <div class="wrapper">
+        <!-- begin of top banner a1-->
+        <div class="banner a1"></div>
+        <!-- end of top banner a1-->
+
+        <!-- begin of header -->
+        @@include("../blocks/modules/header/header.html")
+        <!-- end of header -->
+
+        <!-- begin of main -->
+        <main class="main">
+
+            <!-- breadcrumbs module -->
+            @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+
+            <!-- feedback module -->
+            @@include("../blocks/modules/product/product-dealer.html")
+
+        </main>
+        <!-- end of main -->
+
+        <!-- begin of footer -->
+        @@include("../blocks/modules/footer/footer.html")
+        <!-- end of footer -->
+
+    </div>
+    <!-- end of page -->
+
+    <!-- begin of modals -->
+    @@include("../blocks/modules/modals/modals.html")
+    <!-- end of modals -->
+
+
+    <!-- connecting scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/vendor.js"></script>
+
+</body>
+
+</html>

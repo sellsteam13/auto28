@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Auto28.es Вёрстка</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <!-- connecting styles and fonts -->
+    <link rel="stylesheet" href="styles/main.min.css">
+</head>
+
+<body>
+
+    <!-- begin of page -->
+    <div class="wrapper">
+        <!-- begin of top banner a1-->
+        <div class="banner a1"></div>
+        <!-- end of top banner a1-->
+
+        <!-- begin of header -->
+        <input type="checkbox" id="menuToggler">
+<label for="menuToggler" class="header-menu__layout"></label>
+<header class="header-container">
+    <div class="header-sub">
+        <div class="header-sub-wrap limiter">
+            <div class="header-sub__country" title="Idioma actual del sitio: Español">
+                <img src="./img/default/languages/espanol.svg" alt="Language">
+                <span>España</span>
+            </div>
+            <button class="header-sub__city call-location" title="Elige tu ciudad">
+                <svg viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="M9.9999 6.13965C9.28069 6.13965 8.57764 6.34402 7.97964 6.72691C7.38164 7.1098 6.91556 7.65401 6.64033 8.29073C6.3651 8.92746 6.29309 9.62809 6.4334 10.304C6.57371 10.98 6.92004 11.6009 7.42859 12.0882C7.93715 12.5755 8.58509 12.9074 9.29048 13.0418C9.99586 13.1763 10.727 13.1073 11.3915 12.8435C12.0559 12.5798 12.6239 12.1332 13.0234 11.5601C13.423 10.9871 13.6363 10.3134 13.6363 9.62422C13.6363 8.70006 13.2531 7.81374 12.5712 7.16026C11.8892 6.50677 10.9643 6.13965 9.9999 6.13965ZM9.9999 11.3665C9.64029 11.3665 9.28877 11.2643 8.98977 11.0729C8.69077 10.8814 8.45773 10.6093 8.32011 10.291C8.1825 9.9726 8.14649 9.62229 8.21665 9.28432C8.2868 8.94635 8.45997 8.6359 8.71425 8.39224C8.96852 8.14858 9.29249 7.98264 9.64519 7.91541C9.99788 7.84819 10.3635 7.88269 10.6957 8.01456C11.0279 8.14643 11.3119 8.36974 11.5117 8.65626C11.7114 8.94278 11.8181 9.27963 11.8181 9.62422C11.8181 10.0863 11.6265 10.5295 11.2855 10.8562C10.9446 11.1829 10.4821 11.3665 9.9999 11.3665Z"/>
+                        <path d="M10 0.0419922C7.34785 0.0419922 4.8043 1.05158 2.92894 2.84866C1.05357 4.64575 0 7.08311 0 9.62457C0 17.822 9.09092 24.0159 9.48183 24.2772L10 24.6257L10.5182 24.2772C10.9091 24.0159 20 17.822 20 9.62457C20 7.08311 18.9465 4.64575 17.0711 2.84866C15.1957 1.05158 12.6522 0.0419922 10 0.0419922ZM10 22.4739C8.11819 21.0627 1.81818 15.8532 1.81818 9.62457C1.81818 7.5452 2.6802 5.55099 4.21459 4.08065C5.74898 2.61031 7.83006 1.78428 10 1.78428C12.17 1.78428 14.2511 2.61031 15.7854 4.08065C17.3198 5.55099 18.1818 7.5452 18.1818 9.62457C18.1818 15.8532 11.8818 21.0627 10 22.4739Z"/>
+                    </g>
+                </svg>
+                <span>Sevilla</span>
+            </button>
+            <div class="header-sub-auth">
+                <a href="#" class="header-sub-auth__login" title="Cuenta de Ingreso">Mi Auto28</a>
+                <a href="#" class="header-sub-auth__reg" title="Registro de cuenta">Regístrate</a>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="header-wrap limiter">
+            <a href="#" class="header__logo" title="A la página de inicio"></a>
+            <div class="header-menu">
+                <label for="menuToggler" class="header-menu__btn" title="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="header-menu-nav">
+                    <div class="header-menu-nav__item">
+                        <div class="header-menu-nav__item-block">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Coches</a>
+                            </div>
+                            <div class="header-menu-nav__item-block-list">
+                                <a href="#">Todos</a>
+                                <a href="#">Nuevos</a>
+                                <a href="#">Segunda mano</a>
+                            </div>
+                        </div>
+                        <div class="header-menu-nav__item-block">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Servicios</a>
+                            </div>
+                            <div class="header-menu-nav__item-block-list">
+                                <a href="#">Talleres de coches</a>
+                                <a href="#">Vendedores profesionales</a>
+                            </div>
+                        </div>
+                        <div class="header-menu-nav__item-block header-menu-nav__item-block--publ">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Publicidad</a>
+                            </div>
+                        </div>
+                        <div class="header-menu-nav__item-block header-menu-nav__item-block--real">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Realimentación</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-menu-nav__item">
+                        <div class="header-menu-nav__item-block">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Motos</a>
+                            </div>
+                            <div class="header-menu-nav__item-block-list">
+                                <a href="#">Todas</a>
+                                <a href="#">Chopper</a>
+                                <a href="#">Ciclomotores</a>
+                                <a href="#">Cruiser</a>
+                                <a href="#">Eléctricas</a>
+                                <a href="#">Enduro</a>
+                                <a href="#">Gran Turismo</a>
+                                <a href="#">Motrocross</a>
+                                <a href="#">Naked</a>
+                                <a href="#">Scooters</a>
+                                <a href="#">Sport Turismo</a>
+                                <a href="#">Streetfighter</a>
+                                <a href="#">Super Deportivas</a>
+                                <a href="#">Supermotard</a>
+                                <a href="#">Trail</a>
+                                <a href="#">Trial</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-menu-nav__item">
+                        <div class="header-menu-nav__item-block">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Autocaravanas</a>
+                            </div>
+                            <div class="header-menu-nav__item-block-list">
+                                <a href="#">Todas</a>
+                                <a href="#">Autocaravanas pickup</a>
+                                <a href="#">Cabinas</a>
+                                <a href="#">Capuchinas</a>
+                                <a href="#">Caravanas</a>
+                                <a href="#">Furgonetas</a>
+                                <a href="#">Integral</a>
+                                <a href="#">Semi-integral</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-menu-nav__item">
+                        <div class="header-menu-nav__item-block">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Industriales</a>
+                            </div>
+                            <div class="header-menu-nav__item-block-list">
+                                <a href="#">Todos</a>
+                                <a href="#">Autobuses</a>
+                                <a href="#">Cabezas tractoras</a>
+                                <a href="#">Camiones</a>
+                                <a href="#">Carretillas</a>
+                                <a href="#">Contenedores</a>
+                                <a href="#">Furgonetas</a>
+                                <a href="#">Maq.agrícola</a>
+                                <a href="#">Maq.construcción</a>
+                                <a href="#">Remolques</a>
+                                <a href="#">Semirremolques</a>
+                                <a href="#">Servicio público</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-menu-nav__item header-menu-nav__item--mobile">
+                        <div class="header-menu-nav__item-block">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Publicidad</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-menu-nav__item header-menu-nav__item--mobile">
+                        <div class="header-menu-nav__item-block">
+                            <div class="header-menu-nav__item-block-title">
+                                <a class="title" href="#">Realimentación</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <input type="checkbox" id="searchToggler">
+                <label for="searchToggler" class="header-search__btn" title="Buscar">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.75 14.2165C11.2018 14.2165 14 11.4082 14 7.94395C14 4.47971 11.2018 1.67139 7.75 1.67139C4.29822 1.67139 1.5 4.47971 1.5 7.94395C1.5 11.4082 4.29822 14.2165 7.75 14.2165Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16.5013 16.7258L12.168 12.3768" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+                <form class="header-search-form">
+                    <button type="submit" class="header-search-form__submit">
+                        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.75 14.2165C11.2018 14.2165 14 11.4082 14 7.94395C14 4.47971 11.2018 1.67139 7.75 1.67139C4.29822 1.67139 1.5 4.47971 1.5 7.94395C1.5 11.4082 4.29822 14.2165 7.75 14.2165Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.5013 16.7258L12.168 12.3768" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <input type="text" class="header-search-form__input" placeholder="Buscar...">
+                    <label for="searchToggler" class="header-search-form__close"></label>
+                </form>
+            </div>
+            <nav class="header-nav">
+                <div class="header-nav-item">
+                    <a href="#" class="header-nav-item__main">Coches</a>
+                    <div class="header-nav-item__sub">
+                        <ul class="reset">
+                            <li>
+                                <a href="#">Todos</a>
+                            </li>
+                            <li>
+                                <a href="#">Nuevos</a>
+                            </li>
+                            <li>
+                                <a href="#">Segunda mano</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-nav-item">
+                    <a href="#" class="header-nav-item__main">Motos</a>
+                    <div class="header-nav-item__sub">
+                        <ul class="reset">
+                            <li><a href="#">Todas</a></li>
+                            <li><a href="#">Chopper</a></li>
+                            <li><a href="#">Ciclomotores</a></li>
+                            <li><a href="#">Cruiser</a></li>
+                            <li><a href="#">Eléctricas</a></li>
+                            <li><a href="#">Enduro</a></li>
+                            <li><a href="#">Gran Turismo</a></li>
+                            <li><a href="#">Motrocross</a></li>
+                        </ul>
+                        <ul class="reset">
+                            <li><a href="#">Naked</a></li>
+                            <li><a href="#">Scooters</a></li>
+                            <li><a href="#">Sport Turismo</a></li>
+                            <li><a href="#">Streetfighter</a></li>
+                            <li><a href="#">Super Deportivas</a></li>
+                            <li><a href="#">Supermotard</a></li>
+                            <li><a href="#">Trail</a></li>
+                            <li><a href="#">Trial</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-nav-item">
+                    <a href="#" class="header-nav-item__main">Autocaravanas</a>
+                    <div class="header-nav-item__sub">
+                        <ul class="reset">
+                            <li><a href="#">Todas</a></li>
+                            <li><a href="#">Autocaravanas pickup</a></li>
+                            <li><a href="#">Cabinas</a></li>
+                            <li><a href="#">Capuchinas</a></li>
+                        </ul>
+                        <ul class="reset">
+                            <li><a href="#">Caravanas</a></li>
+                            <li><a href="#">Furgonetas</a></li>
+                            <li><a href="#">Integral</a></li>
+                            <li><a href="#">Semi-integral</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-nav-item">
+                    <a href="#" class="header-nav-item__main">Industriales</a>
+                    <div class="header-nav-item__sub">
+                        <ul class="reset">
+                            <li><a href="#">Todos</a></li>
+                            <li><a href="#">Autobuses</a></li>
+                            <li><a href="#">Cabezas tractoras</a></li>
+                            <li><a href="#">Camiones</a></li>
+                            <li><a href="#">Carretillas</a></li>
+                            <li><a href="#">Contenedores</a></li>
+                        </ul>
+                        <ul class="reset">
+                            <li><a href="#">Furgonetas</a></li>
+                            <li><a href="#">Maq.agrícola</a></li>
+                            <li><a href="#">Maq.construcción</a></li>
+                            <li><a href="#">Remolques</a></li>
+                            <li><a href="#">Semirremolques</a></li>
+                            <li><a href="#">Servicio público</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-nav-item">
+                    <a href="#" class="header-nav-item__main">Servicios</a>
+                    <div class="header-nav-item__sub">
+                        <ul class="reset">
+                            <li><a href="#">Talleres de coches</a></li>
+                            <li><a href="#">Vendedores profesionales</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <a href="#" class="header-new" title="Agregar nueva anunciar">
+                <div class="header-new__plus"></div>
+                <span class="header-new__text">Publicar anuncio</span>
+            </a>
+        </div>
+    </div>
+</header>
+        <!-- end of header -->
+
+        <!-- begin of main -->
+        <main class="main">
+
+            <!-- offer module -->
+            <div class="offer">
+    <div class="offer-wrap limiter">
+        <div class="offer-left">
+            <h1 class="offer__title">Para vendedores profesionales</h1>
+            <div class="offer-banner">
+                <div class="offer-banner__text">
+                    Auto28.es - Sitio web profesional para la venta de cualquier vehículo. Para vendedores profesionales registrados, la máxima funcionalidad está disponible para la venta rápida de cualquier vehículo. Le sugerimos que se registre y pruebe todas las características
+                    del sitio usted mismo.
+                </div>
+                <div class="offer-banner__btns">
+                    <a href="#" class="def-btn">Regístrate ahora</a>
+                    <a href="#" class="def-btn def-btn--gray">Presentación PDF</a>
+                </div>
+            </div>
+            <div class="offer-plans">
+                <div class="offer-plans__title">Para tus anuncios</div>
+                <div class="offer-plans-list">
+                    <div class="offer-plans__item">
+                        <div class="offer-plans__item__descr">
+                            <div class="offer-plans__item__descr-title">
+                                <img src="./img/default/plans/plans-preview1.svg" alt="">
+                                <span>Премиум</span>
+                            </div>
+                            <div class="offer-plans__item__descr-text">
+                                Такие объявления имеют расширенную карточку в поисковой выдаче, что повышает привлекательность предложения в глазах покупателей, а также помещаются в специальный блок над поисковой выдачей
+                            </div>
+                        </div>
+                        <div class="offer-plans__item__img">
+                            <img src="./img/default/plans/plans-illstr1.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="offer-plans__item">
+                        <div class="offer-plans__item__descr">
+                            <div class="offer-plans__item__descr-title">
+                                <img src="./img/default/plans/plans-preview2.svg" alt="">
+                                <span>Выделение</span>
+                            </div>
+                            <div class="offer-plans__item__descr-text">
+                                Автоматическое применение услуг в пределах бюджета. Рациональное использование накопленной экспертизы по подключению услуг с целью повышения внимания покупателей к объявлению в зависимости от времени суток и от других факторов.
+                            </div>
+                        </div>
+                        <div class="offer-plans__item__img">
+                            <img src="./img/default/plans/plans-illstr2.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="offer-plans__item">
+                        <div class="offer-plans__item__descr">
+                            <div class="offer-plans__item__descr-title">
+                                <img src="./img/default/plans/plans-preview3.svg" alt="">
+                                <span>Спецпредложение</span>
+                            </div>
+                            <div class="offer-plans__item__descr-text">
+                                Ваше объявление будет отображаться в специальном блоке на страницах поисковой выдачи и на страницах Каталога, а также иметь приоритетную позицию в блоке «Похожие» на карточках объявлений о продаже аналогичных авто.
+                            </div>
+                        </div>
+                        <div class="offer-plans__item__img">
+                            <img src="./img/default/plans/plans-illstr3.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="offer-plans__item">
+                        <div class="offer-plans__item__descr">
+                            <div class="offer-plans__item__descr-title">
+                                <img src="./img/default/plans/plans-preview4.svg" alt="">
+                                <span>Поднятие объявления</span>
+                            </div>
+                            <div class="offer-plans__item__descr-text">
+                                Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                            </div>
+                        </div>
+                        <div class="offer-plans__item__img">
+                            <img src="./img/default/plans/plans-illstr4.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offer-filter">
+                <div class="filter tabs">
+                    <div class="filter-controls tabs-triggers">
+                        <button class="filter-controls__item">
+                            <svg class="icon-car" viewBox="0 0 45 22" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M31.5304 17.9975C31.5304 20.2151 33.1952 21.9999 35.2636 21.9999C37.332 21.9999 38.9967 20.2151 38.9967 17.9975C38.9967 15.78 37.332 13.9951 35.2636 13.9951C33.1952 13.9951 31.4799 15.8341 31.5304 17.9975ZM33.0438 18.0516C33.0438 16.7535 34.0528 15.6718 35.2636 15.6718C36.4743 15.6718 37.4833 16.7535 37.4833 18.0516C37.4833 19.3497 36.4743 20.4314 35.2636 20.4314C34.0024 20.4314 32.9934 19.3497 33.0438 18.0516Z"/>
+                                <path d="M0 14.8607V18.0518C0 18.4845 0.353139 18.8631 0.756726 18.8631H3.73318C4.18722 18.8631 4.54036 18.5385 4.48991 18.0518C4.48991 14.9688 6.86099 12.4268 9.73655 12.4268C12.6121 12.4268 14.9832 14.9688 14.9832 18.0518C14.9832 18.4845 15.3363 18.8631 15.7399 18.8631H29.2096C29.6637 18.8631 30.0168 18.5385 29.9664 18.0518C29.9664 14.9688 32.3374 12.4268 35.213 12.4268C38.0886 12.4268 40.4596 14.9688 40.4596 18.0518C40.4596 18.4845 40.8128 18.8631 41.2164 18.8631H44.2433C44.6469 18.8631 45 18.4845 45 18.0518V14.8607C45 14.428 44.6469 14.0494 44.2433 14.0494L44.1424 12.0482C44.0919 10.7501 43.4865 9.61426 42.4776 8.91113C40.5605 7.55896 37.2814 6.85584 34.1031 6.80175C29.815 1.23083 23.1054 -0.932637 14.2769 0.365442H14.2265C9.38341 1.28491 7.21413 4.04333 5.59978 6.90992L1.36211 8.42435C1.05942 8.53252 0.857624 8.80296 0.857624 9.18156V13.9953C0.403588 13.9953 0.100897 14.3739 0 14.8607ZM21.037 6.42314L21.0874 2.09621C21.0874 1.87987 21.2892 1.66352 21.491 1.71761C25.5269 2.09621 28.8061 3.55655 31.4294 6.09863C31.6816 6.36906 31.5303 6.80175 31.1771 6.80175H21.3901C21.1883 6.80175 21.037 6.63949 21.037 6.42314ZM11.9563 2.9616C11.9563 2.79934 12.0572 2.63708 12.2085 2.58299C12.8644 2.36665 13.5706 2.1503 14.3778 1.98804C16.0426 1.71761 17.657 1.60943 19.12 1.60943C19.3217 1.60943 19.4731 1.82578 19.4731 2.04213V6.42314C19.4731 6.63949 19.3217 6.80175 19.12 6.80175H12.4103C12.2085 6.80175 12.0572 6.63949 12.0572 6.42314L11.9563 2.9616ZM7.76906 6.15271C8.37444 5.23324 9.03027 4.53011 9.83744 3.88107C10.0897 3.71881 10.4428 3.88107 10.4428 4.20559L10.4933 6.36906C10.4933 6.63949 10.3419 6.80175 10.1401 6.80175H8.1222C7.81951 6.80175 7.66816 6.42314 7.76906 6.15271Z"/>
+                                <path d="M6.05371 17.9975C6.05371 20.2151 7.71851 21.9999 9.7869 21.9999C11.8553 21.9999 13.5201 20.2151 13.5201 17.9975C13.5201 15.78 11.8553 13.9951 9.7869 13.9951C7.71851 13.9951 6.05371 15.8341 6.05371 17.9975ZM7.56716 18.0516C7.56716 16.7535 8.57613 15.6718 9.7869 15.6718C10.9977 15.6718 12.0066 16.7535 12.0066 18.0516C12.0066 19.3497 10.9977 20.4314 9.7869 20.4314C8.57613 20.4314 7.56716 19.3497 7.56716 18.0516Z"/>
+                            </svg>
+                            <span class="filter-controls__item-text">coches</span>
+                        </button>
+                        <button class="filter-controls__item">
+                            <svg class="icon-moto" viewBox="0 0 41 26" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.98563 13.936C2.71617 13.936 0 16.484 0 19.864C0 23.244 2.66587 26 5.93533 26C9.20479 26 11.8707 23.244 11.8707 19.864C11.8707 19.604 11.8707 19.344 11.8204 19.084L13.3293 18.408L15.8946 21.06C16.0455 21.216 16.1964 21.268 16.3976 21.268C16.5485 21.268 16.6994 21.216 16.8 21.164L23.2383 16.692C23.2383 16.692 23.2383 16.692 23.2886 16.64C25.2 14.924 27.9162 14.56 29.8779 14.56C30.1797 14.56 30.4815 14.612 30.7329 14.612C28.3689 17.316 24.9485 17.004 24.9485 17.004L22.0814 19.24H29.3246C29.2743 19.5 29.2743 19.708 29.2743 19.968C29.2743 23.348 31.7892 26 35.0587 26C38.3282 26 40.994 23.244 40.994 19.864C40.994 18.928 40.7425 17.94 40.3401 17.108C40.994 17.42 41.1952 16.848 40.7928 16.328C40.7928 16.328 38.9318 12.844 33.8012 13.572L35.3605 12.116C35.4611 12.012 35.5114 11.856 35.5617 11.7C35.6623 11.284 35.6623 10.92 35.7126 10.556H34.4551C33.3988 8.684 35.3102 7.384 35.3102 7.384C35.4611 7.592 35.5617 7.748 35.6623 7.956C35.3102 5.512 34.1533 3.744 33.097 2.6C31.4371 0.78 29.5761 0.104 29.5258 0.0519997C29.4755 -2.98321e-07 29.3246 0 29.2743 0C29.0228 0 28.8719 0.104 28.721 0.26C28.5701 0.468 28.5198 0.832 28.6707 1.092C29.4252 2.392 29.7773 3.328 29.9282 4.004L28.8719 3.796C28.5198 3.744 28.1677 4.004 28.1174 4.368C28.0671 4.732 28.3186 5.096 28.6707 5.148L29.9785 5.356C29.9785 5.46 29.9785 5.46 29.9282 5.512C29.6264 6.084 28.8719 6.136 28.5701 6.136C28.5198 6.136 28.5198 6.136 28.4695 6.136C25.7533 5.304 23.7916 4.992 23.7413 4.992C23.3892 4.992 22.9868 4.94 22.685 4.94C21.0252 4.94 19.5162 5.616 18.4096 6.864C17.9569 7.384 17.6551 7.904 17.4539 8.268C14.5868 7.904 12.9773 6.188 12.9773 6.188C12.8264 6.032 12.6755 5.98 12.4743 5.98L4.72815 6.032C4.47665 6.032 4.22515 6.188 4.17485 6.448L3.72216 7.384C3.52096 7.696 3.67186 8.112 4.02395 8.32L4.72815 8.684H3.92336C3.62156 8.684 3.37006 8.944 3.37006 9.256C3.37006 9.568 3.62156 9.828 3.92336 9.828H4.27545L2.01198 12.636C1.81078 12.896 1.86108 13.26 2.06228 13.468C2.16288 13.572 2.31377 13.624 2.41437 13.624C2.61557 13.624 2.76647 13.572 2.86707 13.416L5.73413 9.88H6.33773L7.59521 12.844L12.424 14.924V15.912L10.8647 16.588C9.80839 14.976 7.99761 13.936 5.98563 13.936ZM12.424 13.312L8.6515 11.7L8.04791 10.296L12.424 12.428V13.312ZM35.2096 23.296C33.4994 23.296 32.091 21.84 32.091 20.02C32.091 19.396 32.2922 18.772 32.594 18.252L33.8012 20.8L36.3162 19.5L35.0084 16.744C35.0587 16.744 35.1593 16.744 35.2096 16.744C36.9701 16.744 38.3785 18.2 38.3785 20.02C38.3785 21.84 36.9701 23.296 35.2096 23.296ZM5.98563 23.296C4.22515 23.296 2.86707 21.84 2.86707 20.072C2.86707 18.252 4.27545 16.796 6.03593 16.796C6.89102 16.796 7.64551 17.16 8.24911 17.732L5.63353 18.876L6.74012 21.528L9.1042 20.488C8.903 22.048 7.59521 23.296 5.98563 23.296Z"/>
+                            </svg>
+                            <span class="filter-controls__item-text">motos</span>
+                        </button>
+                        <button class="filter-controls__item">
+                            <svg class="icon-trailer" viewBox="0 0 42 25" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.3468 17.7105C17.3445 17.7105 16.5427 18.0698 15.8411 18.7372C15.1897 19.4045 14.8389 20.3285 14.8389 21.3552C14.8389 22.3819 15.1395 23.2546 15.8411 23.9733C16.5427 24.6407 17.3445 25 18.3468 25C19.349 25 20.1508 24.692 20.8524 23.9733C21.5039 23.306 21.8547 22.3819 21.8547 21.3552C21.8547 20.3285 21.554 19.4559 20.8524 18.7372C20.1508 18.0698 19.349 17.7105 18.3468 17.7105ZM16.9937 22.7413C16.6429 22.3819 16.4425 21.9199 16.4425 21.4066C16.4425 20.8932 16.6429 20.4312 16.9937 20.0719C17.3445 19.7125 17.7955 19.5072 18.3468 19.5072C18.8479 19.5072 19.349 19.7125 19.6998 20.0719C20.0506 20.4312 20.2511 20.8932 20.2511 21.4066C20.2511 21.9199 20.0506 22.3819 19.6998 22.7413C19.349 23.1006 18.898 23.306 18.3468 23.306C17.8456 23.306 17.3445 23.1006 16.9937 22.7413Z"/>
+                                <path d="M0.907403 3.23409C0.255934 4.10678 -0.0447437 5.0308 0.00536923 6.05749V17.9158C0.00536923 18.8398 0.35616 19.6612 1.00763 20.3799C1.6591 21.0472 2.41079 21.4066 3.26271 21.4066H13.9368C13.9368 20.1232 14.3377 19.0452 15.1896 18.1725C16.0415 17.2998 17.0939 16.8891 18.3467 16.8891C19.5995 16.8891 20.6519 17.2998 21.5038 18.1725C22.3557 19.0452 22.7566 20.1232 22.7566 21.4066H42V19.6612H36.8384C37.3395 19.6612 37.5901 19.0965 37.5901 17.9158V6.62218C37.5901 5.80082 37.4898 5.0308 37.1892 4.36345C36.8885 3.6961 36.5878 3.18275 36.237 2.82341C35.8862 2.46407 35.4853 2.15606 35.0343 1.84805C34.5833 1.54004 34.2325 1.38604 34.0822 1.3347L33.581 1.1807C32.9296 1.02669 30.8248 0.770021 27.3169 0.462013C23.809 0.154005 20.8523 0 18.3968 0C15.8411 0 12.8844 0.154005 9.57694 0.462013C6.3196 0.770021 4.31508 1.07803 3.6135 1.28337C2.4609 1.69405 1.55887 2.3614 0.907403 3.23409ZM25.4126 10.1643V6.10883C25.4126 5.59548 25.6131 5.39014 26.014 5.39014H31.7269C31.8772 5.39014 32.0275 5.44148 32.1779 5.59548C32.2781 5.69815 32.3783 5.90349 32.3783 6.05749V10.2669C32.3783 10.6263 32.1278 10.7803 31.6767 10.7803H25.9138C25.5128 10.7803 25.3124 10.5749 25.3124 10.1643H25.4126ZM4.31508 6.05749C4.31508 5.54415 4.56565 5.33881 5.01666 5.33881H17.7453C18.1462 5.33881 18.3467 5.59548 18.3467 6.05749V10.2669C18.3467 10.6263 18.1462 10.7803 17.7453 10.7803H5.01666C4.51553 10.7803 4.31508 10.6263 4.31508 10.2669V6.05749Z"/>
+                            </svg>
+                            <span class="filter-controls__item-text">autocaravanas</span>
+                        </button>
+                        <button class="filter-controls__item">
+                            <svg class="icon-truck" viewBox="0 0 42 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M30.1408 16.8494C28.1435 16.8494 26.5249 18.4535 26.5249 20.4246C26.5249 22.4 28.1435 23.9999 30.1408 23.9999C32.1386 23.9999 33.7546 22.3997 33.7546 20.4246C33.7546 18.4536 32.1387 16.8494 30.1408 16.8494ZM30.1408 22.08C29.218 22.08 28.4717 21.341 28.4717 20.4247C28.4717 19.512 29.218 18.7735 30.1408 18.7735C31.0635 18.7735 31.8106 19.512 31.8106 20.4247C31.8108 21.341 31.0635 22.08 30.1408 22.08Z"/>
+                                <path d="M6.032 16.8494C4.03455 16.8494 2.41748 18.4535 2.41748 20.4246C2.41748 22.4 4.03455 23.9999 6.032 23.9999C8.02543 23.9999 9.64652 22.3997 9.64652 20.4246C9.64652 18.4536 8.02543 16.8494 6.032 16.8494ZM6.032 22.08C5.10727 22.08 4.35841 21.341 4.35841 20.4247C4.35841 19.512 5.10727 18.7735 6.032 18.7735C6.95263 18.7735 7.7019 19.512 7.7019 20.4247C7.7019 21.341 6.95263 22.08 6.032 22.08Z"/>
+                                <path d="M41.309 0H11.0808C10.7017 0 10.3935 0.304092 10.3935 0.679987V4.58685C10.3935 4.95001 10.6807 5.16729 10.8646 5.16729H17.1935C17.437 5.16729 17.6428 5.30181 17.765 5.49499L16.7646 6.46714C16.6401 6.28094 16.441 6.15072 16.1994 6.15072H10.3935V6.22634H9.79652C9.41459 6.22634 9.10919 6.53026 9.10919 6.90932L6.69871 9.42165L2.06603 9.98732C1.68212 9.98732 1.37615 10.2876 1.37615 10.6673L0.917268 13.1045V15.5847C0.917268 15.8855 0.715882 16.1425 0.435173 16.229L0 19.0893C0 19.4647 0.308272 19.7726 0.687172 19.7726H1.08535V19.832H1.54259C1.59788 19.3931 1.71067 18.9704 1.87202 18.58C2.58495 17.011 4.17463 15.9131 6.03172 15.9131C6.64277 15.9131 7.22642 16.0358 7.75789 16.2528L7.80129 16.2096C9.15767 16.8691 10.1433 18.216 10.3415 19.8319H25.4846C25.7819 17.5483 27.7529 15.7785 30.1411 15.7785C32.5296 15.7785 34.4987 17.5483 34.7939 19.8319H41.3093C41.6931 19.8319 42 19.5275 42 19.1477V0.679744C41.9998 0.304092 41.6929 0 41.309 0ZM15.3986 9.41037C15.3986 9.78927 15.1066 10.0982 14.749 10.0982H9.33871C8.95563 10.0982 8.64785 9.79357 8.64785 9.41833L10.0259 7.93665C10.0259 7.55743 10.3335 7.25747 10.7137 7.25747H14.749C15.1066 7.25747 15.3986 7.56189 15.3986 7.94062V9.41037Z"/>
+                            </svg>
+                            <span class="filter-controls__item-text">industriales</span>
+                        </button>
+                    </div>
+                    <div class="filter-main">
+                        <div class="filter-tabs tabs-inner">
+                            <div class="filter-tabs__item">
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                            </div>
+                            <div class="filter-tabs__item">
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                            </div>
+                            <div class="filter-tabs__item">
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                            </div>
+                            <div class="filter-tabs__item">
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                                <div class="offer-filter__item">
+                                    <div class="offer-filter__item-left">
+                                        <div class="offer-filter__item-head">
+                                            <div class="offer-filter__item-title">Estándar</div>
+                                            <div class="offer-filter__item-details">
+                                                <div class="offer-filter__item-details__item">
+                                                    <span>100 размещений</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details1.svg" alt="">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details2.svg" alt="">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details3.svg" alt="">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="offer-filter__item-details__item">
+                                                    <img src="./img/default/offer-filter/details4.svg" alt="">
+                                                    <span>17</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-filter__item-text">
+                                            Данная услуга действует разово, она не просто поднимает ваше объявление в поиске, но ещё и обновляет дату публикации и количество просмотров объявления. Таким образом, она отлично работает даже в случае самых застоявшихся автомобилей.
+                                        </div>
+                                    </div>
+                                    <div class="offer-filter__item-right">16,99€</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offer-media">
+                <div class="offer-media-main">
+                    <div class="offer-media__title">Реклама для новых автомобилей</div>
+                    <div class="offer-media__descr">Este es un bloque especial en la parte inferior de las páginas de búsqueda y categorías para coches nuevos. Cada vendedor profesional puede colocar su anuncio en este bloque desde su cuenta personal. Esta es una gran adición al anuncio
+                        principal, atrae más atención y aumenta la posibilidad de una venta rápida.</div>
+                    <div class="offer-media__row">
+                        <div class="offer-media__row-left">Coches</div>
+                        <div class="offer-media__row-right">
+                            7 días - <span>3,99€</span>
+                        </div>
+                    </div>
+                    <div class="offer-media__row">
+                        <div class="offer-media__row-left">Motos</div>
+                        <div class="offer-media__row-right">
+                            7 días - <span>3,99€</span>
+                        </div>
+                    </div>
+                    <div class="offer-media__row">
+                        <div class="offer-media__row-left">Autocaravanas</div>
+                        <div class="offer-media__row-right">
+                            7 días - <span>3,99€</span>
+                        </div>
+                    </div>
+                    <div class="offer-media__row">
+                        <div class="offer-media__row-left">Industriales</div>
+                        <div class="offer-media__row-right">
+                            7 días - <span>3,99€</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-media-illstr">
+                    <img src="./img/default/offer/services-illstr.svg" alt="illstr">
+                </div>
+            </div>
+        </div>
+        <div class="offer-right">
+            <div class="offer-right-inner">
+                <div class="offer-right__title">Дилерам</div>
+                <div class="offer-right-list">
+                    <a href="#" class="offer-right-list__item">- Преимущества</a>
+                    <a href="#" class="offer-right-list__item">- Стоимость размещения</a>
+                    <a href="#" class="offer-right-list__item">Дилеры</a>
+                    <a href="#" class="offer-right-list__item">Медийная реклама</a>
+                    <a href="#" class="offer-right-list__item">Правовая информация</a>
+                    <a href="#" class="offer-right-list__item">О проекте</a>
+                    <a href="#" class="offer-right-list__item">FAQ</a>
+                    <a href="#" class="offer-right-list__item">Обратная связь</a>
+                </div>
+                <div class="offer-right__btn">
+                    <a href="#" class="def-btn">Стать клиентом</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </main>
+        <!-- end of main -->
+
+        <!-- begin of footer -->
+        <footer class="footer">
+    <div class="footer-wrap limiter">
+        <div class="footer-info">
+            <a href="#" class="footer-info__logo" title="A la página de inicio"></a>
+            <div class="footer-info__text">
+                En nuestro sitio puede encontrar vehículos nuevos y vehículos segunda mano de vendedores profesionales en España, también puedes vender tu vehículo.
+            </div>
+            <div class="footer-info__copyrights">© Auto28.es - Agregador de vehículos en España</div>
+        </div>
+        <nav class="footer-nav footer-nav--mobile">
+            <span>Información</span>
+            <div class="footer-nav-block">
+                <a href="#"><span>FAQ</span></a>
+                <a href="#"><span>Sobre nosotros</span></a>
+                <a href="#"><span>Realimentación</span></a>
+            </div>
+            <div class="footer-nav-block">
+                <a href="#"><span>Política de cookies</span></a>
+                <a href="#"><span>Política de Privacidad</span></a>
+                <a href="#"><span>Condiciones de uso sitio</span></a>
+            </div>
+        </nav>
+        <nav class="footer-nav footer-nav--mobile">
+            <span>Cooperación</span>
+            <div class="footer-nav-block">
+                <a href="#"><span>Para talleres de coches</span></a>
+                <a href="#"><span>Para vendedores profesionales</span></a>
+            </div>
+            <div class="footer-nav-block">
+                <a href="#"><span>Publicidad</span></a>
+                <a href="#"><span>Cooperación1</span></a>
+            </div>
+        </nav>
+        <nav class="footer-nav footer-nav--mobile">
+            <span>Mi auto28</span>
+            <div class="footer-nav-block">
+                <a href="#"><span>Mi auto28</span></a>
+                <a href="#"><span>Regístrate</span></a>
+                <a href="#"><span>¿Olvidó tu contraseña?</span></a>
+            </div>
+        </nav>
+    </div>
+</footer>
+        <!-- end of footer -->
+
+    </div>
+    <!-- end of page -->
+
+    <!-- begin of modals -->
+    <div class="overlay">
+    <div class="modal modal-location def">
+        <h3 class="modal-location__title">
+            Buscar por provincia
+        </h3>
+        <div class="modal-location-choose">
+            <div class="select-module">
+                <select multiple="multiple">
+                    <option  placeholder value="">Sevilla</option>
+                    <option> Пример 1 </option>
+                    <option> Пример 2 </option>
+                    <option> Пример 3 </option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-close"></div>
+    </div>
+    <div class="modal modal-order def">
+        <h3 class="modal-order__title">
+            Reservar
+        </h3>
+        <form>
+            <div class="modal-order-inputs">
+                <input type="text" required placeholder="Nombre*">
+                <input type="text" required placeholder="Email*">
+                <input type="text" required placeholder="Telefono">
+            </div>
+            <label class="modal-order-check">
+                <input type="checkbox">
+                <span>
+                    Al hacer clic en el botón, aceptar las <br> <a href="#">Condiciones de uso sitio</a> y la <a href="#">Política de privacidad</a>
+                </span>
+            </label>
+            <button type="submit" class="def-btn">Reservar</button>
+        </form>
+        <div class="modal-close"></div>
+    </div>
+    <div class="modal modal-auth def">
+        <h3 class="modal-auth__title">
+            Login or Register
+        </h3>
+        <div class="modal-auth__text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, recusandae!
+        </div>
+        <div class="modal-auth__btns">
+            <a href="#" class="def-btn">Login</a>
+            <a href="#" class="def-btn">Register</a>
+        </div>
+        <div class="modal-close"></div>
+    </div>
+    <div class="modal modal-report def">
+        <h3 class="modal-report__title">Quejarse</h3>
+        <form class="modal-report-form">
+            <input type="text" placeholder="Nombre*">
+            <input type="text" placeholder="Email">
+            <textarea placeholder="Escribe cuál es el motivo de la queja"></textarea>
+            <button type="submit" class="def-btn">Enviar</button>
+        </form>
+        <div class="modal-close"></div>
+    </div>
+    <div class="modal modal-friend def">
+        <h3 class="modal-friend__title">Enviar a un amigo</h3>
+        <form class="modal-friend-form">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Nombre*">
+            <button type="submit" class="def-btn">Enviar</button>
+        </form>
+        <div class="modal-close"></div>
+    </div>
+</div>
+
+<div class="notifications-inner">
+    <div class="notification is-bad" id="ntf1">
+        <div class="notification__progress">
+            <div class="notification__progress-bar"></div>
+        </div>
+        <div class="notification__title">
+            Внимание!
+        </div>
+        <div class="notification__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <button class="notification__close">
+            <img src="./img/svg/cross.svg" alt="close">
+        </button>
+    </div>
+    <div class="notification is-good" id="ntf2">
+        <div class="notification__progress">
+            <div class="notification__progress-bar"></div>
+        </div>
+        <div class="notification__title">
+            Супер!
+        </div>
+        <div class="notification__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <button class="notification__close">
+            <img src="./img/svg/cross.svg" alt="close">
+        </button>
+    </div>
+    <div class="notification is-semi" id="ntf3">
+        <div class="notification__progress">
+            <div class="notification__progress-bar"></div>
+        </div>
+        <div class="notification__title">
+            Средне!
+        </div>
+        <div class="notification__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <button class="notification__close">
+            <img src="./img/svg/cross.svg" alt="close">
+        </button>
+    </div>
+</div>
+
+<div class="cookie">
+    <div class="cookie-wrap limiter"></div>
+</div>
+
+
+<div class="cookieAlertBlock">
+    <div class="limiter">
+        <div class="cookieAlerts">
+            <div class="cookieAlertMessage">
+                Información importante sobre cookies: El sitio web de la auto28.es utiliza cookies propias para mejorar la navegación. Las cookies utilizadas no contienen ningún tipo de información de carácter personal. Si continua navegando entendemos acepta su uso.
+            </div>
+            <div class="cookieAlertLink">
+                <a href="/pages/politica-privacidad#block6">Más información</a>
+            </div>
+            <div class="cookieAlertButton">
+                <button onclick="accceptCookieInfo($(this))">ACEPTAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- end of modals -->
+
+
+    <!-- connecting scripts -->
+    <script src="js/main.min.js"></script>
+    <script src="js/vendor.min.js"></script>
+
+</body>
+
+</html>

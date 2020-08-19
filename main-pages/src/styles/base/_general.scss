@@ -1,0 +1,154 @@
+/** reset **/
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img,
+abbr {
+    border: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: unset;
+}
+
+legend {
+    color: #000;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .main {
+        flex-grow: 1;
+    }
+}
+
+body,
+html {
+    font-family: 'Gotham Pro';
+    font-size: 14px;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+*:before,
+*:after,
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background: transparent;
+    border: none;
+    text-align: unset;
+    &:focus {
+        outline: none;
+    }
+}
+
+.limiter {
+    width: calc(100% - 12.5vw);
+    // max-width: 1670px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 1650px) {
+        width: calc(100% - 50px);
+    }
+    @media (max-width: 1170px) {
+        width: calc(100% - 40px);
+    }
+}

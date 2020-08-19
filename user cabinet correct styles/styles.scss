@@ -1,0 +1,1450 @@
+.mobileAccountMenuBlockPane.active {
+    display: block;
+}
+
+.accountAdvertImage img {
+    border-radius: 5px !important;
+}
+
+.dealerPageHeaderUserInfoAutos {
+    gap: 15px;
+    a {
+        margin: 0;
+    }
+}
+
+#paypalButtonContainer {
+    position: relative;
+    overflow: hidden;
+    height: 43px;
+    overflow: hidden;
+    iframe {
+        opacity: 0 !important;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #F5AA01;
+        z-index: 1;
+        pointer-events: none;
+        border-radius: 3px;
+    }
+    &:after {
+        content: 'Pagar ahora';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        font-family: "GothamProBlack", sans-serif;
+        color: #000;
+        font-size: 16px;
+        line-height: 17px;
+        pointer-events: none;
+        @media (max-width: 767px) {
+            font-size: 14px;
+            line-height: 10px;
+        }
+    }
+}
+
+.dealerAutoList {
+    padding-right: 0;
+}
+
+.pageContentBlockInner .mainPageFiltersTabs ul li {
+    .shadowBlock {
+        right: -5px;
+        left: -5px;
+    }
+    &:first-child {
+        a {
+            .shadowBlock {
+                margin-left: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+.accountMessagesToolsRight button {
+    @media (max-width: 767px) {
+        padding: 8px 14px;
+        line-height: 15px;
+    }
+    svg {
+        display: none;
+        width: 25px;
+        height: 25px;
+        @media (max-width: 767px) {
+            display: inline-block;
+        }
+    }
+    &:nth-child(1) svg {
+        stroke: #616161;
+        fill: #616161;
+        stroke-width: 20px;
+    }
+    span {
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+}
+
+.dealersContainer {
+    margin-top: -70px;
+    transform: translateY(70px);
+    @media (max-width: 992px) {
+        margin-top: -50px;
+        transform: translateY(50px);
+    }
+}
+
+.accountReviewRatingNum {
+    font-size: 16px;
+    transform: translateY(2px);
+    &:before {
+        content: '(';
+    }
+    &:after {
+        content: ')';
+    }
+}
+
+.mapListItemImageRating {
+    justify-content: normal;
+}
+
+.accountReviewRating {
+    margin-right: 10px;
+}
+
+@media (max-width: 1360px) {
+    .accountConversationMessages {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .accountConversationMessage {
+        flex-direction: column;
+    }
+    .accountConversationMessageUser {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .accountConversationMessageText {
+        width: 100%;
+    }
+    .mapListItems {
+        height: unset !important;
+        overflow: visible !important;
+    }
+}
+
+@media (max-width: 1280px) {
+    .accountOrderInfoProductNumbersPrice {
+        white-space: nowrap;
+    }
+    .accountRatesInformationListBlock {
+        width: 50%;
+    }
+    .dealerAccountRates .tab-content {
+        padding: 30px 15px;
+    }
+    .categoryRateOrderButton a {
+        max-width: 100%;
+    }
+    .paymentInfoBlock {
+        padding: 0 20px;
+    }
+    .paymentsMethodsBlockInner ul {
+        padding-bottom: 30px;
+    }
+    .formParemetersItem {
+        flex-wrap: wrap;
+        padding-bottom: 0
+    }
+    .accountSettingsFormBlock .formParameter {
+        margin-bottom: 1rem;
+        margin-right: 0;
+        flex-wrap: wrap;
+        width: 100%
+    }
+    .accountSettingsFormBlock .formParameter .formParameterLabel,
+    .accountSettingsFormBlock .formParameter .formParameterField {
+        width: 100%;
+    }
+    .formParameterLabel {
+        margin-bottom: 10px;
+    }
+    .accountSettingsFormBlock .formParameter .formParameterField .select-cover,
+    .accountSettingsFormBlock .formParameter .formParameterField input {
+        width: 100%;
+        max-width: 600px;
+    }
+    #addDealerPhone,
+    #addDealerSalonPhone {
+        position: static;
+    }
+    .workdays {
+        width: 100%;
+        &:nth-child(1) {
+            li {
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7) {
+                    width: calc(14.27% - 6px);
+                    margin-right: 7px;
+                    >div {
+                        padding: 10px 5px;
+                    }
+                    @media (max-width: 350px) {
+                        margin-right: 1px;
+                        width: calc(14.27% - 1px);
+                    }
+                }
+                &:nth-child(7) {
+                    margin-right: 0;
+                    @media (max-width: 350px) {
+                        margin-right: 0px;
+                    }
+                }
+                &.allDay {
+                    width: 100%;
+                    margin: 10px 0;
+                    padding: 0;
+                }
+                &:nth-child(9),
+                &:nth-child(11) {
+                    width: calc(50% - 13px);
+                }
+            }
+        }
+        &:nth-child(2) {
+            flex-wrap: wrap;
+            display: flex;
+            padding-top: 10px;
+            li {
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    width: calc(33.33% - 6px);
+                    padding-right: 0 !important;
+                    margin-right: 9px !important;
+                    >div {
+                        height: 100%;
+                        text-align: center;
+                    }
+                }
+                &:nth-child(3) {
+                    margin-right: 0 !important;
+                }
+                &:nth-child(4) {
+                    margin-top: 10px;
+                    width: 100%;
+                    padding-left: 0;
+                    padding-bottom: 0;
+                }
+                &:nth-child(5),
+                &:nth-child(7) {
+                    margin-top: 5px;
+                    width: calc(50% - 13px);
+                }
+                &:nth-child(6) {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    .addAdvertFotoBlock .advertFiltersItemName {
+        display: none;
+    }
+    .advertFiltersItemValue.fotos {
+        justify-content: space-around;
+    }
+    .mapListItemEditButton {
+        top: -15px;
+    }
+    .modal-content {
+        .accountSettingsFormBlock .formParameter .formParameterField .select-cover,
+        .accountSettingsFormBlock .formParameter .formParameterField input {
+            max-width: 100%;
+        }
+        .dealerSalonParamsInfo {
+            width: 100%;
+        }
+        .dealerSalonParamsLogo {
+            width: 100%;
+        }
+        .formParameterLabel {
+            padding-bottom: 0 !important;
+        }
+    }
+    #dealerAutoSalonEditModal .modal-content {
+        padding: 30px 15px;
+        .accountSettingsFormBlock {
+            padding-bottom: 10px;
+        }
+        .modal-header h3 {
+            padding-top: 0 !important;
+        }
+    }
+    .salonJobs,
+    #salonJobs {
+        height: 100%;
+    }
+    .dealerSalonJobItem {
+        padding-bottom: 0;
+        width: 100%;
+    }
+    .dealerSalonJobItemTitle {
+        align-items: normal;
+        padding-bottom: 10px;
+    }
+    #dealerAutoSalonsModal .modal-content {
+        padding: 30px 15px;
+    }
+    .dealerSalonJobItemJobs {
+        padding-left: 15px;
+    }
+    .accountOrderInfoProductStatus {
+        margin-top: 10px;
+    }
+    #dealerAutoMarksModal .modal-content {
+        padding: 30px 15px;
+    }
+    .modal-content .accountSettingsFormBlock {
+        padding-left: 0;
+    }
+    .modal-dialog {
+        margin: 60px auto;
+    }
+    .dealerSalonInformation {
+        width: 100%;
+        +div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .accountAdvertServiceButtons {
+                order: -1;
+            }
+            .accountAdvertFunctions {
+                width: 100%;
+                .accountAdvertFunction {
+                    width: 50%;
+                    button {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+    .rateActiveTime {
+        top: 5px;
+    }
+    .modal {
+        z-index: 10001;
+    }
+    .modal-backdrop {
+        z-index: 10000;
+    }
+    .categoryRate {
+        flex-wrap: wrap;
+    }
+    .categoryRateDescription {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .categoryRatePrice {
+        text-align: left;
+        width: 50%;
+    }
+    .categoryRateOrderButton {
+        width: 50%;
+        justify-content: flex-end;
+        display: flex;
+    }
+    .pageContentAdvertismentIcon {
+        display: none;
+    }
+    .pageContentAdvertismentDescription {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1550px) and (min-width: 768px) {
+    .paymentsMethodsBlockInner ul.paymentsList li {
+        padding-right: 15px;
+    }
+    .paymentsMethodsBlockInner ul {
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 1440px) and (min-width: 768px) {
+    .paymentsMethodsBlockInner {
+        max-width: calc(100% + 30px);
+        width: calc(100% + 30px);
+        margin: 0 -15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .paymentsList {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 !important;
+        overflow-x: auto;
+        padding: 20px 20px;
+        justify-content: flex-start;
+        overflow-y: hidden;
+        &:after {
+            content: '';
+            display: block;
+            min-width: 20px;
+            order: -111;
+        }
+        &:after {
+            order: 111;
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    .paymentInfoBlock {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1170px) and (min-width: 992px) {
+    .accountAdvert {
+        padding: 4rem 2rem 2rem;
+    }
+    .accountAdvertInfoLeft {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        .accountAdvertImage {
+            max-height: 150px;
+            img {
+                max-width: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .accountAdvertInfoRight {
+        width: 65%;
+        .accountAdvertInfo {
+            width: 100%;
+        }
+    }
+    .accountMessageItemCheck {
+        padding-right: 15px;
+    }
+    .accountMessageItemEnvelope,
+    .accountOrderInfoProductImage,
+    .accountOrderInfoProductDescription {
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dealerPageShopsBg {
+        display: none;
+    }
+    .dealerPageShops {
+        background-color: transparent;
+        margin-top: 25px;
+    }
+    .serviceInfo,
+    .dealerPageShops {
+        height: auto;
+        overflow: unset;
+    }
+    .mapListPopularServiceImage {
+        img {
+            max-width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+    .account-menu-list.mobile {
+        margin-bottom: 0 !important;
+        padding-bottom: 20px;
+    }
+    .formParameterLabel {
+        margin-bottom: 10px;
+    }
+    .accountSettingsFormBlock .formParameter {
+        max-width: 500px;
+    }
+    .mobileAccountMenuBlockButtons button {
+        padding: 2rem 1.5rem;
+        width: 50%;
+        background-color: #F9F9F9;
+        flex-grow: 1;
+        &:nth-child(2) {
+            justify-content: center;
+        }
+    }
+    .new-free-rate {
+        padding: 1.5rem 0;
+        .container {
+            flex-direction: column;
+        }
+        .newFreeRateTitle {
+            padding-left: 0;
+            padding-right: 0;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .newFreeRateTieser {
+            font-size: 20px;
+            line-height: 25px;
+            border-width: 2px;
+            margin-bottom: 10px;
+        }
+    }
+    .accountRatesInformation {
+        padding: 1.5rem;
+        margin-bottom: 5px;
+    }
+    .mobileAccountMenu .accountRatesInformationListItem a {
+        padding: 8px 24px;
+        font-size: 16px;
+        max-width: 250px;
+        margin: 0 auto;
+        svg {
+            display: none;
+        }
+    }
+    .mobileAccountMenuBlockButtons button.active {
+        background-color: #E7E7E7;
+    }
+    .accountRatesInformationHeader,
+    .accountRatesInformationListItem {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .account-menu-list.mobile {
+        padding-left: 28px !important;
+        padding-right: 15px !important;
+    }
+    .accountAdverts {
+        flex-direction: row;
+        align-items: unset;
+    }
+    .accountAdverts.line {
+        flex-direction: row;
+        align-items: unset;
+        flex-wrap: wrap;
+    }
+    .accountAdvert,
+    .accountAdvert.cube {
+        padding: 10px 15px 60px;
+        max-width: 100%;
+        width: calc(33.33% - 10px);
+        margin-right: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+    .accountAdvert.cube {
+        padding: 10px 0;
+    }
+    .accountAdvertInfoRight {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .accountAdvertInfoNumbers {
+        margin-top: auto;
+    }
+    .accountAdvertInfoName a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+    .accountAdvertInfoModificationItem {
+        display: inline;
+        padding-right: 0;
+    }
+    .accountAdvertInfoName {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .accountAdvertInfoModification {
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+    .accountAdvertFunction {
+        padding-bottom: 0 !important;
+    }
+    .accountAdvertFunctions.left {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 0;
+    }
+    .accountAdvertInfoBoard {
+        flex-wrap: wrap;
+        padding-bottom: 0;
+        .accountAdvertInfoBoardItem {
+            margin-bottom: 10px;
+        }
+    }
+    .accountAdvertFunction button svg,
+    .accountAdvertFunction div.button svg {
+        margin-left: 0 !important;
+        margin-right: 7px;
+    }
+    .accountAdvertFunctions.left .accountAdvertFunction div.button {
+        padding-right: 0 !important;
+    }
+    .accountAdvertFunctions.left .accountAdvertFunction button {
+        margin-bottom: 10px;
+        border-radius: 4px;
+        background: #e7e7e7;
+        padding: 5px 10px;
+    }
+    .header-functions {
+        padding: 10px 0;
+    }
+    .padination {
+        padding: 35px 0 20px;
+    }
+    .account-block-header-label a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    .accountMessagesTools {
+        padding-bottom: 20px;
+    }
+    .accountMessagesToolsLeft {
+        flex-grow: 1;
+        padding-bottom: 0;
+        width: unset;
+    }
+    .accountMessagesToolsRight {
+        width: unset;
+    }
+    .accountMessagesToolsSelect {
+        padding: 0 20px;
+        margin-left: auto;
+    }
+    .accountConversationMessageText button {
+        transform: translateX(-35px);
+    }
+    .accountMessageFormButtons button {
+        transform: translateX(0);
+    }
+    .accountOrderInfoProduct {
+        width: 100%;
+    }
+    .objectStatusSelect {
+        min-width: 155px;
+        max-width: 155px;
+    }
+    .accountOrderInfoProductImage {
+        padding-right: 20px;
+    }
+    .accountOrderInfoProductNumbers {
+        margin-left: auto;
+    }
+    .accountOrderInfoProductDescription {
+        padding-right: 10px;
+    }
+    #modalGamburgerMenu .modal-dialog {
+        width: 100%;
+        margin: 0;
+        height: 100%;
+        .modal-content {
+            max-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
+    .accountOrderUser {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .accountOrders {
+        padding-bottom: 0 !important;
+    }
+    .accountOrder {
+        padding-bottom: 25px;
+    }
+    .accountOrderInfoProductStatus button {
+        min-width: 155px;
+        margin-right: auto;
+    }
+    .accountOrderInfoProductStatus {
+        display: flex;
+        flex-direction: column;
+    }
+    .accountSettingsTabs ul li a {
+        font-size: 18px;
+    }
+    .accountOrder.review {
+        .accountOrderInfoProduct {
+            flex-direction: row;
+        }
+    }
+    .dealerAccountRates .tab-content {
+        padding: 20px 15px;
+        .categoryRateName {
+            text-align: left;
+        }
+        .categoryRateServices {
+            align-items: flex-start;
+        }
+        .accountAdvertFunctions {
+            margin: 0;
+            margin-right: auto;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .accountAdvertFunction {
+            margin-bottom: 5px;
+        }
+    }
+    .paymentsMethodsBlock {
+        padding-top: 30px;
+    }
+    .paymentsMethodsBlockHeader {
+        padding-bottom: 0;
+    }
+    .mapListItemImage {
+        margin-right: 10px;
+    }
+    .accountSettingsFormBlockHeader {
+        padding-bottom: 15px;
+    }
+    .accountBlockHeader.subheader {
+        padding-bottom: 10px;
+    }
+    .accountRatesInformationListBlock {
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .paymentTabMore {
+        padding-top: 10px;
+        a {
+            font-size: 14px;
+        }
+    }
+    .modal-content.payment {
+        padding: 20px;
+    }
+    .paymentFullText .modal-header h3 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .modal-content button.close svg {
+        transform: scale(0.8);
+    }
+    .mapListItem {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .modal-body .formParemetersItem {
+        &:last-child {
+            .formParameterField {
+                width: unset;
+            }
+        }
+    }
+    .cookieAlertButton button {
+        max-width: 100%;
+    }
+    .modal-content .accountSettingsFormBlock {
+        padding: 0 0 20px 0;
+    }
+    .modal-content {
+        .accountSettingsFormBlock .formParameter {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 943px) {
+    .advertFiltersItemValue.fotos {
+        justify-content: space-between;
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 830px) {
+    .accountOrderInfoProduct {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .accountOrderInfoProductDescription {
+        text-align: left;
+        width: calc(100% - 175px);
+    }
+    .accountOrderInfoProductNumbers {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 5px;
+    }
+    .accountOrderInfoProductStatus {
+        width: 100%;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal.fade.in {
+        display: flex;
+    }
+    .accountMessageItemUser {
+        flex-wrap: unset;
+    }
+    .accountMessageItemEnvelope {
+        padding-right: 15px;
+    }
+    .accountMessageItemTitle {
+        padding-left: 0;
+        max-width: calc(100% - 318px);
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .accountMessageItemTitleName {
+        text-overflow: ellipsis;
+        padding-right: 0;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .accountSettingsTabs ul li a {
+        font-size: 18px !important;
+    }
+    .categoryRatePrice {
+        text-align: center;
+        width: 100%;
+        padding-top: 10px;
+    }
+    .categoryRateOrderButton {
+        width: 100%;
+    }
+    .payment-link {
+        display: flex;
+        justify-content: center;
+    }
+    .paymentsMethodsBlockInner {
+        padding-top: 20px;
+    }
+    .paymentsList {
+        padding-bottom: 15px;
+    }
+    .paymentInfoLink {
+        padding: 20px 0;
+    }
+    .accountConversationHeader {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .accountAdvert,
+    .accountAdvert.cube {
+        width: calc(50% - 10px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+        &:nth-child(3n) {
+            margin-right: 20px;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+    .accountBottomPaymentSummValue {
+        flex-wrap: wrap;
+        padding-right: 0;
+    }
+    .accountBottomPaymentSumm {
+        padding: 10px 0;
+    }
+    .accountBottomPaymentSummValueText {
+        font-size: 18px;
+        padding-right: 0;
+    }
+    .accoutnProductServicesTotalSumma {
+        flex-grow: 1;
+        padding-right: 0;
+        padding-left: 10px;
+        font-size: 20px;
+    }
+    .accountBottomPaymentSummValueButton {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .accountBottomPaymentSummValueButton a {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .accountMessagesTools {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+    .accountMessagesToolsLeft {
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .accountMessagesToolsCheck {
+        margin-bottom: 25px;
+    }
+    .accountMessagesToolsSelect {
+        padding: 0;
+        width: 100%;
+    }
+    .accountMessagesToolsRight {
+        position: absolute;
+        right: 0;
+        top: -13px;
+    }
+    .accountMessagesToolsRight button {
+        background-color: #e7e7e7;
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .accountMessages .list-inline>li {
+        a {
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+    .settingsTabs {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        &::-webkit-scollbar {
+            display: none;
+        }
+        li {
+            float: unset;
+            flex-shrink: 0;
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    .dealerPageInner {
+        .categoryAdvertCover {
+            padding: 0;
+            margin: 0;
+            .categoryAdvert {
+                margin: 0 0 20px;
+                padding: 0 0 20px;
+            }
+        }
+    }
+    .accountOrderUser {
+        padding: 20px 10px 10px;
+    }
+    .accountOrderInfo {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .accountOrderUserAvatar {
+        justify-content: flex-start;
+        padding-bottom: 15px;
+    }
+    .accountOrderUserAvatarName {
+        text-align: left;
+    }
+    .accountOrderUserAvatarImage {
+        margin-bottom: 5px;
+    }
+    .accountOrderUserInfo {
+        justify-content: flex-start;
+        ul {
+            justify-content: flex-start;
+            width: 100%;
+            li {
+                padding-left: 0;
+                padding-bottom: 10px;
+                a {
+                    text-align: left;
+                    justify-content: flex-start;
+                }
+                &:last-child {
+                    a {
+                        font-size: 18px;
+                    }
+                }
+                &:nth-child(1) {
+                    order: 1;
+                    width: 50%;
+                    display: flex;
+                    justify-content: flex-start;
+                }
+                &:nth-child(3) {
+                    order: 2;
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 50%;
+                }
+            }
+        }
+    }
+    .accountOrder .list-inline>li {
+        padding-bottom: 10px;
+    }
+    .accountOrderInfoProductImage {
+        padding-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    .accountOrderInfoProductDescription {
+        width: 100%;
+    }
+    .accountOrderUserInfo {
+        .list-inline li {
+            padding-right: 0;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+    .accountOrderInfoProductStatus {
+        .objectStatusSelect {
+            max-width: 20px;
+            margin: 10px auto 0;
+        }
+    }
+    .accountOrderInfoProductStatus button {
+        width: 200px;
+        margin-left: auto;
+    }
+    .accountOrderInfoProductStatus a.edit {
+        justify-content: center;
+    }
+    .accountOrder.review {
+        padding-bottom: 10px;
+        .accountOrderInfo.order {
+            padding: 15px 10px 10px;
+            .accountOrderInfoProductDescription {
+                width: 100%;
+            }
+            .accountOrderInfoProductDescriptionTitle,
+            .accountOrderInfoProductSubDescriptionTitle {
+                padding-bottom: 5px;
+            }
+            .accountOrderInfoProductSubDescription {
+                padding-top: 20px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+    .accountSettingsFormBlock .formParameterField {
+        display: flex;
+        flex-wrap: wrap;
+        .checkbox-cover {
+            flex-shrink: 0;
+        }
+    }
+    .dealerSalonInformation {
+        flex-direction: column;
+    }
+    .dealerSalon {
+        margin: 0;
+    }
+    .rateActiveTime {
+        top: 0.5rem;
+    }
+    .buttonServicePrice {
+        margin-top: 5px;
+    }
+    .accountSettingsFormBlock .formParameter .formParameterField.cookieAlertButton {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .advertFiltersItemValue.fotos {
+        display: flex;
+        justify-content: unset;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0;
+        .dz-preview {
+            margin-right: 0;
+        }
+    }
+    .addAdvertParameterDescription {
+        display: none;
+    }
+    .dealerAutoButton {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .dealerSettingsLogotype img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #alertSettings .accountSettingsFormBlock .formParameterField {
+        flex-wrap: unset;
+    }
+    .pb3 {
+        margin-bottom: 15px;
+    }
+    #addDealerSalonPhone,
+    #addDealerPhone {
+        margin-left: 5px;
+    }
+    .accountSettingsFormBlock {
+        padding-bottom: 20px;
+    }
+    .mapListItemImage {
+        margin-right: 0;
+        width: 100%;
+    }
+    .dealerSettingsPage .mapListItemImage {
+        width: 100%;
+        margin-right: 0;
+    }
+    .mapListItemImageSrc {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cookieAlertButton button {
+        font-size: 14px;
+    }
+    .cookieAlertButton button.gray {
+        margin-top: 10px;
+    }
+    .paymentsMethodsBlockHeader {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 560px) {
+    .accountBill {
+        max-width: 100%;
+        width: calc(33.33% - 10px);
+        margin-right: 0;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+    .accountBillInfo a {
+        align-items: flex-start;
+    }
+    .accountBillInfoItem {
+        text-align: left;
+    }
+    .accountBillInfoItem.status {
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .accountBillDownload {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 550px) {
+    .dealerPageInner {
+        padding: 40px 20px;
+        .categoryAdvertCover {
+            width: 100%;
+        }
+    }
+    .dealerPageReviewsButton {
+        justify-content: center;
+    }
+    .accountMessageItemUser {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .accountMessageItemEnvelope {
+        width: calc(100% - 44px);
+        padding-right: 0;
+        justify-content: flex-end;
+    }
+    .accountMessageItemUserAvatar {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .accountMessageItemUserAvatar img {
+        width: 35px;
+    }
+    .accountMessageItemUserName {
+        padding-left: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        hyphens: auto;
+    }
+    .accountMessageItemTitle {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 10px;
+        align-items: flex-start;
+    }
+    .accountMessageItem {
+        padding: 1rem;
+    }
+    .accountMessageItemTitleName {
+        font-size: 14px;
+    }
+    .accountMessageItemEnvelope svg {
+        width: 30px;
+    }
+    .pageContentJobsList {
+        width: 100%;
+    }
+    .mapAutoName {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .mapServiceInfoSchedule {
+        flex-direction: column;
+        align-items: flex-start;
+        .mapListItemInfoText {
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
+    }
+    .accountAdvert,
+    .accountAdvert.cube {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 15px;
+        max-width: 100%;
+        &:nth-child(3n) {
+            margin-right: 0px;
+        }
+    }
+    .accountAdvertInfoName a {
+        white-space: unset;
+        overflow: unset;
+        text-overflow: unset;
+        max-width: 100%;
+    }
+    .accountAdvertInfoName {
+        overflow: unset;
+        text-overflow: unset;
+    }
+    .accountConversationMessage.oppoMessage {
+        padding-left: 0;
+    }
+    .accountBill {
+        width: calc(50% - 10px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+        &:nth-child(3n) {
+            margin-right: 20px;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+    .accountAdverts.line {
+        justify-content: center;
+    }
+    .notesAdverts .accountAdvert.cube {
+        margin-right: 0;
+    }
+    .pageContentBlockInner .mainPageFiltersTabs ul li {
+        width: 25%;
+        .shadowBlock {
+            right: -5px;
+            left: -5px;
+        }
+        a {
+            justify-content: center;
+        }
+        &:first-child {
+            a {
+                .shadowBlock {
+                    margin-left: 0;
+                    left: 0;
+                }
+            }
+        }
+        &:last-child {
+            .shadowBlock {
+                right: 0;
+            }
+            a {
+                margin-right: 0;
+            }
+        }
+    }
+    .mainPageFiltersTabs .tab-content {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .send-message-file {
+        width: 100%;
+    }
+    .send-message-file span {
+        justify-content: center;
+    }
+    .message-button-answer {
+        max-width: 100% !important;
+        margin-top: 10px;
+    }
+    .accountConversationMessages {
+        padding: 10px;
+    }
+    .accountConversationHeader {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .accountMessagesToolsLeft {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+    .accountMessagesToolsCheck {
+        margin-bottom: 25px;
+    }
+    .accountMessagesToolsSelect {
+        margin-left: 0;
+    }
+    .reviewAnswerFormInner button {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobileAccountMenuBlockButtons button {
+        width: unset;
+        flex-grow: 1;
+        justify-content: left;
+        &:nth-child(2) {
+            justify-content: center;
+        }
+        &.active {
+            background-color: #E7E7E7;
+        }
+    }
+    .accountConversationMessageText button {
+        padding: 1.3rem 1rem;
+    }
+    .advertFiltersItemValue.fotos {
+        .dz-preview {
+            width: calc(100% - 20px);
+            img {
+                width: 100%;
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+        .addFotoIcon {
+            width: calc(100% - 20px);
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .accountBill {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 10px;
+        position: relative;
+        &:nth-child(3n) {
+            margin-right: 0px;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+        .accountBillInfoItem {
+            &.title {
+                width: 50%;
+            }
+            &.price {
+                width: 50%;
+                text-align: right;
+            }
+            &.status {
+                padding-bottom: 0;
+            }
+        }
+        .accountBillDownload {
+            position: absolute;
+            width: unset;
+            right: 10px;
+            bottom: 23px;
+        }
+    }
+    .static-filters .filter {
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+@media (min-width: 631px) {
+    .accountOrderUserInfo {
+        ul {
+            li {
+                &:nth-child(1) {
+                    order: 3;
+                    a {
+                        padding-right: 0;
+                    }
+                }
+                &:nth-child(2) a {
+                    padding-right: 15px;
+                }
+                &:nth-child(3) {
+                    padding: 0 15px 0 0;
+                    a {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

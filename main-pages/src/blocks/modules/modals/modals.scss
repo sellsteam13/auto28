@@ -1,0 +1,593 @@
+/** styles for modals **/
+
+.overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(#000, .4);
+    opacity: 0;
+    transition: opacity $trans;
+}
+
+.overlay-toggled .overlay {
+    opacity: 1;
+    transition: opacity $trans;
+}
+
+.modal.def {
+    background-color: $white;
+    border-radius: 12px;
+    box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+    flex-direction: column;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: transform $trans, opacity $trans;
+    display: none;
+    position: relative;
+    &.animated {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform $trans, opacity $trans;
+    }
+    .modal-close {
+        position: absolute;
+        left: calc(100% + 2px);
+        bottom: calc(100% + 2px);
+        cursor: pointer;
+        width: 26px;
+        height: 26px;
+        @media (max-width: 650px) {
+            left: auto;
+            right: 0;
+            bottom: calc(100% + 5px);
+        }
+        &:hover {
+            &:before,
+            &:after {
+                background-color: $yellow;
+                transition: background-color $trans;
+            }
+        }
+        &:before,
+        &:after {
+            width: 26px;
+            height: 2px;
+            background-color: $white;
+            position: absolute;
+            content: '';
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: background-color $trans;
+        }
+        &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
+
+
+/** location modal **/
+
+.modal-location {
+    width: 600px;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0 70px;
+    @media (max-width: 650px) {
+        max-width: calc(100% - 40px);
+        margin: 0 20px;
+        padding: 25px 20px 35px;
+    }
+    &__title {
+        margin-bottom: 30px;
+        color: $gray;
+        @media (max-width: 650px) {
+            margin-bottom: 15px;
+        }
+    }
+    &-choose {
+        width: 320px;
+        @media (max-width: 650px) {
+            max-width: 100%;
+        }
+    }
+}
+
+.modal-order {
+    padding: 50px 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    @media (max-width: 650px) {
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        padding: 25px 20px 60px;
+    }
+    form {
+        @media (max-width: 650px) {
+            max-width: 100%;
+        }
+    }
+    &-inputs {
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 650px) {
+            max-width: 100%;
+        }
+        input {
+            width: 320px;
+            height: 40px;
+            background: $white;
+            border: 1px solid #DFE1E5;
+            border-radius: 2px;
+            padding: 0 14px;
+            margin-bottom: 10px;
+            @media (max-width: 650px) {
+                max-width: 100%;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:focus {
+                outline: none;
+                border-color: $yellow;
+            }
+        }
+    }
+    &__title {
+        color: #ABABAB;
+        margin-bottom: 30px;
+        text-align: center;
+        @media (max-width: 650px) {
+            margin-bottom: 15px;
+        }
+    }
+    &-check {
+        display: flex;
+        margin: 20px 0 30px;
+        max-width: 320px;
+        cursor: pointer;
+        @media (max-width: 650px) {
+            max-width: 100%;
+            margin: 15px 0;
+        }
+        input {
+            min-width: 24px;
+            margin-right: 10px;
+        }
+        span {
+            font-size: rem(10);
+            line-height: lh(14, 12);
+            color: #494949;
+            a {
+                color: $yellow;
+                text-decoration: underline;
+            }
+        }
+    }
+    form button {
+        width: 220px;
+        margin: 0 auto;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+
+.modal-auth {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 130px 70px;
+    @media (max-width: 650px) {
+        max-width: calc(100% - 40px);
+        margin: 0 20px;
+        padding: 25px 20px 35px;
+    }
+    &__title {
+        margin-bottom: 30px;
+        color: $gray;
+    }
+    &__text {
+        font-size: rem(16);
+        text-align: center;
+        line-height: lh(25, 16);
+        margin-bottom: 25px;
+    }
+    &__btns {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        a.def-btn {
+            justify-content: center;
+            width: calc(50% - 5px);
+        }
+    }
+}
+
+.modal-report,
+.modal-friend {
+    padding: 50px 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    @media (max-width: 650px) {
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        padding: 25px 20px 35px;
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 650px) {
+            max-width: 100%;
+        }
+        input {
+            width: 320px;
+            height: 40px;
+            background: $white;
+            border: 1px solid #DFE1E5;
+            border-radius: 2px;
+            padding: 0 14px;
+            margin-bottom: 10px;
+            transition: border-color $trans;
+            @media (max-width: 650px) {
+                width: 100%;
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            &:focus {
+                outline: none;
+                border-color: $yellow;
+                transition: border-color $trans;
+            }
+        }
+        textarea {
+            width: 320px;
+            resize: vertical;
+            min-height: 120px;
+            background: $white;
+            border: 1px solid #DFE1E5;
+            border-radius: 2px;
+            padding: 14px;
+            transition: border-color $trans;
+            margin-top: 10px;
+            @media (max-width: 650px) {
+                max-width: 100%;
+                min-height: 80px;
+            }
+            &:focus {
+                outline: none;
+                border-color: $yellow;
+                transition: border-color $trans;
+            }
+        }
+        button {
+            width: 220px;
+            margin: 0 auto;
+            justify-content: center;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    }
+    &__title {
+        color: #ABABAB;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+.modal-report {
+    padding: 50px 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    @media (max-width: 650px) {
+        width: calc(100% - 40px);
+        padding: 25px 20px 60px;
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 650px) {
+            max-width: 100%;
+        }
+        input {
+            width: 320px;
+            height: 40px;
+            background: $white;
+            border: 1px solid #DFE1E5;
+            border-radius: 2px;
+            padding: 0 14px;
+            margin-bottom: 10px;
+            transition: border-color $trans;
+            @media (max-width: 650px) {
+                max-width: 100%;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:focus {
+                outline: none;
+                border-color: $yellow;
+                transition: border-color $trans;
+            }
+        }
+        textarea {
+            width: 320px;
+            resize: vertical;
+            min-height: 120px;
+            background: $white;
+            border: 1px solid #DFE1E5;
+            border-radius: 2px;
+            padding: 14px;
+            transition: border-color $trans;
+            @media (max-width: 650px) {
+                max-width: 100%;
+            }
+            &:focus {
+                outline: none;
+                border-color: $yellow;
+                transition: border-color $trans;
+            }
+        }
+        button {
+            width: 220px;
+            margin: 0 auto;
+            justify-content: center;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    }
+    &__title {
+        color: #ABABAB;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+.notification {
+    &s-inner {
+        display: none;
+        opacity: 0;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        background-color: $white;
+        width: 600px;
+        transition: opacity $trans;
+        @media (max-width: 640px) {
+            width: calc(100vw - 40px);
+        }
+        &.is-opened {
+            opacity: 1;
+            transition: opacity $trans;
+        }
+    }
+    padding: 0 0 20px;
+    display: none;
+    position: relative;
+    opacity: 0;
+    transition: opacity $trans;
+    &.is-opened {
+        opacity: 1;
+        transition: opacity $trans;
+        .notification {
+            &__progress-bar {
+                animation: animateProgress 6s linear;
+                animation-fill-mode: forwards;
+                @media (max-width: 640px) {
+                    animation-name: MobileAnimateProgress;
+                }
+            }
+        }
+    }
+    &__progress {
+        height: 7px;
+        width: 100%;
+        margin-bottom: 10px;
+        position: relative;
+        &-bar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 600px;
+            animation-fill-mode: forwards;
+            @media (max-width: 640px) {
+                width: calc(100vw - 40px);
+            }
+        }
+    }
+    &.is-bad {
+        background-color: #EC7357;
+        .notification {
+            &__progress {
+                background-color: #D95D39;
+                &-bar {
+                    background-color: #EC7357;
+                }
+            }
+            &__title,
+            &__text {
+                color: $white;
+            }
+        }
+    }
+    &.is-good {
+        background-color: #0CCA4A;
+        .notification {
+            &__progress {
+                background-color: darken(#0CCA4A, 5%);
+                &-bar {
+                    background-color: #0CCA4A;
+                }
+            }
+            &__title,
+            &__text {
+                color: $white;
+            }
+        }
+    }
+    &.is-semi {
+        background-color: #FFD23F;
+        .notification {
+            &__progress {
+                background-color: orange;
+                &-bar {
+                    background-color: #FFD23F;
+                }
+            }
+        }
+    }
+    &__title {
+        font-size: rem(16);
+        padding: 0 10px 0;
+        margin-bottom: 0px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+    &__text {
+        padding: 0 10px 0;
+        font-size: rem(12);
+    }
+    &__close {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        cursor: pointer;
+        transition: transform $trans;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        filter: brightness(0);
+        &:hover {
+            transform: rotate(360deg);
+            transition: transform $trans;
+        }
+    }
+}
+
+@keyframes animateProgress {
+    from {
+        width: 600px;
+    }
+    to {
+        width: 0px;
+    }
+}
+
+@keyframes MobileAnimateProgress {
+    from {
+        width: calc(100vw - 40px);
+    }
+    to {
+        width: 0px;
+    }
+}
+
+.cookieAlerts {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    @media (max-width: 1070px) {
+        flex-direction: column;
+    }
+}
+
+.cookieAlertBlock {
+    background: #fff;
+    -moz-box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100001;
+    @media (max-width: 1070px) {
+        padding: 15px 0;
+    }
+}
+
+.cookieAlertButton button {
+    border: none;
+    background: #F5AA01;
+    font-weight: 700;
+    color: #000;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    padding: 13px 15px;
+    width: 270px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    @media (max-width: 1070px) {
+        font-size: 15px;
+    }
+}
+
+.cookieAlertButton button:hover,
+.cookieAlertButton button:focus {
+    background: #EB840B
+}
+
+.cookieAlertButton button.gray {
+    background: #E7E7E7;
+    margin-top: 20px
+}
+
+.cookieAlertButton button.gray:hover,
+.cookieAlertButton button.gray:focus {
+    background: rgba(231, 231, 231, 0.6)
+}
+
+.cookieAlertMessage {
+    color: #000;
+    font-size: 14px;
+    line-height: 24px;
+    width: 65%;
+    padding-right: 15px;
+    @media (max-width: 1070px) {
+        width: 100%;
+        text-align: center;
+        padding-right: 0;
+        line-height: 18px;
+    }
+}
+
+.cookieAlertLink a {
+    font-weight: 700;
+    color: #ABABAB;
+    font-size: 18px;
+    line-height: 17px;
+    display: block;
+    padding: 13px 15px;
+    white-space: nowrap;
+    @media (max-width: 1070px) {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+}
