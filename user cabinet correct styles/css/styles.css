@@ -113,9 +113,9 @@
 
 @media (max-width: 992px) {
   .dealersContainer {
-    margin-top: -50px;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
+    margin-top: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -143,7 +143,34 @@
   margin-right: 10px;
 }
 
+.mapServiceReviewsHeaderRatingTitle {
+  padding-right: 0;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.mapServiceReviewsHeaderRatingTitle:before {
+  content: '(';
+}
+
+.mapServiceReviewsHeaderRatingTitle:after {
+  content: ')';
+}
+
+@media (max-width: 1700px) {
+  .userAccount .col-lg-2.col-md-2 {
+    padding-left: 38px;
+  }
+}
+
 @media (max-width: 1360px) {
+  .serviceInfo {
+    max-height: calc(100vh - 150px);
+  }
+  .dealerPageShops {
+    margin-top: 50px;
+  }
   .accountConversationMessages {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -162,8 +189,7 @@
     width: 100%;
   }
   .mapListItems {
-    height: unset !important;
-    overflow: visible !important;
+    max-height: calc(100vh - 250px) !important;
   }
 }
 
@@ -469,6 +495,10 @@
 }
 
 @media (max-width: 1170px) and (min-width: 992px) {
+  .pageContentJobsList,
+  .mapListServicesJobs .pageContentJobsList {
+    width: 100%;
+  }
   .accountAdvert {
     padding: 4rem 2rem 2rem;
   }
@@ -507,7 +537,88 @@
   }
 }
 
+@media (max-width: 1199px) {
+  .mapImage {
+    width: 58.5%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dealerPageHeader {
+    padding-bottom: 20px;
+  }
+  .dealerPageImages {
+    padding-top: 20px;
+  }
+  .dealerPageInner .advertIcons ul li {
+    padding-right: 10px;
+  }
+}
+
 @media (max-width: 992px) {
+  .serviceInfo {
+    max-height: unset;
+  }
+  .dealerPageHeaderUserLogo {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .mapServiceReviewsHeader {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .dealerPageProducts .categoryAdvertInfoPrice {
+    padding: 0 !important;
+  }
+  .dealerPageProducts .categoryAdvertInfoPrice .categoryAdvertPrice {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .dealerPageProducts .categoryAdverts {
+    padding-bottom: 0;
+  }
+  .dealerPageProducts .padination {
+    padding-top: 0;
+  }
+  .sunwebhead {
+    padding-top: 20px;
+  }
+  .dealerPageInner {
+    padding: 20px;
+  }
+  .dealerPageInner .dealerPageHeader {
+    padding-top: 0;
+  }
+  .dealerPageShops .dealerPageShopsHeader {
+    padding-left: 0;
+    padding-bottom: 5px;
+  }
+  .dealerPageReviewsHeader {
+    font-size: 18px;
+    padding-bottom: 0;
+  }
+  #mainServicesList {
+    padding-right: 0;
+  }
+  .mapListSearchBlockTabs ul li {
+    padding-right: 15px;
+  }
+  .mapListItems {
+    max-height: unset !important;
+    height: unset !important;
+    overflow: unset !important;
+  }
+  #modalWindowMap {
+    max-height: calc(100vh - 130px);
+  }
+  #modalMap .modal-dialog {
+    width: 90vw;
+  }
+  #modalMap .modal-dialog .modal-title {
+    padding-top: 0 !important;
+  }
   .dealerPageShopsBg {
     display: none;
   }
@@ -1083,6 +1194,10 @@
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
+  #reviewModal .modal-dialog {
+    max-width: 90vw;
+    margin: 60px auto;
+  }
 }
 
 @media (max-width: 630px) {
@@ -1312,6 +1427,14 @@
   .mapListItemImageSrc {
     margin-bottom: 10px;
   }
+  .mapListItemImage {
+    width: unset;
+  }
+  .mapListItem {
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1357,8 +1480,19 @@
 }
 
 @media (max-width: 550px) {
+  .filtersFromTo {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .filtersFromTo > * {
+    border-left: 1px solid #dfe1e5 !important;
+    width: 100% !important;
+  }
+  .filtersFromTo > *:focus {
+    border-left: 1px solid #F5AA01 !important;
+  }
   .dealerPageInner {
-    padding: 40px 20px;
+    padding: 20px;
   }
   .dealerPageInner .categoryAdvertCover {
     width: 100%;
@@ -1419,7 +1553,8 @@
   .accountMessageItemEnvelope svg {
     width: 30px;
   }
-  .pageContentJobsList {
+  .pageContentJobsList,
+  .mapListServicesJobs .pageContentJobsList {
     width: 100%;
   }
   .mapAutoName {
