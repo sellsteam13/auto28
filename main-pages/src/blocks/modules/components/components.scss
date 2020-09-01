@@ -111,7 +111,7 @@ h5 {
 
 .tabs-inner>* {
     display: none;
-    &:first-child {
+    &.is-active {
         display: block;
     }
 }

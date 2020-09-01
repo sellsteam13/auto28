@@ -17,16 +17,15 @@ const tabsInit = () => {
         tabsInners.forEach(each => {
             const controls = Array.from(each.querySelectorAll('.tabs-triggers > *'));
             const inners = Array.from(each.querySelectorAll('.tabs-inner > *'));
-            controls[0].classList.add('is-active');
             controls.forEach(key => {
                 key.addEventListener('click', (evnt) => {
                     evnt.preventDefault();
                     let index = controls.indexOf(key);
                     if (inners[index]) {
                         inners.forEach(el => {
-                            el.style.display = 'none';
+                            el.classList.remove('is-active');
                         });
-                        inners[index].style.display = 'block';
+                        inners[index].classList.add('is-active');
                         controls.forEach(el => {
                             el.classList.remove('is-active');
                         });

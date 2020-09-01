@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         newDisabler()
     });
+    commentaryRowsAmount();
 });
 
 const productGalleryInit = () => {
@@ -146,10 +147,37 @@ const newDisabler = () => {
     if (document.querySelector('.product')) {
         if (window.innerWidth < 1170) {
             document.querySelector('.header-new').style.display = 'none';
-            console.log(1);
         } else {
             document.querySelector('.header-new').style.display = 'flex';
-            console.log(2);
         }
+    }
+};
+
+
+const commentaryRowsAmount = () => {
+    if (document.querySelector('.product-main__descr-text')) {
+        const div = document.querySelector('.product-main__descr-text');
+        const tglBtn = document.querySelector('.product-main__descr-status');
+        const cuttDiv = () => {
+            div.classList.remove('is-opened');
+            if (div.offsetHeight > 102) {
+                div.classList.add('is-cutted');
+                tglBtn.style.display = 'block';
+                console.log(213);
+            } else {
+                div.classList.remove('is-cutted');
+                tglBtn.style.display = 'none';
+                console.log(312);
+            }
+        };
+        cuttDiv();
+        window.addEventListener('resize', () => {
+            div.classList.remove('is-cutted');
+            cuttDiv();
+        });
+        tglBtn.addEventListener('click', () => {
+            div.classList.toggle('is-opened');
+            tglBtn.classList.toggle('is-opened');
+        });
     }
 };
