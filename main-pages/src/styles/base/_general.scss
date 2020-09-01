@@ -152,3 +152,10 @@ button {
         width: calc(100% - 40px);
     }
 }
+
+p a {
+    color: $yellow;
+    &:hover {
+        text-decoration: underline;
+    }
+}

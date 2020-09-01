@@ -379,7 +379,7 @@
         pointer-events: none;
         transition: opacity $trans, transform $trans;
         @media (max-width: 1650px) {
-            right: 5px;
+            right: 15px;
             top: 20px;
         }
         @media (max-width: 780px) {
@@ -396,7 +396,7 @@
             cursor: pointer;
             width: 23px;
             height: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             @media (max-width: 1650px) {
                 margin-bottom: 15px;
                 width: 16px;
@@ -433,6 +433,7 @@
         &-share {
             margin-bottom: 20px;
             position: relative;
+            z-index: 1;
             @media (max-width: 1650px) {
                 margin-bottom: 15px;
             }
@@ -490,15 +491,18 @@
         }
         &__note {
             cursor: pointer;
+            padding: 0;
             svg {
                 width: 19px;
                 height: 22px;
                 fill: none;
                 stroke: #616161;
                 transition: fill $trans, stroke $trans;
+                transform: translateX(4px);
                 @media (max-width: 1650px) {
                     width: 16px;
                     height: 19px;
+                    transform: translateX(2px);
                 }
             }
             &:hover svg {
@@ -657,6 +661,8 @@
                 cursor: pointer;
                 color: $white;
                 font-weight: 500;
+                position: relative;
+                z-index: 1;
                 @media (max-width: 940px) {
                     width: 100%;
                 }
@@ -682,6 +688,8 @@
                 margin-right: 10px;
                 color: $orange;
                 text-decoration: underline;
+                position: relative;
+                z-index: 1;
                 @media (max-width: 940px) {
                     font-size: rem(12);
                 }

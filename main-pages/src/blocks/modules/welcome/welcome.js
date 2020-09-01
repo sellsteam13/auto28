@@ -8,4 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger.classList.toggle('is-opened');
         });
     }
+    if (document.querySelector('.welcome-offers-map')) {
+        document.querySelector('.welcome-offers-map__expand').addEventListener('click', () => {
+            if (window.innerWidth < 1071) {
+                document.querySelector('.welcome-offers-map__wrap').classList.toggle('is-opened');
+                document.querySelector('.welcome-offers-map__expand').classList.toggle('is-opened');
+            }
+        });
+    }
 });

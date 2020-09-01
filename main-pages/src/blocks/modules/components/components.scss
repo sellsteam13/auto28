@@ -204,7 +204,7 @@ input[type="checkbox"] {
         border: 1px solid #DFE1E5;
         border-radius: 2px;
         padding: 0 10px;
-        font-size: rem(12);
+        font-size: rem(13);
         line-height: 1;
         color: $lgray;
         transition: border-color $trans;
@@ -377,9 +377,8 @@ input[type="checkbox"] {
     padding-right: 25px;
     background: #fff;
     font-size: rem(13);
-    font-family: "GothamProRegular", sans-serif;
     color: $lgray;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAYAAAA8sqwkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACLSURBVHgBfZBNDYUwEITftgqeAyTUAkpoagAcAAqQQFFAUMCVIzgBAy2zhANZfubS7ew3zaTknGtCCJ33fv59yFprlFKZArwQUQ8j+YATZpjVM2SM2WC0OAdc1wd4jDHWaOE1m28hCbNH4jULoASQHksB3wJnqACY8wyYP6O67rUMoM6EWn+Mi4RZO45WVFBZ19w8AAAAAElFTkSuQmCC') no-repeat;
+    background: $white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAYAAAA8sqwkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACLSURBVHgBfZBNDYUwEITftgqeAyTUAkpoagAcAAqQQFFAUMCVIzgBAy2zhANZfubS7ew3zaTknGtCCJ33fv59yFprlFKZArwQUQ8j+YATZpjVM2SM2WC0OAdc1wd4jDHWaOE1m28hCbNH4jULoASQHksB3wJnqACY8wyYP6O67rUMoM6EWn+Mi4RZO45WVFBZ19w8AAAAAElFTkSuQmCC') no-repeat;
     cursor: pointer;
     background-position: top 16px right 8px;
     text-align: left !important;
