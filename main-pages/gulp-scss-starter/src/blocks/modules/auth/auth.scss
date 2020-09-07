@@ -1,0 +1,302 @@
+.auth {
+    padding: 108px 0;
+    background-color: #F9F9F9;
+    @media (max-width: 980px) {
+        padding: 50px 0;
+    }
+    &-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: 980px) {
+            flex-direction: column;
+            justify-content: normal;
+        }
+    }
+    &-bussines {
+        padding: 60px 0;
+        .auth {
+            &-main {
+                margin-right: 0;
+            }
+        }
+    }
+    &-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 600px;
+        margin-right: 150px;
+        background: $white;
+        box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+        border-radius: 12px;
+        padding: 60px;
+        @media (max-width: 980px) {
+            max-width: 100%;
+            margin-right: 0;
+            padding: 40px 20px;
+        }
+    }
+    &-socials {
+        width: 400px;
+        transform: translateY(-27px);
+        @media (max-width: 980px) {
+            transform: translateY(0);
+            max-width: 100%;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        &__title {
+            font-weight: 900;
+            font-size: rem(22);
+            color: #222B2A;
+            margin-bottom: 20px;
+        }
+        &__text {
+            margin-bottom: 30px;
+            font-size: rem(16);
+            line-height: lh(22, 16);
+            color: #222B2A;
+        }
+        &__btn {
+            display: inline-flex;
+            align-items: center;
+            background: #344C8A;
+            border-radius: 3px;
+            height: 40px;
+            padding: 0 20px 0 17px;
+            transition: filter $trans;
+            &:hover {
+                filter: brightness(1.1);
+                transition: filter $trans;
+            }
+            &:focus,
+            &:active {
+                filter: brightness(.9);
+                transition: filter $trans;
+            }
+            img {
+                margin-right: 17px;
+            }
+            span {
+                font-size: rem(13);
+                font-weight: bold;
+                color: $white;
+                transform: translateY(1px);
+            }
+        }
+    }
+    &-titling {
+        margin-bottom: 45px;
+        font-weight: bold;
+        font-size: rem(16);
+        color: #ABABAB;
+        @media (max-width: 980px) {
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a {
+            color: $yellow;
+        }
+        a.is-current {
+            color: #ABABAB;
+            pointer-events: none;
+        }
+    }
+    &-inputs {
+        width: 320px;
+        @media (max-width: 980px) {
+            max-width: 100%;
+        }
+        &__item {
+            position: relative;
+            width: 100%;
+            margin-bottom: 30px;
+            @media (max-width: 980px) {
+                margin-bottom: 15px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            input {
+                width: 100%;
+                background-color: transparent;
+                border: none;
+                height: 30px;
+                border-bottom: 1px solid #BBC8D2;
+                padding: 0 10px 0 30px;
+                transition: border-color $trans;
+                &:focus {
+                    outline: none;
+                    border-color: $yellow;
+                    transition: border-color $trans;
+                }
+            }
+            img {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-70%);
+            }
+        }
+    }
+    &-submit {
+        .def-btn {
+            cursor: pointer;
+            width: 320px;
+            margin-top: 30px;
+            justify-content: center;
+            color: $white;
+            @media (max-width: 980px) {
+                max-width: 100%;
+                margin-top: 15px;
+            }
+            @media (max-width: 400px) {
+                width: calc(100vw - 80px);
+            }
+        }
+    }
+    &-forget {
+        margin-top: 50px;
+        color: $yellow;
+        font-size: rem(16);
+        @media (max-width: 980px) {
+            margin-top: 25px;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &-goreg {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (max-width: 980px) {
+            margin-top: 15px;
+        }
+        span {
+            font-size: rem(16);
+            color: #71798A;
+            margin-bottom: 5px;
+        }
+        a {
+            color: $yellow;
+            font-size: rem(16);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.auth-restore-sended {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    @media (max-width: 980px) {
+        padding: 60px 20px;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: rem(16);
+        color: $orange;
+        margin-bottom: 50px;
+        @media (max-width: 980px) {
+            margin-bottom: 25px;
+        }
+    }
+    &__subtitle {
+        margin-bottom: 25px;
+        text-align: center;
+        color: #71798A;
+        font-size: rem(16);
+        line-height: lh(22, 16);
+    }
+    &__mail {
+        margin-bottom: 60px;
+        text-align: center;
+        color: #71798A;
+        font-size: rem(16);
+        line-height: lh(22, 16);
+        font-weight: bold;
+        @media (max-width: 980px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__link {
+        color: $yellow;
+        text-decoration: underline;
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+.auth-privacy {
+    margin-top: 40px;
+    text-align: center;
+    font-size: rem(12);
+    line-height: lh(15, 12);
+    @media (max-width: 980px) {
+        margin-top: 20px;
+    }
+    a {
+        color: $yellow;
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+.auth-reg-send {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    @media (max-width: 980px) {
+        padding: 60px 20px;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: rem(16);
+        color: $orange;
+        margin-bottom: 30px;
+        @media (max-width: 980px) {
+            margin-bottom: 15px;
+        }
+    }
+    &__text {
+        font-size: rem(16);
+        color: #71798A;
+        line-height: lh(19, 16);
+        margin-bottom: 20px;
+        text-align: center;
+        @media (max-width: 980px) {
+            margin-bottom: 15px;
+        }
+    }
+    &__mail {
+        color: #71798A;
+        font-size: rem(16);
+        font-weight: bold;
+        margin-bottom: 55px;
+        @media (max-width: 980px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__login {
+        color: #71798A;
+        a {
+            text-decoration: underline;
+            color: $orange;
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("../blocks/modules/header/head.html")
+
+<body>
+
+    <!-- begin of page -->
+    <div class="wrapper">
+
+        <!-- begin of header -->
+        @@include("../blocks/modules/header/header.html")
+        <!-- end of header -->
+        <style>
+            .pages-list {
+                padding: 100px 160px;
+            }
+            
+            .pages-list h1 {
+                margin-bottom: 100px;
+            }
+            
+            .pages-list a {
+                margin-bottom: 30px;
+                font-size: 20px;
+                display: block;
+            }
+            
+            .pages-list a:hover {
+                text-decoration: underline;
+            }
+            
+            @media (max-width: 1170px) {
+                .pages-list {
+                    padding: 20px;
+                }
+            }
+        </style>
+        <!-- begin of main -->
+        <main class="main">
+            <div class="pages-list" style="background-color: #ccc;">
+                <h1>Список страниц:</h1>
+                <a href="./page-main.html">1 - Главная</a>
+                <a href="./page-category.html">2 - Каталог</a>
+                <a href="./page-add-auto.html">3 - Добавление авто</a>
+                <a href="./page-add-moto.html">4 - Добавление мото</a>
+                <a href="./page-add-caravanas.html">5 - Добавление автокараванов</a>
+                <a href="./page-add-buses.html">6 - Добавление автобусов</a>
+                <a href="./page-add-moderation.html">7 - Объявление отправлено в модерацию</a>
+                <a href="./page-add-draft.html">8 - Объявление отправлено в черновик</a>
+                <a href="./page-404.html">9 - Страница 404</a>
+                <a href="./page-faq.html">10 - FAQ</a>
+                <a href="./page-feedback.html">11 - Обратная связь</a>
+                <a href="./page-info.html#block1">12 - Пользовательская страница</a>
+                <a href="./page-product-dealer.html">13 - Объявление</a>
+                <a href="./page-about.html">14 - О компании</a>
+                <a href="./page-partnership.html">15 - Партнерство</a>
+                <a href="./page-media.html">16 - Медийка</a>
+                <a href="./page-services.html">17 - Сервисам</a>
+                <a href="./page-dealers.html">18 - Дилерам</a>
+                <a href="./page-auth-login.html">19 - Авторизация - вход в аккаунт</a>
+                <a href="./page-auth-restore.html">20 - Авторизация - восставлновление форма</a>
+                <a href="./page-auth-restore-sended.html">21 - Авторизация - восстановление отправлено</a>
+                <a href="./page-auth-reg.html">22 - Авторизация - регистрация</a>
+                <a href="./page-auth-reg-send.html">23 - Авторизация - регистрация отправлена</a>
+                <a href="./page-service-reg.html">24 - Регистрация сервиса</a>
+                <a href="./page-dealer-reg.html">25 - Регистрация дилера </a>
+                <a href="./page-business-reg-send.html">26 - Регистрация дилера / Регистрация сервиса отправлена</a>
+                <a href="#" onclick="openNotificationWithFunction('#ntf1')">Уведомление плохое</a>
+                <a href="#" onclick="openNotificationWithFunction('#ntf2')">Уведомление хорошее</a>
+                <a href="#" onclick="openNotificationWithFunction('#ntf3')">Уведомление нейтральное</a>
+            </div>
+        </main>
+        <!-- end of main -->
+
+        <!-- begin of footer -->
+        @@include("../blocks/modules/footer/footer.html")
+        <!-- end of footer -->
+
+    </div>
+    <!-- end of page -->
+
+    <!-- begin of modals -->
+    @@include("../blocks/modules/modals/modals.html")
+    <!-- end of modals -->
+
+
+    <!-- connecting scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/vendor.js"></script>
+
+</body>
+
+</html>

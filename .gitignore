@@ -1,2 +1,3 @@
 
 .DS_Store
+/main-pages/gulp-scss-starter/node_modules/*
