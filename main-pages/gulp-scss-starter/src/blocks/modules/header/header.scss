@@ -119,21 +119,8 @@ body {
                     display: none;
                 }
             }
-            &:after {
-                content: '/';
-                position: absolute;
-                top: 50%;
-                left: calc(100% + 4px);
-                transform: translateY(-50%);
-                @media (max-width: 1170px) {
-                    display: none;
-                }
-            }
             &:last-of-type {
                 @media (max-width: 1170px) {
-                    display: none;
-                }
-                &:after {
                     display: none;
                 }
             }

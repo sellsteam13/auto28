@@ -52,7 +52,10 @@
             }
         }
         &-inner {
-            max-width: 1000px;
+            max-width: 1100px;
+            .input-module input::placeholder {
+                color: $lgray;
+            }
         }
     }
     &-offers {
@@ -379,7 +382,7 @@
         &-map {
             min-height: 772px;
             margin: 50px 0 40px;
-            background: url('../../../img/backgrounds/welcome/welcome-map-bg.svg') no-repeat center center;
+            background: url('../img/backgrounds/welcome/welcome-map-bg.svg') no-repeat center center;
             background-size: 1058px 772px;
             padding: 55px 90px 90px;
             @media (max-width: 1650px) {

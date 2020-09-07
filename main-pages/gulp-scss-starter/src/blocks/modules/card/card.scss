@@ -90,7 +90,7 @@
             @media (max-width: 1650px) {
                 padding-bottom: 68%;
             }
-            @media (max-width: 780px) {
+            @media (max-width: 850) {
                 display: none;
             }
         }
@@ -108,7 +108,7 @@
             img {
                 border-radius: 3px;
             }
-            @media (max-width: 780px) {
+            @media (max-width: 850) {
                 position: static;
                 align-items: unset;
                 padding: 0;
@@ -126,7 +126,7 @@
             &:last-child {
                 margin-right: 0;
             }
-            @media (max-width: 780px) {
+            @media (max-width: 850) {
                 display: block !important;
                 margin-right: 0;
             }
@@ -148,7 +148,7 @@
                 color: $white;
                 font-weight: 500;
                 font-size: rem(16);
-                @media (max-width: 780px) {
+                @media (max-width: 850) {
                     display: none !important;
                 }
             }
@@ -161,7 +161,7 @@
                 display: none;
                 object-fit: cover;
                 z-index: -3;
-                @media (max-width: 780px) {
+                @media (max-width: 850) {
                     z-index: unset;
                     position: static;
                     display: block !important;
@@ -181,7 +181,7 @@
             &:nth-child(4),
             &:nth-child(5) {
                 display: block;
-                @media (max-width: 780px) {
+                @media (max-width: 850) {
                     border: none;
                 }
             }
@@ -202,7 +202,7 @@
         display: flex;
         margin-top: 4px;
         justify-content: space-between;
-        @media (max-width: 780px) {
+        @media (max-width: 850) {
             display: none;
         }
         &__item {
@@ -360,6 +360,7 @@
         margin-left: auto;
         width: 32%;
         text-align: center;
+        white-space: nowrap;
         @media (max-width: 1650px) {
             font-size: rem(18);
             width: calc(50% - 21px);
@@ -431,11 +432,11 @@
             }
         }
         &-share {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             position: relative;
             z-index: 1;
             @media (max-width: 1650px) {
-                margin-bottom: 15px;
+                margin-bottom: 12px;
             }
             &:hover {
                 .card-manage-share {

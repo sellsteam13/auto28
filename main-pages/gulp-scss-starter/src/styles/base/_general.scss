@@ -135,6 +135,7 @@ button {
     background: transparent;
     border: none;
     text-align: unset;
+    cursor: pointer;
     &:focus {
         outline: none;
     }

@@ -395,6 +395,9 @@
             padding: 0;
             margin-bottom: 100px;
             border-radius: 0;
+            @media (max-width: 550px) {
+                margin-top: 70px;
+            }
             .category-offer {
                 &__title {
                     h3 {

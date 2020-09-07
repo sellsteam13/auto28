@@ -1,0 +1,34 @@
+{
+    "dir": "ltr",
+    "lang": "Spanish; Castilian",
+    "name": "Auto28 - Coches de segunda mano y nuevos. Todos los vehículos.",
+    "short_name": "Auto28",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "https://auto28.es",
+    "background_color": "#fff",
+    "theme_color": "#fff",
+    "description": "Encuentra el coche de tus sueños en nuestro sitio web. Búsqueda conveniente los coches de segunda mano y nuevos.",
+    "orientation": "natural",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [{
+            "src": "https://auto28.es/bundles/Default/img/pwa-icons/144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "https://auto28.es/bundles/Default/img/pwa-icons/512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "https://auto28.es/bundles/Default/img/pwa-icons/maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "url": "https://auto28.es",
+    "screenshots": []
+}

@@ -1,0 +1,18 @@
+{
+    "dir": "ltr",
+    "lang": "Spanish; Castilian",
+    "name": "Auto28.es",
+    "short_name": "Auto28.es ",
+    "scope": "/dev/auto28/dist/page-main.html",
+    "display": "standalone",
+    "start_url": "https://tsymbal-yurii.art/dev/auto28/dist/page-main.html",
+    "background_color": "pick",
+    "theme_color": "transparent",
+    "description": "Some description",
+    "orientation": "natural",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [],
+    "url": "https://tsymbal-yurii.art/dev/auto28/dist/page-main.html",
+    "screenshots": []
+}

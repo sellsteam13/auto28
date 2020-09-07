@@ -1,0 +1,46 @@
+.legacy-isolated .mapServiceLogo {
+    margin-top: 15px;
+}
+
+.legacy-isolated .advertSliderMainFoto #serviceSlider button {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.legacy-isolated .serviceInfo {
+    height: calc(100vh - 115px);
+}
+
+.legacy-isolated .dealersContainer {
+    max-height: calc(100vh - 115px);
+}
+
+.filter.search-filter {
+    .fitler-main {
+        border-radius: 12px;
+    }
+    .filter-controls {
+        display: none;
+    }
+    form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .filter-tab__checks {
+        width: 100%;
+    }
+    .filter-tab-rows {
+        width: calc(100% - 150px);
+    }
+    .filter-manage {
+        width: 100%;
+        margin-top: auto;
+        width: 140px;
+        margin-left: 10px;
+        button {
+            justify-content: center;
+            width: 100%;
+        }
+    }
+}

@@ -14,7 +14,7 @@ const mobileBind = () => {
         inners.forEach(each => {
             const trigger = each.querySelector('span');
             trigger.addEventListener('click', () => {
-                if (!each.classList.contains('is-opened') && window.innerWidth < 551) {
+                if (!each.classList.contains('is-opened') && window.innerWidth < 993) {
                     inners.forEach(el => {
                         el.classList.remove('is-opened');
                     });

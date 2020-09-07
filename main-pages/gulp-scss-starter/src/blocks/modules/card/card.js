@@ -59,7 +59,7 @@ const showPhoneBind = () => {
 // Инициализация слайдера фоток в карточке на планшетах и телефонах
 
 const sliderInit = () => {
-    if (document.querySelector('.card') && window.innerWidth < 781) {
+    if (document.querySelector('.card') && window.innerWidth < 851) {
         const allCards = document.querySelectorAll('.card');
         allCards.forEach(each => {
             const swiperInner = each.querySelector('.card-photo');
@@ -74,7 +74,7 @@ const sliderInit = () => {
                 loop: true,
             })
             window.addEventListener('resize', () => {
-                if (window.innerWidth > 780) {
+                if (window.innerWidth > 850) {
                     slider.destroy();
                     swiperTrack.classList.remove('swiper-wrapper');
                     swiperSlides.forEach(slide => {
