@@ -1,0 +1,236 @@
+<footer class="footer">
+    <div class="footer-wrap limiter">
+        <div class="footer-info">
+            {% if settings.siteLogo %}
+                <a class="footer-info__logo" href="{{ path('main') }}" title="A la página de inicio"></a>
+            {% endif %}
+            <div class=" footer-info__text">
+                {{ settings.userAdvertWorkRight | raw }}
+            </div>
+            <div class="footer-info__copyrights">{{ settings.copyright | raw }}</div>
+        </div>
+
+        {% if bottomMenu %}
+            {% if bottomMenu.items | length > 0 %}
+                {% for item in bottomMenu.items %}
+                    {% if not item.parent %}
+                        <nav class="footer-nav footer-nav--mobile">
+                        <span>{{ item.title }}</span>
+
+                        {% if item.children | length > 0 %}
+                            <div class="footer-nav-block">
+                                {% set num = item.children | length / 2 %}
+                                {% set num = num | round(0, 'ceil') %}
+                                {% for i in 0..num-1 %}
+                                    {% if item.children[i].category %}
+                                        {% set link = path('category',{'categoryId' : item.children[i].category.id, 'categoryName' : item.children[i].category.name}) %}
+                                    {% elseif item.children[i].page %}
+                                        {% if item.children[i].page.isUserpage %}
+                                            {% set link = path('pages',{'route' : item.children[i].page.route}) %}
+                                        {% else %}
+                                            {% set link = '/' ~ item.children[i].page.route %}
+                                        {% endif %}
+                                    {% elseif item.children[i].link %}
+                                        {% set link = item.children[i].link %}
+                                    {% endif %}
+                                    <a href="{{ link }}"><span>{{ item.children[i].title }}</span></a>
+                                {% endfor %}
+                            </div>
+                            {% if item.children | length > 1 %}
+                                <div class="footer-nav-block">
+                                    {% for i in num..item.children | length - 1 %}
+                                        {% if item.children[i].category %}
+                                            {% set link = path('category',{'categoryId' : item.children[i].category.id, 'categoryName' : item.children[i].category.name}) %}
+                                        {% elseif item.children[i].page %}
+                                            {% if item.children[i].page.isUserpage %}
+                                                {% set link = path('pages',{'route' : item.children[i].page.route}) %}
+                                            {% else %}
+                                                {% set link = '/' ~ item.children[i].page.route %}
+                                            {% endif %}
+                                        {% elseif item.children[i].link %}
+                                            {% set link = item.children[i].link %}
+                                        {% endif %}
+                                        <a href="{{ link }}"><span>{{ item.children[i].title }}</span></a>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            </nav>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+
+        <div class="footer-nav footer-nav--mobile">
+            <nav class="footer-nav">
+                <span>{% trans %}Личный кабинет{% endtrans %}</span>
+                <div class="footer-nav-block">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a href="{{ path('account') }}"><span>{% trans %}Личный кабинет{% endtrans %}</span></a>
+                        <a href="{{ path('logout') }}"><span>{% trans %}Выйти{% endtrans %}</span></a>
+                    {% else %}
+                        <a href="{{ path('login') }}"><span>{% trans %}Войти{% endtrans %}</span></a>
+                        <a href="{{ path('register') }}"><span>{% trans %}Регистрация{% endtrans %}</span></a>
+                        <a href="{{ path('restore') }}"><span>{% trans %}Забыли пароль?{% endtrans %}</span></a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<div class="overlay">
+    {# Location popup #}
+    <div class="modal modal-location def">
+        <h3 class="modal-location__title">
+            {% trans %}Выберите Ваше местоположение{% endtrans %}
+        </h3>
+        <div class="modal-location-choose">
+            <div class="select-module">
+                {{ form_start(regionForm, {'method':'POST','multipart':true,'attr': {'class': 'form-horizontal','id' : 'regionFilter'}}) }}
+                <input name="selectFilterRegionCity" value="1" type="hidden"/>
+                <div class="select-module-main">
+                    {{ form_widget(regionForm.name) }}
+                </div>
+                {{ form_end(regionForm) }}
+            </div>
+        </div>
+        <div class="modal-close"></div>
+    </div>
+
+    {# Order popup #}
+    <div class="modal modal-order def">
+        {% if orderForm %}
+            <h3 class="modal-order__title">
+                {% trans %}Оставить заявку заголовок{% endtrans %}
+            </h3>
+            {{ form_start(orderForm, {'method':'POST'}) }}
+                <div class="modal-order-inputs">
+                    {{ form_widget(orderForm.name, {'attr' : {"autocomplete" : "off"}}) }}
+                    {{ form_widget(orderForm.email, {'attr' : {"autocomplete" : "off"}}) }}
+                    {{ form_widget(orderForm.phone, {'attr' : {"autocomplete" : "off", 'class': 'masked-phone'}}) }}
+                </div>
+                <div class="modal-order__important">
+                    <span>
+                        {% trans with {'%link%': '/pages/politica-privacidad#block2', '%link1%' : '/pages/politica-privacidad#block3'} %}Нажимая кнопку я соглашаюсь с <a href="%link%">Условиями обслуживания</a> и <a href="%link1%">Политикой конфиденциальности{% endtrans %}</a>
+                    </span>
+                </div>
+                {{ form_widget(orderForm.save,{'type' : 'submit', 'attr' : {'class': 'def-btn'}}) }}
+            {{ form_end(orderForm)}}
+        {% endif %}
+        <div class="modal-close"></div>
+    </div>
+
+    {# Authorization popup #}
+    <div class="modal modal-auth def">
+        <h3 class="modal-auth__title">
+            {% trans %}Войти или зарегистрироваться{% endtrans %}
+        </h3>
+        <div class="modal-auth__text">
+            {% trans %}Для продолжения, войдите в аккаунт или зарегистрируйтесь.{% endtrans %}
+        </div>
+        <div class="modal-auth__btns">
+            <a href="{{ path('login') }}" class="def-btn">{% trans %}Войти{% endtrans %}</a>
+            <a href="{{ path('register') }}" class="def-btn">{% trans %}Зарегистрироваться{% endtrans %}</a>
+        </div>
+        <div class="modal-close"></div>
+    </div>
+
+    {# Complaint popup #}
+    <div class="modal modal-report def">
+        {% if complaintMessageForm %}
+            <h3 class="modal-report__title">{% trans %}Пожаловаться{% endtrans %}</h3>
+            {{ form_start(complaintMessageForm, {'method':'POST', 'attr': {'class': 'modal-report-form'}}) }}
+                {{ form_widget(complaintMessageForm.authorName, {'attr' : {"autocomplete" : "off"}}) }}
+                {{ form_widget(complaintMessageForm.authorEmail, {'attr' : {"autocomplete" : "off"}}) }}
+                {{ form_widget(complaintMessageForm.reason) }}
+                {{ form_widget(complaintMessageForm.save,{'type' : 'submit', 'attr': {'class': 'def-btn'}}) }}
+            {{ form_end(complaintMessageForm)}}
+        {% endif %}
+        <div class="modal-close"></div>
+    </div>
+
+    {# Send to a friend popup #}
+    <div class="modal modal-friend def">
+        {% if friendMessageForm %}
+            <h3 class="modal-friend__title">{% trans %}Сообщить другу{% endtrans %}</h3>
+            {{ form_start(friendMessageForm, {'method':'POST', 'attr': {'class': 'modal-friend-form'}}) }}
+                {{ form_widget(friendMessageForm.friendemail, {'attr' : {"autocomplete" : "off"}}) }}
+                {{ form_widget(friendMessageForm.friendname, {'attr' : {"autocomplete" : "off"}}) }}
+                {{ form_widget(friendMessageForm.save,{'type' : 'submit', 'attr' : {"class" : "def-btn"}}) }}
+            {{ form_end(friendMessageForm)}}
+        {% endif %}
+        <div class="modal-close"></div>
+    </div>
+
+    {# Send owner a message #}
+    <div class="modal modal-message def">
+        {% if profileMessageForm %}
+            <h3 class="modal-message__title">{% trans %}Написать сообщение{% endtrans %}</h3>
+            {{ form_start(profileMessageForm, {'method':'POST','attr': {'class': 'form-horizontal'}}) }}
+                {{ form_widget(profileMessageForm.message) }}
+                {{ form_widget(profileMessageForm.userFrom, {'value' : user.id }) }}
+                {{ form_widget(profileMessageForm.userTo, {'value' : product.user.id }) }}
+                {{ form_widget(profileMessageForm.save,{'type' : 'submit', 'attr' : {"class" : "def-btn"}}) }}
+            {{ form_end(profileMessageForm)}}
+        {% endif %}
+        <div class="modal-close"></div>
+    </div>
+</div>
+
+{# Notifications #}
+<div class="notifications-inner">
+    {% set i = 0 %}
+    {% for flashMessage in app.session.flashbag.get('notice_header') %}
+        {% set i = i + 1 %}
+        <div class="notice-message">
+            <div class="notification is-good" id="notice_header_{{i}}">
+                <div class="notification__progress">
+                    <div class="notification__progress-bar"></div>
+                </div>
+                <div class="notification__title">
+                    {% trans %}Ok!{% endtrans %}
+                </div>
+                <div class="notification__text">
+                    {{ flashMessage | raw }}
+                </div>
+                <button class="notification__close">
+                    <img src="{{ asset('bundles/Default/img/svg/cross.svg') }}" alt="close">
+                </button>
+            </div>
+        </div>
+        <script>
+            window.addEventListener("load", function(event) {
+                openNotificationWithFunction("#notice_header_{{i}}");
+            })
+        </script>
+    {% endfor %}
+</div>
+
+{# Accept cookie message #}
+{% if not app.request.cookies.get('cookieInfoAccepted') %}
+    <div class="cookie">
+        <div class="cookie-wrap limiter"></div>
+    </div>
+
+    <div class="cookieAlertBlock">
+        <div class="limiter">
+            <div class="cookieAlerts">
+                <div class="cookieAlertMessage">
+                    {{ settings.userAdvertLimitText | raw }}
+                </div>
+                <div class="cookieAlertLink">
+                    <a href="/pages/politica-privacidad#block6">{% trans %}Больше информации{% endtrans %}</a>
+                </div>
+                <div class="cookieAlertButton">
+                    <button onclick="accceptCookieInfo($(this))">{% trans %}Принять{% endtrans %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if settings.isShowCaptcha %}
+    <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
+{% endif %}

@@ -58,6 +58,9 @@
                 &.def-btn--gray {
                     background-color: $white;
                     color: #222B2A;
+                    &:hover {
+                        background-color: var(--yellow) !important;
+                    }
                 }
             }
         }

@@ -85,6 +85,9 @@ h5 {
     &.a1 {
         width: 100%;
         height: 90px;
+        @media (max-width: 992px) {
+            display: none !important;
+        }
     }
     &.c1,
     &.c2 {

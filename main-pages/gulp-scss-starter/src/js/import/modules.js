@@ -8,3 +8,4 @@ import "%modules%/product/product";
 import "%modules%/filter/filter";
 import "%modules%/footer/footer";
 import "%modules%/welcome/welcome";
+import "%modules%/info/info";

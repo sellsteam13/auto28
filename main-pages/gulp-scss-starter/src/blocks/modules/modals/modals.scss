@@ -30,6 +30,12 @@
     transition: transform $trans, opacity $trans;
     display: none;
     position: relative;
+    h3 {
+        text-align: center;
+        @media (min-width: 1650px) {
+            font-size: 24px;
+        }
+    }
     &.animated {
         opacity: 1;
         transform: translateY(0);
@@ -106,6 +112,11 @@
     flex-direction: column;
     align-items: center;
     width: 600px;
+    &__important {
+        margin: 10px 0;
+        text-align: center;
+        opacity: .6;
+    }
     @media (max-width: 650px) {
         width: calc(100% - 40px);
         margin: 0 20px;
