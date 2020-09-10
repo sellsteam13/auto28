@@ -1,0 +1,2296 @@
+@media (max-width: 1700px) {
+    .userAccount .col-lg-2.col-md-2 {
+        width: 25%;
+        padding-left: 30px
+    }
+    .userAccount .col-lg-10.col-md-10 {
+        width: 75%
+    }
+}
+
+@media (max-width: 1600px) {
+    .header-search-box input[name="searchText"] {
+        width: 200px
+    }
+    .mainPageFiltersBlock {
+        padding-top: 4.9rem;
+        padding-bottom: 14rem
+    }
+}
+
+@media (max-width: 1540px) {
+    .siteInfoPaneFloat {
+        float: none;
+        position: relative;
+        top: 0;
+        right: auto;
+        margin-top: 1rem
+    }
+    .header-search-box input[name="searchText"] {
+        width: 50%
+    }
+    .header-search-box a.top-select-region {
+        width: 50%
+    }
+    .siteInfoPaneAddadvert {
+        text-align: center
+    }
+    .siteInfoPaneContent .description {
+        padding-top: 1.6rem
+    }
+}
+
+@media (max-width: 1420px) {
+    .footer-menu-list-block {
+        display: block
+    }
+    .header-search-box a.top-select-region {
+        font-size: 1.2rem
+    }
+    .mainPageAutoList ul li {
+        margin-bottom: 0
+    }
+    .mainPageAutoListBlock {
+        padding-bottom: 1rem;
+        padding-top: 6rem
+    }
+}
+
+@media (max-width: 1335px) {
+    .categoryAdvertPrice {
+        padding: 6px 10px;
+        font-size: 2.2rem;
+        width: 100%;
+        text-align: center
+    }
+    .categoryAdverts.grid .categoryAdvertPrice {
+        width: auto
+    }
+}
+
+@media (max-width: 1260px) {
+    .categoryAdvertInfo {
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .categoryAdvertInfoPrice {
+        width: 33%
+    }
+    .categoryAdvertInfoYear {
+        width: 33%
+    }
+    .categoryAdvertInfoProbeg {
+        width: 33%
+    }
+    .categoryAdvertMainInfo {
+        padding-bottom: 25px
+    }
+    .categoryAdvertInfoPriceAdditionals {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center
+    }
+    .categoryAdvertInfoPrice,
+    categoryAdvertInfoYear,
+    .categoryAdvertInfoProbeg {
+        width: 100%
+    }
+    .categoryAdvertMainInfo {
+        width: 70%
+    }
+}
+
+@media (max-width: 1200px) {
+    .mainPageAutoList ul li {
+        width: 25%
+    }
+}
+
+@media (max-width: 992px) {
+    .header-locale {
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        width: 100%
+    }
+    .top-select-region {
+        margin-left: 0
+    }
+    .header-functions {
+        display: block
+    }
+    .siteLogo {
+        -webkit-justify-content: space-between;
+        justify-content: space-between
+    }
+    .siteMenuGamburger {
+        order: 3
+    }
+    .siteMenuGamburger>button {
+        margin: 0
+    }
+    .siteMenuSearch {
+        margin-left: 20px;
+        margin-right: 20px
+    }
+    .mainPageFiltersTabs ul li a[role="tab"] span {
+        display: none
+    }
+    .mainPageFiltersTabs ul li a svg {
+        margin: 0
+    }
+    .mainPageFiltersTabs ul li a {
+        padding: 11px 16px 13px
+    }
+    .mainPageFiltersShowResults {
+        width: 100%;
+        text-align: center;
+        padding-top: 2rem
+    }
+    .mainPageFiltersButtons {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .mainPageFiltersSettings {
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        width: 100%
+    }
+    .siteInfoPaneFloat {
+        position: relative;
+        top: 0;
+        left: 0
+    }
+    .footer-menu-header svg {
+        display: block
+    }
+    .footer-menu-list-block {
+        display: none
+    }
+    .footer-menu-list-block.active {
+        display: block
+    }
+    .login-blocks {
+        display: block;
+        padding-top: 5rem;
+        padding-bottom: 5rem
+    }
+    .socialLoginBlock {
+        padding-left: 0;
+        padding-top: 4rem;
+        text-align: center
+    }
+    .oauth-link {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .register-block-description {
+        padding-top: 2rem;
+        padding-bottom: 5rem
+    }
+    .siteMenuGamburgerMenu {
+        top: 28px;
+        right: 0;
+        left: auto;
+        padding-left: 4rem;
+        width: 100%
+    }
+    .siteMenuGamburgerMenu button {
+        top: 15px;
+        right: 10px;
+        left: auto
+    }
+    .searchBlockInner input {
+        width: 80%
+    }
+    .categorySortParams .select-cover {
+        width: 250px
+    }
+    .categorySortParams .filter {
+        width: 110px
+    }
+    .categoryAdvertShareLinks ul li button.share .shareLinks {
+        left: auto;
+        right: -12px
+    }
+    .productSliderInner .row {
+        display: block
+    }
+    #owlMainSlider .owl-dots {
+        width: 100%
+    }
+    .cookieAlerts {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .cookieAlertMessage {
+        width: 100%;
+        padding-bottom: 15px
+    }
+    #navbar-bottom {
+        padding-top: 20px
+    }
+    #navbar-bottom .footer-menu {
+        padding-bottom: 20px
+    }
+    .categorySpecialAdvertsHeader {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .categoryAdvertCommonInfo {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .footer-menu-list,
+    .footer-menu-list li {
+        display: block
+    }
+    .footer-menu-list li:nth-child(2n) {
+        text-align: left
+    }
+    .mainPageFiltersBlock {
+        padding-top: 3rem;
+        padding-bottom: 3rem
+    }
+    .innerHeader h4 {
+        margin-bottom: 1.5rem
+    }
+    .siteInfoPaneAddadvert {
+        text-align: center
+    }
+    .categorySorts {
+        margin-top: 0
+    }
+    .categoryViewButtons {
+        display: none
+    }
+    .categorySortParams {
+        justify-content: space-between
+    }
+    .categoryAdverts {
+        margin-left: -7px;
+        margin-right: -7px;
+        width: auto
+    }
+    .categoryAdverts .categoryAdvert {
+        width: 288px;
+        display: block;
+        margin-bottom: 25px
+    }
+    .categoryAdverts .categoryAdvertCover {
+        padding-left: 7px;
+        padding-right: 7px
+    }
+    .categoryAdverts:after {
+        content: " ";
+        display: block;
+        clear: both
+    }
+    .categoryAdverts .categoryAdvertImages {
+        width: 100%
+    }
+    .categoryAdverts .categoryAdvertInfo {
+        width: 100%;
+        padding-left: 0;
+        display: block
+    }
+    .categoryAdverts .categoryAdvertInfo .categoryAdvertCommonInfo {
+        display: block
+    }
+    .categoryAdvertMainInfo {
+        width: 100%
+    }
+    .categoryAdverts .categoryAdvertName {
+        font-family: "GothamProBlack", sans-serif;
+        color: #222B2A;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        padding-top: 15px
+    }
+    .categoryAdverts .categoryAdvertTypes {
+        display: none
+    }
+    .categoryAdverts .categoryAdvertTypes .categoryAdvertType {
+        margin-bottom: 10px
+    }
+    .categoryAdverts .categoryAdvertInfoFeature {
+        width: 100%
+    }
+    .categoryAdverts .categoryAdvertInfoFeatures {
+        padding-top: 22px
+    }
+    .categoryAdverts .categoryAdvertInfoYear,
+    .categoryAdverts .categoryAdvertInfoProbeg,
+    .categoryAdverts .categoryAdvertInfoProbeg,
+    .categoryAdvert.premium .categoryAdvertInfoYear,
+    .categoryAdvert.premium .categoryAdvertInfoProbeg {
+        display: none
+    }
+    .categoryAdverts .categoryAdvertInfoPrice {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 15px
+    }
+    .categoryAdverts .categoryAdvertInfoPrice .categoryAdvertPrice {
+        padding: 0;
+        font-size: 1.8rem;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 100%
+    }
+    .categoryAdverts .categoryAdvertInfoPrice .categoryAdvertCredit {
+        margin: 0;
+        font-size: 1.4rem
+    }
+    .categoryAdvertInfoFeature {
+        display: none
+    }
+    .categoryAdverts .categoryAdvertInfoFeature {
+        display: block
+    }
+    .categoryAdverts .categoryAdvertShareLinks {
+        top: -18px;
+        right: 0;
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        padding: 5px 10px;
+        border: 2px solid #F5AA01
+    }
+    .categoryAdverts .categoryAdvertShareLinks ul {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .categoryAdverts .categoryAdvertShareLinks ul li button {
+        margin-bottom: 0
+    }
+    .categoryAdvertInfoPrice {
+        width: 100%
+    }
+    .categoryAdvertInfoYear {
+        width: 100%
+    }
+    .categoryAdvertInfoProbeg {
+        width: 100%
+    }
+    .registerBigForm {
+        width: 100%
+    }
+    .formParemetersItem {
+        flex-wrap: wrap;
+        padding-bottom: 0
+    }
+    .registerBigInner .formParameter {
+        width: 100%;
+        padding-bottom: 1.6rem
+    }
+    .formParameter .register-form-forms {
+        padding-left: 0
+    }
+    .pageContentBannerBg {
+        display: none
+    }
+    .pageContentBanner {
+        padding: 5rem;
+        padding-left: 5rem;
+        margin-bottom: 5rem;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0
+    }
+    .pageContentServiceDescription,
+    .pageContentServiceIcon {
+        width: 100%
+    }
+    .pageContentServiceDescription {
+        padding-bottom: 2rem
+    }
+    .pageContentService {
+        padding-bottom: 3rem
+    }
+    .pageContentServices {
+        padding-top: 3.5rem
+    }
+    .pageContentBlock {
+        padding-bottom: 4rem
+    }
+    .pageContentAdvertismentIcon {
+        display: none
+    }
+    .pageContentAdvertismentDescription {
+        width: 100%;
+        padding-right: 0
+    }
+    .categoryRate {
+        flex-wrap: wrap
+    }
+    .pageContentServiceDescriptionText {
+        padding-right: 0
+    }
+    .pageContentRates {
+        margin-top: 3rem;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0
+    }
+    .pageContentAdvertismentDescriptionText.office {
+        padding-top: 3rem
+    }
+    .searchBlockForm form {
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    #modalSearchForm button.submit {
+        margin-right: 0;
+        margin-top: 2rem
+    }
+    .pageFaq {
+        column-count: 1
+    }
+    .pageFaqBlock {
+        padding-right: 0;
+        padding-bottom: 3rem
+    }
+    .pagContentTabs {
+        flex-wrap: wrap
+    }
+    .pagContentTabsSelectors,
+    .pagContentTabsContent {
+        width: 100%
+    }
+    .pagContentTabsSelectors ul li {
+        width: auto;
+        display: inline-block
+    }
+    .pagContentTabsSelectors ul li a {
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        padding: 0.8rem 1.2rem
+    }
+    .pagContentTabsSelectors ul li.active .whiteBlock {
+        display: none
+    }
+    .pagContentTabsSelectors ul li.active a {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+    .content-row {
+        display: block
+    }
+    .userAccount .col-lg-10 {
+        padding-left: 15px
+    }
+    #breadScrumbsMobileMenuToggler {
+        display: block
+    }
+    .accountAdvert {
+        display: block;
+        width: 360px;
+        padding: 2rem;
+        padding-bottom: 7rem;
+        margin-bottom: 2rem
+    }
+    .accountAdvertInfoLeft,
+    .accountAdvertInfoRight {
+        width: 100%;
+        display: block
+    }
+    .accountAdvertInfoRight .accountAdvertInfoYear,
+    .accountAdvertInfoRight .accountAdvertInfoProbeg {
+        display: none
+    }
+    .accountAdvertInfoRight .accountAdvertInfoPrice {
+        font-family: "GothamProBold", sans-serif;
+        color: #494949;
+        font-size: 1.8rem;
+        line-height: 3.2rem;
+        padding-top: 1.4rem;
+        text-align: left
+    }
+    .accountAdvertInfoNumbers {
+        width: 100%
+    }
+    .accountAdvertServiceButtons {
+        width: 100%;
+        padding-left: 0
+    }
+    .accountAdvertImage {
+        max-width: 100%;
+        margin-right: 0;
+        max-height: 100%
+    }
+    .accountAdvertFunctions {
+        padding-bottom: 0.8rem;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0
+    }
+    .accountAdvertFunctions.left {
+        position: relative;
+        top: 0;
+        left: 0
+    }
+    .accountAdvertFunctions.left .accountAdvertFunction div.button {
+        padding-top: 0;
+        padding-left: 0
+    }
+    .accountAdvertFunction:last-child a {
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0
+    }
+    .accountAdvertFunctions.right {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: stretch;
+        align-items: stretch;
+        top: auto;
+        right: auto;
+        padding-bottom: 0;
+        -moz-border-radius: 0 0 9px 9px;
+        -webkit-border-radius: 0;
+        border-radius: 0 0 9px 9px
+    }
+    .accountAdvertFunctions.right .accountAdvertFunction,
+    .accountAdvertFunctions.right .accountAdvertFunction {
+        width: 50%
+    }
+    .accountAdvertFunctions.right .accountAdvertFunction button,
+    .accountAdvertFunctions.right .accountAdvertFunction a {
+        width: 100%;
+        text-align: center;
+        font-family: "GothamProRegular", sans-serif;
+        color: #000;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        padding: 1.6rem
+    }
+    .accountAdvertFunctions.right .accountAdvertFunction:first-child button,
+    .accountAdvertFunctions.right .accountAdvertFunction:first-child a {
+        -moz-border-radius: 0 0 0 9px;
+        -webkit-border-radius: 0;
+        border-radius: 0 0 0 9px
+    }
+    .accountAdvertFunctions.right .accountAdvertFunction:last-child button,
+    .accountAdvertFunctions.right .accountAdvertFunction:last-child a {
+        -moz-border-radius: 0 0 9px 0;
+        -webkit-border-radius: 0;
+        border-radius: 0 0 9px 0
+    }
+    .accountMessagesTools {
+        flex-wrap: wrap
+    }
+    .accountMessagesToolsLeft {
+        padding-bottom: 1.5rem;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%
+    }
+    .accountMessagesToolsCheck {
+        padding: 0
+    }
+    .accountMessageItemCheck {
+        padding-right: 1.5rem
+    }
+    .accountMessageItemButton {
+        display: none
+    }
+    .accountMessageItemUser {
+        width: 100%
+    }
+    .accountMessageItemUser>a {
+        display: block
+    }
+    .advertFiltersItem.justFilter .advertFiltersItemValue .filter {
+        width: 50%;
+        margin-right: 0
+    }
+    .topBanner {
+        display: none
+    }
+    .register-block-header {
+        text-align: center
+    }
+    .accountConversationMessage,
+    .accountMessageFormButtons {
+        flex-wrap: wrap
+    }
+    .accountConversationMessageUser {
+        width: 100%
+    }
+    .accountConversationMessageText {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 7rem
+    }
+    .accountConversationMessageText.form {
+        padding-left: 0
+    }
+    .accountMessagesToolsRight {
+        justify-content: center;
+        width: 100%
+    }
+    .accountSettingsFormBlock {
+        padding-left: 0
+    }
+    .accountSettingsFormBlock .formParameter {
+        margin-bottom: 1rem;
+        margin-right: 0;
+        flex-wrap: wrap;
+        width: 100%
+    }
+    .accountSettingsFormBlock .formParameter .formParameterLabel,
+    .accountSettingsFormBlock .formParameter .formParameterField {
+        width: 100%
+    }
+    .accountSettingsFormBlock .formParameter .formParameterField input {
+        width: 100%
+    }
+    .accountSettingsFormBlock .formParameter .formParameterField .select-cover {
+        width: 100%
+    }
+    #addDealerPhone {
+        position: relative;
+        bottom: 0;
+        right: 0
+    }
+    .accountSettingsFormBlock .form-control.dealerDescription {
+        width: 100%;
+        margin-top: 2rem
+    }
+    .categoryRateOrderButton a {
+        width: 100%
+    }
+    #advertFiltersItemsTable>tbody>tr>td:nth-child(2n-1) {
+        display: none
+    }
+    #advertFiltersItemsTable>tbody>tr>td:nth-child(2) .advertFiltersItemName {
+        display: block;
+        padding-bottom: 0;
+        margin-top: 0.5rem
+    }
+    #dealerFotoTable>tbody>tr>td:nth-child(2n-1) {
+        display: none
+    }
+    .addProductFilterRadios li {
+        margin-bottom: 1rem
+    }
+    .addAdvertPriceParameters {
+        flex-wrap: wrap
+    }
+    .advertFiltersItemValue .categoryAdverts {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .nav-tabs.addAdvertServicesTabs>li {
+        padding-right: 0;
+        width: 100%
+    }
+    .addAdvertUserAgreement {
+        padding-right: 0;
+        padding-bottom: 1.5rem;
+        width: 100%;
+        text-align: left
+    }
+    .cookieAlertButton.nextStep {
+        justify-content: center
+    }
+    .addAdvertServiceTabsBlock .tab-pane .servicePremium {
+        display: block
+    }
+    .addAdvertServiceDescription,
+    .addAdvertServiceItems {
+        width: 100%
+    }
+    .addAdvertServiceDescription {
+        padding-bottom: 1.5rem
+    }
+    .addAdvertServiceItems {
+        padding-left: 0
+    }
+    .right-column {
+        align-items: center
+    }
+    .accountAdvert.cube.productnote {
+        width: 100%;
+        max-width: 100%
+    }
+    .product-block .price {
+        align-items: flex-start;
+        padding-top: 1.5rem
+    }
+    .product-block {
+        padding-bottom: 1.5rem
+    }
+    .productModalSliderIcons {
+        display: none
+    }
+    #productSlider.modal.fade.in {
+        display: block
+    }
+    .advertSliderMainFoto {
+        padding-left: 0;
+        height: auto
+    }
+    .product-tabs {
+        display: none
+    }
+    .product-tabs-inner ul {
+        justify-content: flex-start
+    }
+    #dealerAutoSalonsModal .modal-content {
+        padding: 3rem
+    }
+    #dealerAutoSalonEditModal .modal-content {
+        padding: 3rem
+    }
+    #addDealerSalonPhone {
+        position: relative;
+        bottom: 0;
+        right: 0
+    }
+    .mapImage {
+        display: none
+    }
+    .addReviewPage .form-group .form-group-label {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 1rem
+    }
+    .addReviewPage .form-group .form-group-control {
+        width: 100%
+    }
+    .addReviewPage .form-group {
+        flex-wrap: wrap
+    }
+    .categoryAdvert.premium .categoryAdvertImages {
+        float: left;
+        margin-right: 3rem;
+        width: 30%
+    }
+    .categoryAdvert.premium {
+        display: block
+    }
+    .categoryAdvert.premium .categoryAdvertInfo {
+        width: 100%;
+        padding-left: 0
+    }
+    .categoryAdvert.premium .categoryAdvertCommonInfo {
+        display: block
+    }
+    .categoryAdvert.premium .categoryAdvertInfoPrice {
+        margin-top: 2rem
+    }
+    .categoryAdvert.premium .categoryAdvertShareLinks {
+        top: -18px;
+        right: 0;
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        padding: 5px 10px;
+        border: 2px solid #F5AA01
+    }
+    .categoryAdvert.premium .categoryAdvertShareLinks ul {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .categoryAdvert.premium .categoryAdvertShareLinks ul li button {
+        margin-bottom: 0
+    }
+    .productNoteForm>svg {
+        display: none
+    }
+    .productNoteForm textarea {
+        width: 100%;
+        margin-right: 0
+    }
+    .productNoteForm {
+        flex-wrap: wrap
+    }
+    .productNoteForm .cookieAlertButton {
+        width: 100%;
+        margin-top: 1rem
+    }
+    .productNoteForm .cookieAlertButton button {
+        width: 100%
+    }
+    .addAdvertServiceTabsBlock .tab-pane .service {
+        flex-wrap: wrap
+    }
+    #navbar-bottom {
+        padding-left: 0
+    }
+    .col-md-5.footer-menu {
+        padding-right: 15px
+    }
+    .index-services-blocks {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+    .mainPageSitHeaderBlock {
+        padding-left: 15px
+    }
+    .faq-left {
+        padding-right: 15px
+    }
+    .faq-right {
+        padding-left: 15px
+    }
+    .error404 {
+        display: block
+    }
+    .error404 .errorCode {
+        padding-bottom: 4.5rem;
+        padding-right: 0;
+        font-size: 15rem;
+        text-align: center
+    }
+    .error404 .errorCodeDescriptionLink {
+        padding-top: 2.5rem;
+        font-size: 3rem
+    }
+    .error404 .errorCodeDescription {
+        text-align: center
+    }
+    .error404 .errorCodeDescriptionTitle {
+        font-size: 4rem
+    }
+    .page-content.error404 {
+        padding-top: 18rem;
+        padding-bottom: 18rem
+    }
+    .accountAdvertInfoModification {
+        padding-top: 1rem;
+        padding-bottom: 1rem
+    }
+    .paymentsMethodsBlock {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+    .bannerMobileView {
+        display: block
+    }
+    .bannerCode,
+    .banner-link {
+        display: none
+    }
+    .siteInfoPane.banner .bannerCode {
+        display: block
+    }
+    .advertise-block {
+        max-width: 100%;
+        width: 100%
+    }
+    .sticky {
+        position: relative;
+        z-index: 101
+    }
+    .mainPageAutoListHeader svg {
+        display: block
+    }
+    .mainPageAutoList li a img {
+        display: none
+    }
+    .mainPageAutoList ul li {
+        width: 25%;
+        background: url("../img/round-arrow.png") 0 50% no-repeat;
+        padding-left: 48px;
+        margin-bottom: 1.4rem
+    }
+    .siteInfoPane.banner {
+        margin-bottom: 3rem
+    }
+    .mainPageAutoListBlock .mainPageAutoList {
+        display: none
+    }
+    .mainPageAutoList.active {
+        display: block
+    }
+    .mainPageAutoListHeader.active svg {
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg)
+    }
+    .mainPageAutoListBlock {
+        background: #E7E7E7;
+        padding-bottom: 3rem;
+        padding-top: 3rem
+    }
+    .headerLogogtypeMenu {
+        z-index: 1050
+    }
+    #modalGamburgerMenu .modal-content {
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        padding: 6rem 0
+    }
+    #modalGamburgerMenu .footer-menu-header {
+        border-bottom: 1px solid #DFE1E5;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        font-family: "GothamProRegular", sans-serif;
+        color: #222B2A;
+        font-size: 1.4rem;
+        line-height: 1.3rem;
+        padding-bottom: 1.2rem;
+        margin-bottom: 1.4rem
+    }
+    #modalGamburgerMenu .footer-menu-header a {
+        font-family: "GothamProRegular", sans-serif;
+        color: #222B2A;
+        font-size: 1.4rem;
+        line-height: 1.3rem
+    }
+    #modalGamburgerMenu .footer-menu-header.active {
+        border-bottom: 0;
+        font-family: "GothamProBold", sans-serif;
+        color: #222B2A;
+        font-size: 1.4rem;
+        line-height: 1.3rem;
+        margin-bottom: 0
+    }
+    #modalGamburgerMenu .footer-menu-header.active a {
+        font-family: "GothamProBold", sans-serif;
+        color: #222B2A;
+        font-size: 1.4rem;
+        line-height: 1.3rem
+    }
+    #modalGamburgerMenu .footer-menu-list-block {
+        background: #E7E7E7;
+        margin-bottom: 1.4rem
+    }
+    #modalGamburgerMenu .footer-menu-list-block ul li a {
+        font-family: "GothamProRegular", sans-serif;
+        color: #222B2A;
+        font-size: 1.4rem;
+        line-height: 1.3rem
+    }
+    #modalGamburgerMenu .footer-menu-list-block {
+        padding-top: 2rem;
+        padding-bottom: 0.3rem;
+        padding-left: 4rem;
+        padding-right: 4rem
+    }
+    #modalGamburgerMenu .footer-menu-header.clear-link {
+        border-bottom: 0
+    }
+    #modalGamburgerMenu .footer-menu-header.clear-link a {
+        font-family: "GothamProBold", sans-serif;
+        color: #222B2A;
+        font-size: 1.4rem;
+        line-height: 1.3rem
+    }
+    .modalFooterMenuLinks {
+        padding-top: 8rem
+    }
+    .modal-content button.close {
+        top: 1.5rem;
+        right: 1.5rem
+    }
+    .categoryAdvertShareLinks {
+        display: none
+    }
+    .categoryAdvert:hover .categoryAdvertShareLinks {
+        display: none
+    }
+    .categoryAdverts .categoryAdvertShareLinks.modal,
+    .categoryAdvert.premium .categoryAdvertShareLinks.modal {
+        padding: 0
+    }
+    .categoryAdvertShareLinks.modal,
+    .categoryAdvert.premium .categoryAdvertShareLinks.modal {
+        position: relative;
+        display: block;
+        border: none;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        top: auto;
+        right: auto;
+        background: none;
+        width: 100%
+    }
+    .categoryAdvertShareLinks.modal ul,
+    .categoryAdvert.premium .categoryAdvertShareLinks ul {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: stretch;
+        align-items: stretch;
+        width: 100%;
+        padding-top: 1.1rem
+    }
+    .categoryAdvertShareLinks.modal ul li {
+        width: 32%
+    }
+    .categoryAdvertShareLinks.modal ul li button {
+        border: 1px solid #DFE1E5;
+        -moz-border-radius: 9px;
+        -webkit-border-radius: 9px;
+        border-radius: 9px;
+        padding: 1.5rem;
+        width: 100%;
+        height: 51px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .categoryAdvert:hover .categoryAdvertShareLinks.modal {
+        display: block
+    }
+    .categoryAdvert.payed {
+        margin-top: 0
+    }
+    .categoryAdverts.list {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        flex-wrap: wrap
+    }
+    .productNoteText>svg {
+        display: none
+    }
+    .productNoteText .productNoteTextInner {
+        line-height: 1.6rem
+    }
+    .categorySorts {
+        display: none
+    }
+    .categoryAdvert.premium .categoryAdvertInfoFeature.grid,
+    .categoryAdvert.premium .categoryAdvertInfoFeature {
+        display: block
+    }
+    .categoryAdvertDealerInfo {
+        padding-top: 0
+    }
+    .categoryAdvertDealerName {
+        width: 100%
+    }
+    .categoryAdvertDealerAll {
+        justify-content: space-between;
+        padding-top: 1.4rem;
+        padding-bottom: 1.4rem
+    }
+    .categoryAdvertDealerInfo {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch
+    }
+    .categoryAdvertDealerNameInfo {
+        display: none
+    }
+    .categoryAdvertDealerContact a {
+        width: 100%
+    }
+    .categoryAdvert.premium .categoryAdvertInfoPrice.dealer {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .categoryAdvert.premium .categoryAdvertInfoPrice.dealer .categoryAdvertPrice {
+        padding-left: 0
+    }
+    .advertFotoIcons {
+        display: none
+    }
+    .categorySpecialAdvertsModalBg {
+        display: block;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: -30px;
+        right: -15px;
+        background: #222B2A
+    }
+    .categorySpecialAdvertsModalBg.gray {
+        background: #E7E7E7
+    }
+    .categorySpecialAdvertsSliderNav button {
+        border: none
+    }
+    .categoryAdvertShareLinks.modal {
+        z-index: 9997
+    }
+    .mapListItemInfoText a.mobileMap {
+        display: block
+    }
+    .mapListItemInfoText span.desktopAddress,
+    .advertSellerInfoHeader {
+        display: none
+    }
+    .product-block {
+        display: none
+    }
+    .product-block.mobile {
+        display: block;
+        padding-top: 3rem
+    }
+    .product-block.mobile .price {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .product-block.mobile .price .creditRule {
+        padding-left: 1.5rem
+    }
+    .product-block.mobile .advertInfoViews,
+    .product-block.mobile .advertInfoDate {
+        display: none
+    }
+    .breadscrumbsBlock {
+        display: none
+    }
+    .content-row {
+        margin-top: 0
+    }
+    .advertFotos .advertMainFoto {
+        padding-left: 0;
+        padding-right: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0
+    }
+    .advertFotos .advertMainFoto img {
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0
+    }
+    .container.product .content-row {
+        margin-top: 0
+    }
+    .mobileAccountMenu {
+        display: block;
+        background: #F9F9F9
+    }
+    .mobileAccountMenuBlockPane {
+        display: none
+    }
+    .mobileAccountMenuBlockPane.active {
+        display: block
+    }
+    .mobileAccountMenuBlockPane {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #E7E7E7;
+        z-index: 2000
+    }
+    .mobileAccountMenuBlockButtons {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: stretch;
+        align-items: stretch
+    }
+    .mobileAccountMenuBlockButtons button {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: center;
+        align-items: center;
+        border: none;
+        background: #F9F9F9;
+        font-family: "GothamProRegular", sans-serif;
+        color: #494949;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        padding: 2rem 3rem;
+        width: 50%
+    }
+    .mobileAccountMenuBlockButtons button.active {
+        background: #E7E7E7
+    }
+    .mobileAccountMenuBlockButtons button svg {
+        margin-right: 8px
+    }
+    .account-menu-list {
+        display: none
+    }
+    .account-menu-list.mobile {
+        display: block;
+        padding-left: 3rem
+    }
+    .account-menu-list.mobile .numberNewItems {
+        left: -26px
+    }
+    .accountAdvertInfoModificationItem {
+        width: 100%
+    }
+    .accountAdvertInfoModification {
+        display: block;
+        padding-bottom: 0
+    }
+    .accountAdvertInfoName {
+        padding-top: 1.1rem
+    }
+    .account-block-header {
+        display: none
+    }
+    .accountBlockHeader .account-block-header {
+        display: block;
+        padding-bottom: 1rem
+    }
+    .accountBlockHeader .account-block-header h1 {
+        display: block;
+        font-family: "GothamProBold", sans-serif;
+        color: #222B2A;
+        font-size: 2rem;
+        line-height: 2.4rem
+    }
+    .accountAdverts,
+    .accountAdverts.line {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: center;
+        align-items: center;
+        flex-wrap: wrap
+    }
+    .mapListItem:hover {
+        background: none;
+        cursor: pointer;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0
+    }
+    .mapListItem {
+        padding-left: 0;
+        padding-right: 0
+    }
+    .mapListItemInfo,
+    .mapListItemImage {
+        padding-left: 0
+    }
+    .mapListItemImageSrc {
+        height: auto;
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        margin-bottom: 3rem
+    }
+    .mapListItemInfo {
+        padding-left: 2rem
+    }
+    .modalMapLink {
+        display: block
+    }
+    .accountConversationMessages {
+        padding-left: 0;
+        padding-right: 0
+    }
+    .accountOrderInfo.order .accountOrderInfoProduct {
+        width: 100%
+    }
+    .accountOrderInfo.order .accountOrderInfoProduct {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .reviewAnswerFormInner.active {
+        display: block
+    }
+    .reviewAnswerFormInner.cookieAlertButton.active .form-control {
+        margin-bottom: 1rem
+    }
+    .accountBills {
+        flex-wrap: wrap
+    }
+    .mapListItemEditButton {
+        position: relative
+    }
+    .mapListItemEditButton .accountAdvertFunctions.right {
+        position: relative
+    }
+    .dealerSettingsPage .mapListItem {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: stretch;
+        align-items: stretch;
+        padding-left: 0;
+        padding-right: 0
+    }
+    .dealerSettingsPage .mapListItemInfo {
+        padding-left: 0
+    }
+    .dealerSettingsPage accountAdvertFunctions right,
+    .dealerSettingsPage .accountAdvertFunctions.right .accountAdvertFunction:first-child button,
+    .dealerSettingsPage .accountAdvertFunctions.right .accountAdvertFunction:first-child a,
+    .dealerSettingsPage .accountAdvertFunctions.right .accountAdvertFunction:last-child button,
+    .accountAdvertFunctions.right .accountAdvertFunction:last-child a {
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0
+    }
+    .dealerSalonParams {
+        display: block
+    }
+    .contactFormUseragreement {
+        flex-wrap: wrap;
+        margin-bottom: 1rem
+    }
+    .siteInfoPane {
+        height: auto
+    }
+    .siteInfoPane.banner {
+        height: auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem
+    }
+    .ratesStatistic {
+        display: none
+    }
+    .advertSellerOrder button.headerButton {
+        display: block
+    }
+    .userAccount .col-lg-2.col-md-2 {
+        width: 100%;
+        padding-left: 15px
+    }
+    .userAccount .col-lg-10.col-md-10 {
+        width: 100%
+    }
+    .dealerPageHederContacts {
+        justify-content: flex-start;
+        padding-top: 3rem
+    }
+    .dealerPageHeaderUser {
+        display: block
+    }
+    .dealerPageHeaderUserInfo {
+        width: 100%;
+        padding-left: 0;
+        max-width: 100%;
+        padding-top: 3rem
+    }
+    .dealerPageHeaderUserLogo {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .content-block-header {
+        padding-bottom: 2.5rem
+    }
+}
+
+@media (max-width: 830px) {
+    .siteMenuGamburgerMenu {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3
+    }
+    .accountOrderInfo {
+        justify-content: center
+    }
+    .accountOrderInfoProduct {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    .accountOrderInfoProductImage {
+        padding-right: 0
+    }
+    .accountOrderInfoProductDescription,
+    .accountOrderInfoProductNumbers {
+        width: 100%;
+        padding-right: 0
+    }
+    .accountOrderInfoProductDescription {
+        text-align: center
+    }
+    .accountOrderUser {
+        justify-content: center
+    }
+    .accountOrderUserAvatar {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        padding-bottom: 1.5rem
+    }
+    .accountOrderUserInfo {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+}
+
+@media (max-width: 768px) {
+    .content-row {
+        margin-top: 1.5rem
+    }
+    .container.product .content-row {
+        margin-top: 0
+    }
+    h1 {
+        font-size: 3.2rem
+    }
+    h2 {
+        font-size: 3.2rem;
+        line-height: 3.8rem
+    }
+    .page-content {
+        padding-top: 1.5rem
+    }
+    .mainPageSiteSubheader {
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+        padding-bottom: 3rem
+    }
+    .mainPageSitHeader {
+        padding-top: 3rem;
+        padding-bottom: 3rem
+    }
+    .innerHeader h4 {
+        font-size: 2.7rem;
+        line-height: 100%
+    }
+    .siteInfoPane {
+        padding-left: 0;
+        padding-top: 1rem;
+        height: auto
+    }
+    .siteInfoPaneInner {
+        padding: 2rem
+    }
+    .siteInfoPaneInner {
+        -moz-border-radius: 0 0 9px 9px;
+        -webkit-border-radius: 0;
+        border-radius: 0 0 9px 9px
+    }
+    .header-search-box input[type="submit"] {
+        display: none
+    }
+    .header-search-box input[type="text"],
+    .header-search-box a.top-select-region {
+        width: 100%
+    }
+    .header-search-box a.top-select-region {
+        border: 2px solid #222B2A
+    }
+    .header-search-box {
+        height: auto;
+        display: block
+    }
+    .header-search-box input[name="searchText"] {
+        margin-bottom: 1rem;
+        width: 100%;
+        margin-top: 1.5rem;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem
+    }
+    .header-search-box a.top-select-region {
+        width: 100%
+    }
+    .top-select-region {
+        padding-top: 12px;
+        padding-bottom: 12px
+    }
+    .header-search-box a.top-select-region {
+        width: 100%
+    }
+    .infoPaneCheckbox {
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        margin-top: 1rem
+    }
+    .siteInfoPane {
+        margin-bottom: 3rem
+    }
+    .siteInfoPaneContent .description {
+        padding-top: 1.5rem
+    }
+    .siteInfoPaneContentButton {
+        display: block
+    }
+    .mainPageContentHeader h3 {
+        font-size: 1.4rem;
+        line-height: 2rem
+    }
+    .mainPageText {
+        padding-top: 0.5rem;
+        padding-bottom: 4rem
+    }
+    .mainPageContentHeader {
+        padding-bottom: 3rem
+    }
+    .mainPageAutoListHeader h3 {
+        font-size: 1.8rem;
+        line-height: 1.7rem
+    }
+    .mainPageAutoList ul {
+        padding-top: 2rem;
+        padding-bottom: 1.2rem
+    }
+    footer {
+        padding-top: 2.7rem
+    }
+    .footerSiteDescription {
+        padding-top: 1.8rem;
+        padding-bottom: 1.7rem
+    }
+    .footer-menu-header {
+        padding-top: 1.4rem
+    }
+    .footer-developer {
+        text-align: left
+    }
+    .register-block,
+    .register-block.result {
+        padding: 2.5rem
+    }
+    .categorySortFields {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .advertFilersDescription ul li div {
+        padding-right: 30px
+    }
+    .advertFilersDescription ul li div.advertFilterValue {
+        padding-right: 30px
+    }
+    .advertFilersDescription {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .modal-content button.close svg path {
+        fill: #F5AA01
+    }
+    .modal.fade.in {
+        display: block
+    }
+    .categorySortFields {
+        padding: 1.5rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 1.5rem
+    }
+    .categorySortParams {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .categorySortParams .select-cover {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0
+    }
+    .categorySortParams .filter {
+        width: 100%
+    }
+    .mainPageFiltersTabs.category-filters {
+        padding-bottom: 2rem;
+        padding-top: 1rem
+    }
+    .mainPageFiltersTabs {
+        padding-top: 2rem
+    }
+    .registerBigForm {
+        padding: 3rem
+    }
+    .categoryRateDescription,
+    .categoryRatePrice {
+        width: 100%
+    }
+    .categoryRatePrice {
+        padding-top: 3.5rem;
+        padding-bottom: 1.5rem
+    }
+    .categoryRateDescriptionTitle {
+        flex-wrap: wrap
+    }
+    .categoryRateName {
+        width: 100%;
+        text-align: center
+    }
+    .categoryRateServices {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        padding-top: 2rem
+    }
+    .advertFiltersItem.justFilter .advertFiltersItemValue .filter {
+        width: 100%
+    }
+    .dealerAccountRates .categoryRateDescription {
+        width: 100%
+    }
+    .categoryRateOrderButton {
+        width: 100%
+    }
+    .categoryRateOrderButton a {
+        width: 18rem;
+        margin: 0 auto
+    }
+    .mainPageFiltersTabs.category-filters.addProduct a.block span.block {
+        display: none
+    }
+    .advertFotosStartBg {
+        justify-content: center;
+        flex-wrap: wrap
+    }
+    .addFotoDescription {
+        padding: 0;
+        text-align: center
+    }
+    .addFotoIcon {
+        margin-bottom: 1.5rem
+    }
+    .dz-preview {
+        margin: 0;
+        margin-bottom: 1.5rem;
+        margin-right: 1.5rem
+    }
+    .addAdvertResultButtons {
+        flex-wrap: wrap;
+        justify-content: center
+    }
+    .addAdvertResultButtons .cookieAlertButton.nextStep {
+        padding-bottom: 2.5rem
+    }
+    .advertFiltersHeader h3 {
+        font-size: 2.8rem
+    }
+    .dealerSalonParamsLogo {
+        padding-bottom: 1.5rem
+    }
+    .accountBillInfoItem {
+        width: 100%;
+        padding-bottom: 1rem;
+        text-align: center
+    }
+    .accountBillInfo a {
+        flex-wrap: wrap;
+        align-items: center
+    }
+    .accountBills {
+        background: none;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start
+    }
+    .accountBill {
+        flex-wrap: wrap;
+        max-width: 255px;
+        background: #fff;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #DFE1E5;
+        padding: 2.5rem 1rem
+    }
+    .accountBillDownload {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .accountBillInfoItem.status {
+        padding-top: 3rem;
+        padding-bottom: 4rem
+    }
+    .paymentsMethodsBlockInner {
+        width: 100%
+    }
+    .paymentsMethodsBlockInner ul.paymentsList {
+        display: block
+    }
+    .paymentsMethodsBlockInner ul.paymentsList li {
+        display: block;
+        margin-bottom: 1.5rem;
+        padding-right: 0
+    }
+    .accountMessageItemUser {
+        flex-wrap: wrap
+    }
+    .accountMessageItemTitle {
+        padding-left: 12rem;
+        flex-wrap: wrap
+    }
+    .accountMessageItemUserAvatar {
+        width: auto
+    }
+    .page-content.error404 {
+        padding-top: 14rem;
+        padding-bottom: 14rem
+    }
+    .error404 .errorCode {
+        font-size: 12rem
+    }
+    .error404 .errorCodeDescriptionLink {
+        font-size: 2.6rem
+    }
+    .error404 .errorCodeDescriptionTitle {
+        font-size: 3.4rem
+    }
+    .categoryAdvert.premium .categoryAdvertImages {
+        float: none;
+        width: 100%;
+        padding-right: 0
+    }
+    .categoryAdvert.premium .categoryAdvertInfoFeatures {
+        display: block
+    }
+    .categoryAdvert.premium .categoryAdvertPrice {
+        background: none;
+        color: #222B2A
+    }
+    .categoryAdvertInfoPrice .categoryAdvertDealerLogo {
+        display: block;
+        padding-right: 0;
+        padding-bottom: 0
+    }
+    .categoryAdvertImages.premium>a {
+        width: 100%
+    }
+    .categoryAdvertImages.premium a {
+        width: 100%
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        font-size: 8px
+    }
+    .mainPageAutoList ul li {
+        width: 50%
+    }
+    .mainPageContentText {
+        columns: 1
+    }
+    .siteMenuGamburgerMenu {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+        top: 0
+    }
+    .categoryAdvert {
+        display: block
+    }
+    .categoryAdvertImages {
+        width: 100%
+    }
+    .categoryAdvertInfo {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 15px
+    }
+    .categoryAdvertInfoPrice {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .categoryAdvert.premium .categoryAdvertInfoPrice.dealer {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .categoryAdvertInfoYear {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .categoryAdvertInfoProbeg {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+    .categoryAdvertPrice {
+        width: auto
+    }
+    .categoryAdvertCredit {
+        margin: 0
+    }
+    .categoryAdvertInfoYear {
+        padding: 15px 0
+    }
+    .categorySpecialAdvertsHeader h3 {
+        font-size: 2.6rem;
+        line-height: 3.2rem
+    }
+    .advertFotos {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+    .advertAdditionalsItems {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2
+    }
+    .modal-content {
+        padding: 3rem 5rem
+    }
+    .searchBlockInner {
+        display: block;
+        padding-top: 2rem;
+        padding-bottom: 2rem
+    }
+    .searchBlockInner button.close {
+        position: absolute;
+        top: 2.5rem;
+        right: 1.5rem
+    }
+    .searchBlockInner>div {
+        text-align: center
+    }
+    .searchBlockForm {
+        border-left: none;
+        margin-left: 0;
+        padding-top: 2rem
+    }
+    .searchBlock {
+        padding: 0
+    }
+    .searchBlockInner input {
+        width: 100%;
+        margin-left: 0
+    }
+    .pageContactUs {
+        padding: 2rem
+    }
+    .accountMessageFormButtons>.send-message-file {
+        margin-bottom: 1rem
+    }
+    .categoryAdvertImages.premium a {
+        width: auto
+    }
+}
+
+@media (max-width: 630px) {
+    .categoryAdverts .categoryAdvert {
+        width: 100%
+    }
+    .categoryAdvertImages img {
+        max-width: 100%
+    }
+    .categoryAdvertImages {
+        max-height: 250px
+    }
+    .categoryAdvertImages.premium {
+        max-height: none
+    }
+    .pageContentAdvertismentDescriptionRateTitle,
+    .pageContentAdvertismentDescriptionRatePrice {
+        width: 100%;
+        text-align: center
+    }
+    .pageContentBanner {
+        padding: 3rem
+    }
+    .accountOrderUserInfo ul {
+        flex-wrap: wrap
+    }
+    .accountOrderUserInfo ul li {
+        display: block;
+        width: 100%;
+        padding-bottom: 2rem
+    }
+    .accountOrderUserInfo ul li:last-child {
+        padding-bottom: 1rem
+    }
+    .accountOrderUser {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
+    }
+    .accountOrderUserInfo ul li a {
+        padding-right: 0;
+        justify-content: center
+    }
+    .accountOrderUserAvatar {
+        flex-wrap: wrap
+    }
+    .accountOrderUserAvatarImage {
+        padding-right: 0
+    }
+    .accountOrderUserAvatarName {
+        width: 100%;
+        text-align: center
+    }
+    .error404 .errorCode {
+        font-size: 10rem
+    }
+    .error404 .errorCodeDescriptionLink {
+        font-size: 2rem
+    }
+    .page-content.error404 {
+        padding-top: 10rem;
+        padding-bottom: 10rem
+    }
+    .error404 .errorCodeDescriptionTitle {
+        font-size: 2.8rem
+    }
+}
+
+@media (max-width: 560px) {
+    .cookieAlerts {
+        display: block
+    }
+    .cookieAlerts .cookieAlertLink,
+    .cookieAlerts .cookieAlertButton {
+        text-align: center
+    }
+    .cookieAlerts .cookieAlertLink {
+        padding-bottom: 2.5rem
+    }
+    .modal-header h3 {
+        font-size: 2.6rem;
+        line-height: 3.2rem
+    }
+    .modal-header {
+        padding-bottom: 1.5rem
+    }
+    .mapListItem {
+        flex-wrap: wrap
+    }
+    .mapListItemImage {
+        width: 100%;
+        padding-bottom: 2rem
+    }
+    .mapListItemInfo {
+        width: 100%;
+        padding-left: 0
+    }
+    .mapListItemImageSrc img {
+        max-width: 150px
+    }
+    .mapListItemImageRating {
+        justify-content: flex-start
+    }
+    .showAllMarks {
+        margin-bottom: 1.5rem
+    }
+    .mapListSearchBlockForm {
+        display: block
+    }
+    .mapListSearchBlockForm .formParameterField {
+        width: 100%;
+        margin-bottom: 1rem
+    }
+    #selectAutoMark input,
+    #selectServiceAuto input {
+        border-right: 1px solid #aaa
+    }
+    .mapListSearchBlockForm .formParameterField.button {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        -webkit-align-items: stretch;
+        align-items: stretch
+    }
+    .formParameterField button.find {
+        width: auto;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px
+    }
+    #selectServiceJob input {
+        border-right: 1px solid #aaa
+    }
+}
+
+@media (max-width: 490px) {
+    .mainPageAutoList ul li {
+        width: 100%
+    }
+    .addAdvertModificationParam.label {
+        padding-right: 1rem
+    }
+    .addAdvertModification {
+        flex-wrap: wrap
+    }
+    .addAdvertPriceGarant {
+        display: block
+    }
+}
+
+@media (max-width: 475px) {
+    .siteMenuGamburgerMenu {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1
+    }
+    .categoryAdvertPrice {
+        width: 100%
+    }
+    .categoryAdvert.premium .categoryAdvertInfoPrice.dealer .categoryAdvertPrice {
+        width: auto
+    }
+    .categoryAdverts.grid .categoryAdvertPrice {
+        width: auto
+    }
+    .categoryAdvertCredit {
+        width: 100%;
+        padding-top: 15px;
+        text-align: center
+    }
+    .categoryAdverts.grid {
+        width: auto;
+        padding-top: 0
+    }
+    .categorySpecialAdvertsHeader h3 {
+        font-size: 1.8rem
+    }
+    .categoryAdvertShareLinks {
+        padding-top: 10px;
+        top: 2rem
+    }
+    .advertAdditionalsItems {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1
+    }
+    .modal-content {
+        padding: 3rem
+    }
+    .modal-header h3 {
+        font-size: 2.2rem;
+        line-height: 2.8rem
+    }
+    h1 {
+        font-size: 2.8rem
+    }
+    h2 {
+        font-size: 2.8rem;
+        line-height: 3.2rem
+    }
+    .mainPageSiteSubheader {
+        font-size: 2.4rem;
+        line-height: 2.8rem
+    }
+    .register-form-forms.right-text button[type="submit"] {
+        width: 100%
+    }
+}
+
+@media (max-width: 450px) {
+    .siteInfoPaneContent ul li {
+        display: block;
+        padding-bottom: 1rem
+    }
+    .siteInfoPaneContent ul li:after {
+        clear: both;
+        display: table;
+        content: " "
+    }
+    .siteInfoPaneContent ul li a {
+        float: left
+    }
+}
+
+@media (max-width: 370px) {
+    .accountAdvert {
+        width: 100%
+    }
+}
+
+@media (max-width: 340px) {
+    .category-premium-adverts .premium-advert,
+    .premium-advert,
+    .top-sellers-block {
+        width: 100%
+    }
+    .premium-adverts.category-premium-adverts {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+    .category-premium-adverts .premium-advert {
+        margin-left: 0;
+        margin-right: 0
+    }
+    .message-message-text img {
+        width: 100%
+    }
+    .categorySpecialAdvertsHeader h3 {
+        font-size: 1.4rem
+    }
+}
+
+@media (max-width: 310px) {
+    .categoryAdverts.grid .categoryAdvert {
+        width: 100%
+    }
+}
+
+@media (max-width: 270px) {
+    .categorySpecialAdvert {
+        width: 100%
+    }
+}

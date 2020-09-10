@@ -1,0 +1,62 @@
+{# checked #}
+<div class="filter tabs search-filter" style="display: block !important;">
+
+    {# Category select #}
+    <div class="filter-controls tabs-triggers">
+        <button class="filter-controls__item is-active">
+            <span class="filter-controls__item-text">Filtrar</span>
+        </button>
+    </div>
+
+    {# Desktop filters #}
+    <div class="filter-main">
+        <div class="filter-tabs tabs-inner">
+            <div class="filter-tabs__item is-active">
+                <form action="{{ path('search') }}" method="POST" name="categorySearchForm" id="categorySearchForm">
+                    <input name="sort" type="hidden" value="{% if request.request.get('sort') %}{{ request.request.get('sort') }}{% endif %}"/>
+                    <input name="isfinance" type="hidden" value="{% if request.request.get('isfinance') %}{{ request.request.get('isfinance') }}{% endif %}" />
+
+                    <div class="filter-tab__checks">
+                        {% if shapes %}
+                            {% for shape in shapes %}
+                                <label>
+                                    {% set checked = '' %}
+                                    {% if request.request.get('newold') %}
+                                        {% for shapeId in request.request.get('newold') %}
+                                            {% if shapeId == shape.id %}
+                                                {% set checked = 'checked=checked' %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                    {% if request.query.get('newold') %}
+                                        {% if request.query.get('newold') == shape.id %}
+                                            {% set checked = 'checked=checked' %}
+                                        {% endif %}
+                                    {% endif %}
+                                    <input name="newold[]" type="checkbox" value="{{ shape.id }}" {{ checked }} />
+                                    <span>{{ shape.title }}</span>
+                                </label>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <div class="filter-tab-rows">
+                        <div class="input-module" style="width: 100%">
+                            <input type="text" name="searchText" value="{{ app.request.get('searchText') }}" {% trans %}placeholder="Текст для поиска"{% endtrans %} autocomplete="off" />
+                        </div>
+                    </div>
+
+                    <div class="filter-manage">
+                        <button class="filter-manage__submit" type="submit">
+                        <span>{% trans %}Поиск{% endtrans %}</span>
+                        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 18px;height: 18px;stroke: white;">
+                            <path d="M7.75 14.2165C11.2018 14.2165 14 11.4082 14 7.94395C14 4.47971 11.2018 1.67139 7.75 1.67139C4.29822 1.67139 1.5 4.47971 1.5 7.94395C1.5 11.4082 4.29822 14.2165 7.75 14.2165Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M16.5013 16.7258L12.168 12.3768" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

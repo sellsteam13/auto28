@@ -1,0 +1,262 @@
+//region Fonts
+@font-face {
+  font-family: "legacy-GothamProRegular";
+  src: url("../../fonts/legacy/GothamProRegular/GothamProRegular.eot");
+  src: url("../../fonts/legacy/GothamProRegular/GothamProRegular.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProRegular/GothamProRegular.woff") format("woff"), url("../../fonts/legacy/GothamProRegular/GothamProRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProBold";
+  src: url("../../fonts/legacy/GothamProBold/GothamProBold.eot");
+  src: url("../../fonts/legacy/GothamProBold/GothamProBold.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProBold/GothamProBold.woff") format("woff"), url("../../fonts/legacy/GothamProBold/GothamProBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProBlack";
+  src: url("../../fonts/legacy/GothamProBlack/GothamProBlack.eot");
+  src: url("../../fonts/legacy/GothamProBlack/GothamProBlack.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProBlack/GothamProBlack.woff") format("woff"), url("../../fonts/legacy/GothamProBlack/GothamProBlack.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProItalic";
+  src: url("../../fonts/legacy/GothamProItalic/GothamProItalic.eot");
+  src: url("../../fonts/legacy/GothamProItalic/GothamProItalic.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProItalic/GothamProItalic.woff") format("woff"), url("../../fonts/legacy/GothamProItalic/GothamProItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProMedium";
+  src: url("../../fonts/legacy/GothamProMedium/GothamProMedium.eot");
+  src: url("../../fonts/legacy/GothamProMedium/GothamProMedium.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProMedium/GothamProMedium.woff") format("woff"), url("../../fonts/legacy/GothamProMedium/GothamProMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProLight";
+  src: url("../../fonts/legacy/GothamProLight/GothamProLight.eot");
+  src: url("../../fonts/legacy/GothamProLight/GothamProLight.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProLight/GothamProLight.woff") format("woff"), url("../../fonts/legacy/GothamProLight/GothamProLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProItalic";
+  src: url("../../fonts/legacy/GothamProItalic/GothamProItalic.eot");
+  src: url("../../fonts/legacy/GothamProItalic/GothamProItalic.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProItalic/GothamProItalic.woff") format("woff"), url("../../fonts/legacy/GothamProItalic/GothamProItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProLightItalic";
+  src: url("../../fonts/legacy/GothamProLightItalic/GothamProLightItalic.eot");
+  src: url("../../fonts/legacy/GothamProLightItalic/GothamProLightItalic.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProLightItalic/GothamProLightItalic.woff") format("woff"), url("../../fonts/legacy/GothamProLightItalic/GothamProLightItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProBoldItalic";
+  src: url("../../fonts/legacy/GothamProBoldItalic/GothamProBoldItalic.eot");
+  src: url("../../fonts/legacy/GothamProBoldItalic/GothamProBoldItalic.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProBoldItalic/GothamProBoldItalic.woff") format("woff"), url("../../fonts/legacy/GothamProBoldItalic/GothamProBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProBlackItalic";
+  src: url("../../fonts/legacy/GothamProBlackItalic/GothamProBlackItalic.eot");
+  src: url("../../fonts/legacy/GothamProBlackItalic/GothamProBlackItalic.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProBlackItalic/GothamProBlackItalic.woff") format("woff"), url("../../fonts/legacy/GothamProBlackItalic/GothamProBlackItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProNarrowBold";
+  src: url("../../fonts/legacy/GothamProNarrowBold/GothamProNarrowBold.eot");
+  src: url("../../fonts/legacy/GothamProNarrowBold/GothamProNarrowBold.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProNarrowBold/GothamProNarrowBold.woff") format("woff"), url("../../fonts/legacy/GothamProNarrowBold/GothamProNarrowBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+
+@font-face {
+  font-family: "legacy-GothamProNarrowMedium";
+  src: url("../../fonts/legacy/GothamProNarrowMedium/GothamProNarrowMedium.eot");
+  src: url("../../fonts/legacy/GothamProNarrowMedium/GothamProNarrowMedium.eot?#iefix") format("embedded-opentype"), url("../../fonts/legacy/GothamProNarrowMedium/GothamProNarrowMedium.woff") format("woff"), url("../../fonts/legacy/GothamProNarrowMedium/GothamProNarrowMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal
+}
+//endregion
+
+.legacy-isolated {
+  @import "src/_bootstrap.scss";
+  @import "src/_custom.scss";
+  @import "src/_customform.scss";
+  @import "src/_mobile.scss";
+  @import "src/_customCorrect.scss";
+
+  button {
+    text-align: center;
+  }
+}
+
+.legacy-sunwebhead {
+  padding-top: 60px;
+}
+
+footer {
+  margin-top: 70px;
+}
+
+//region Bootstrap
+.legacy-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.legacy-row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.legacy-col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.legacy-container:before,
+.legacy-container:after,
+.legacy-row:before,
+.legacy-row:after {
+  display: table;
+  content: " ";
+}
+
+.legacy-container:after,
+.legacy-row:after {
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  .legacy-container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .legacy-container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .legacy-container {
+    width: 1170px;
+  }
+  .legacy-col-lg-12 {
+    float: left;
+  }
+  .legacy-col-lg-12 {
+    width: 100%;
+  }
+}
+//endregion
+
+//region custom.css & customNew.css slices
+.legacy-container {
+  max-width: 1660px;
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .legacy-sunwebhead {
+    padding-top: 20px;
+  }
+}
+//endregion
+
+//region Dealer page
+.legacy-dealerPageInner {
+  -moz-border-radius: 9px;
+  -webkit-border-radius: 9px;
+  border-radius: 9px;
+  -moz-box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+  background: #fff;
+  padding: 40px 30px;
+}
+
+.legacy-dealerPageInner {
+  margin: 0 auto;
+  max-width: 1254px;
+}
+
+.legacy-dealerPageInner .category-filter {
+  margin-top: 40px;
+}
+
+@media (max-width: 1360px) {
+  .legacy-dealerPageInner {
+    position: relative;
+  }
+}
+
+@media (max-width: 992px) {
+  .legacy-dealerPageInner {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .legacy-dealerPageInner {
+    padding: 20px;
+  }
+}
+//endregion
+
+//region User account
+body.legacy-userAccount {
+  background: #F9F9F9
+}
+
+.legacy-userAccount .col-lg-10 {
+  padding-left: 40px
+}
+
+@media (max-width: 1700px) {
+  .legacy-userAccount .col-lg-2.col-md-2 {
+    width: 25%;
+    padding-left: 38px;
+  }
+  .legacy-userAccount .col-lg-10.col-md-10 {
+    width: 75%
+  }
+}
+
+@media (max-width: 992px) {
+  .legacy-userAccount .col-lg-10 {
+    padding-left: 15px
+  }
+  .legacy-userAccount .col-lg-2.col-md-2 {
+    width: 100%;
+    padding-left: 15px
+  }
+  .legacy-userAccount .col-lg-10.col-md-10 {
+    width: 100%
+  }
+}
+//endregion

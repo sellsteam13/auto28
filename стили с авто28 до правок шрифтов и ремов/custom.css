@@ -1,0 +1,264 @@
+.topBannerBlock {
+    max-height: 90px !important;
+    height: auto !important;
+    margin-bottom: -4px
+}
+
+#dealerSettingsRegionBlock {
+    width: 100%;
+}
+
+#dealerSettingsRegionBlock .bussines-reg-form__item {
+    float: left;
+}
+
+.bussines-reg-form__submit button {
+    width: 300px;
+    margin-left: auto;
+    justify-content: center;
+    color: var(--white);
+    color: #fff !important;
+}
+
+.inputMessage {
+    font-family: "GothamProRegular", sans-serif;
+    color: #EB840B;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    text-align: right;
+    padding-top: 0.4rem;
+}
+
+.hideCategory {
+    display: none !important;
+}
+
+.visible {
+    display: flex;
+}
+
+.showCategory {
+    display: flex !important;
+}
+
+.add-main-steps {
+    margin-top: 40px;
+}
+
+a {
+    text-decoration: none !important
+}
+
+.modal {
+    overflow: visible
+}
+
+.logined svg {
+    margin: 0px !important;
+    margin: 0px 5px !important;
+}
+
+.logined .header-sub-auth__login:after {
+    display: none;
+}
+
+input[type='submit'],
+button[type='submit'] {
+    cursor: pointer;
+}
+
+.auth-socials__btn {
+    color: #fff
+}
+
+.filter-mobile__close {
+    display: block !important;
+    text-align: right !important;
+    width: 100%;
+}
+
+.filter-mobile__close img {
+    position: relative;
+    top: 2px;
+}
+
+
+#addAdvertStep .filter-controls__item {
+    background: none !important;
+    box-shadow: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    padding: 0 50px;
+    border-radius: 12px 12px 0 0;
+    position: relative;
+    transition: box-shadow 275ms, background-color 275ms;
+}
+
+#addAdvertStep .filter-controls__item.is-active {
+    background-color: white !important;
+    box-shadow: 0 3px 17px rgba(0, 0, 0, .19) !important;
+    transition: box-shadow 275ms, background-color 275ms !important;
+    transition-property: box-shadow, background-color !important;
+    transition-duration: 275ms, 275ms !important;
+    transition-timing-function: ease, ease !important;
+    transition-delay: 0s, 0s !important;
+    pointer-events: none !important;
+}
+
+#addAdvertStep .filter-controls__item span {
+    font-weight: 700;
+    font-size: 1.14286rem;
+    line-height: 1.375;
+    color: #222b2a;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    #addAdvertStep .filter-controls__item {
+        padding: 20px 0px !important;
+        height: auto;
+    }
+
+    #addAdvertStep .filter-controls__item span {
+        display: none;
+    }
+}
+
+.yearsOlderItems {
+    display: none;
+}
+
+.notAllowedCategory {
+    background: #F5AA01;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+.add-row-list > div:nth-child(even) div {
+    background: #F9F9F9 !important
+}
+
+.dz-preview {
+    position: relative;
+    margin: 15px
+}
+
+.dz-preview .dz-remove {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    z-index: 3
+}
+
+#advertFotos .dz-preview.dz-processing .dz-progress {
+    opacity: 1;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear
+}
+
+#advertFotos .dz-preview.dz-complete .dz-progress {
+    opacity: 0;
+    -webkit-transition: opacity 0.4s ease-in;
+    -moz-transition: opacity 0.4s ease-in;
+    -ms-transition: opacity 0.4s ease-in;
+    -o-transition: opacity 0.4s ease-in;
+    transition: opacity 0.4s ease-in
+}
+
+#advertFotos .dz-preview:not(.dz-processing) .dz-progress {
+    -webkit-animation: pulse 6s ease infinite;
+    -moz-animation: pulse 6s ease infinite;
+    -ms-animation: pulse 6s ease infinite;
+    -o-animation: pulse 6s ease infinite;
+    animation: pulse 6s ease infinite
+}
+
+#advertFotos .dz-preview .dz-progress {
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: none;
+    position: absolute;
+    height: 16px;
+    left: 50%;
+    top: 50%;
+    margin-top: -8px;
+    width: 80px;
+    margin-left: -40px;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-transform: scale(1);
+    border-radius: 8px;
+    overflow: hidden
+}
+
+#advertFotos .dz-preview .dz-progress .dz-upload {
+    background: #333;
+    background: linear-gradient(to bottom, #666666, #444444);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    -webkit-transition: width 300ms ease-in-out;
+    -moz-transition: width 300ms ease-in-out;
+    -ms-transition: width 300ms ease-in-out;
+    -o-transition: width 300ms ease-in-out;
+    transition: width 300ms ease-in-out
+}
+
+
+.addFotoIcon {
+    width: 260px;
+    height: 150px;
+    border: 2px solid #DFE1E5;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: url(../img/addfoto.svg) 50% 50% no-repeat;
+    padding: 5px;
+    position: relative;
+}
+
+.advertFotosStartBg {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.add-photo__text {
+    margin-left: 20px;
+}
+
+@media (max-width: 800px) {
+    .add-photo, .add-photo * {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.addFotoIconInner {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 10px;
+    text-align: center;
+}
+
+.dz-remove {
+    width: 24px;
+}
+
+.step-marca-models-manage {
+    margin-top: 40px;
+}

@@ -17,7 +17,8 @@
 }
 
 .filter.search-filter {
-    .fitler-main {
+    .filter-main {
+        padding: 20px;
         border-radius: 12px;
     }
     .filter-controls {
@@ -29,18 +30,80 @@
     }
     .filter-tab__checks {
         width: 100%;
+        @media (max-width: 961px) {
+            display: flex;
+        }
     }
     .filter-tab-rows {
         width: calc(100% - 150px);
+        @media (max-width: 520px) {
+            width: calc(100% - 70px);
+        }
     }
     .filter-manage {
         width: 100%;
         margin-top: auto;
         width: 140px;
         margin-left: 10px;
+        @media (max-width: 520px) {
+            width: 60px;
+        }
         button {
             justify-content: center;
             width: 100%;
+            margin-top: 0!important;
+            @media (max-width: 520px) {
+                padding: 0;
+            }
+            svg {
+                display: none;
+                @media (max-width: 520px) {
+                    display: block;
+                }
+            }
+            span {
+                @media (max-width: 520px) {
+                    display: none;
+                }
+            }
         }
+    }
+}
+
+.category-filter .filter.tabs.search-filter {
+    @media (max-width: 961px) {
+        display: block !important;
+    }
+}
+
+.legacy-isolated .pb3.accountBlockHeader {
+    @media (max-width: 992px) {
+        padding-bottom: 0;
+    }
+}
+
+.legacy-isolated .accountAdverts {
+    @media (max-width: 992px) {
+        margin-bottom: 20px;
+    }
+}
+
+.legacy-isolated .mapListItems {
+    height: calc(100vh - 218px) !important;
+    @media (max-width: 992px) {
+        height: unset !important;
+    }
+}
+
+.legacy-isolated .serviceInfo {
+    height: calc(100vh - 115px) !important;
+    @media (max-width: 992px) {
+        height: unset !important;
+    }
+}
+
+.legacy-isolated .dealersContainer {
+    @media (max-width: 992px) {
+        max-height: unset !important;
     }
 }

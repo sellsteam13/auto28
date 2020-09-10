@@ -1,0 +1,328 @@
+<input type="checkbox" id="menuToggler">
+<label for="menuToggler" class="header-menu__layout"></label>
+<header class="header-container">
+    <div class="header-sub">
+        <div class="header-sub-wrap limiter">
+
+            {% for item in locales %}
+                {% if item.id == locale.id %}
+                    {% if item.isDefault %}
+                        <div class="header-sub__country" title="{{ item.name }} {% if locales | length > 1 %}{{ block('arrow') }}{% endif %}">
+                            <img src="{{ asset('bundles/Default/img/default/languages/' ~ item.country) }}" alt="Language"/>
+                            <span>{{ item.name }} {% if locales | length > 1 %}{{ block('arrow') }}{% endif %}</span>
+                        </div>
+                    {% else %}
+                        <div class="header-sub__country" title="{{ item.name }} {% if locales | length > 1 %}{{ block('arrow') }}{% endif %}">
+                            <img src="{{ asset('bundles/Default/img/default/languages/' ~ item.country) }}" alt="Language"/>
+                            <span>{{ item.name }} {% if locales | length > 1 %}{{ block('arrow') }}{% endif %}</span>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+            <button class="header-sub__city call-location">
+                <svg viewBox="0 0 20 26" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="M9.9999 6.13965C9.28069 6.13965 8.57764 6.34402 7.97964 6.72691C7.38164 7.1098 6.91556 7.65401 6.64033 8.29073C6.3651 8.92746 6.29309 9.62809 6.4334 10.304C6.57371 10.98 6.92004 11.6009 7.42859 12.0882C7.93715 12.5755 8.58509 12.9074 9.29048 13.0418C9.99586 13.1763 10.727 13.1073 11.3915 12.8435C12.0559 12.5798 12.6239 12.1332 13.0234 11.5601C13.423 10.9871 13.6363 10.3134 13.6363 9.62422C13.6363 8.70006 13.2531 7.81374 12.5712 7.16026C11.8892 6.50677 10.9643 6.13965 9.9999 6.13965ZM9.9999 11.3665C9.64029 11.3665 9.28877 11.2643 8.98977 11.0729C8.69077 10.8814 8.45773 10.6093 8.32011 10.291C8.1825 9.9726 8.14649 9.62229 8.21665 9.28432C8.2868 8.94635 8.45997 8.6359 8.71425 8.39224C8.96852 8.14858 9.29249 7.98264 9.64519 7.91541C9.99788 7.84819 10.3635 7.88269 10.6957 8.01456C11.0279 8.14643 11.3119 8.36974 11.5117 8.65626C11.7114 8.94278 11.8181 9.27963 11.8181 9.62422C11.8181 10.0863 11.6265 10.5295 11.2855 10.8562C10.9446 11.1829 10.4821 11.3665 9.9999 11.3665Z"/>
+                        <path d="M10 0.0419922C7.34785 0.0419922 4.8043 1.05158 2.92894 2.84866C1.05357 4.64575 0 7.08311 0 9.62457C0 17.822 9.09092 24.0159 9.48183 24.2772L10 24.6257L10.5182 24.2772C10.9091 24.0159 20 17.822 20 9.62457C20 7.08311 18.9465 4.64575 17.0711 2.84866C15.1957 1.05158 12.6522 0.0419922 10 0.0419922ZM10 22.4739C8.11819 21.0627 1.81818 15.8532 1.81818 9.62457C1.81818 7.5452 2.6802 5.55099 4.21459 4.08065C5.74898 2.61031 7.83006 1.78428 10 1.78428C12.17 1.78428 14.2511 2.61031 15.7854 4.08065C17.3198 5.55099 18.1818 7.5452 18.1818 9.62457C18.1818 15.8532 11.8818 21.0627 10 22.4739Z"/>
+                    </g>
+                </svg>
+                <span>
+                    {% if sessionRegion %}
+                        {{ sessionRegion.name }}
+                    {% else %}
+                        {% trans %}Испания{% endtrans %}
+                    {% endif %}
+                </span>
+            </button>
+
+            {% if user %}
+                <div class="header-sub-auth logined">
+
+                    {% if app.user.roles[0].role == 'ROLE_DEALER' %}
+                        {% if app.user.userinfo.firstname or  app.user.userinfo.lastname %}
+                            <a class="header-sub-auth__login" href="{{ path('account_products', {'productType' : 'current'}) }}">{{ app.user.userinfo.firstname }} {{ app.user.userinfo.lastname }}</a>
+                        {% elseif app.user.fbID %}
+                            <a class="header-sub-auth__login" href="{{ path('account_products', {'productType' : 'current'}) }}">{{ app.user.fbID }}</a>
+                        {% elseif app.user.email %}
+                            <a class="header-sub-auth__login" href="{{ path('account_products', {'productType' : 'current'}) }}">{{ app.user.email }}</a>
+                        {% endif %}
+                    {% elseif app.user.roles[0].role == 'ROLE_INDIVIDUAL' %}
+                        {% if app.user.userinfo.firstname or  app.user.userinfo.lastname %}
+                            <a class="header-sub-auth__login" href="{{ path('account') }}">{{ app.user.userinfo.firstname }} {{ app.user.userinfo.lastname }}</a>
+                        {% elseif app.user.fbID %}
+                            <a class="header-sub-auth__login" href="{{ path('account') }}">{{ app.user.fbID }}</a>
+                        {% elseif app.user.email %}
+                            <a class="header-sub-auth__login" href="{{ path('account') }}">{{ app.user.email }}</a>
+                        {% endif %}
+                    {% else %}
+                        {% if app.user.userinfo.firstname or  app.user.userinfo.lastname %}
+                            <a class="header-sub-auth__login" href="{{ path('account_settings') }}">{{ app.user.userinfo.firstname }} {{ app.user.userinfo.lastname }}</a>
+                        {% elseif app.user.fbID %}
+                            <a class="header-sub-auth__login" href="{{ path('account_settings') }}">{{ app.user.fbID }}</a>
+                        {% elseif app.user.email %}
+                            <a class="header-sub-auth__login" href="{{ path('account_settings') }}">{{ app.user.email }}</a>
+                        {% endif %}
+                    {% endif %}
+
+                    <a href="{{ path('logout') }}" class="header-sub-auth__login">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 1.9rem;">
+                            <path d="M7 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H7" stroke="#616161" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 15L19 10L14 5" stroke="#616161" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19 10H7" stroke="#616161" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            {% else %}
+                <div class="header-sub-auth">
+                    <a href="{{ path('login') }}" class="header-sub-auth__login" title="Cuenta de Ingreso">{% trans %}Войти{% endtrans %}</a>
+                    <a href="{{ path('register') }}" class="header-sub-auth__reg" title="Registro de cuenta">{% trans %}Регистрация{% endtrans %}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="header">
+        <div class="header-wrap limiter">
+            {% if settings.siteLogo %}
+                <a class="header__logo" href="{{ path('main') }}" title="A la página de inicio"></a>
+            {% endif %}
+
+            {% if toggleMenu %}
+                <div class="header-menu">
+                    <label for="menuToggler" class="header-menu__btn" title="Menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+
+                    <div class="header-menu-nav">
+                        {% if toggleMenu.items | length > 0 %}
+                            {% set i = 0 %}
+                            {% for item in toggleMenu.items %}
+                                {% if not item.parent %}
+                                    {% set i = i + 1 %}
+                                    {% if i == 1 or i > 4 %}
+                                        <div class="header-menu-nav__item">
+                                    {% endif %}
+                                    <div class="header-menu-nav__item-block{% if item.children | length == 0 %} header-menu-nav__item-block--publ{% endif %}">
+                                        {% if item.category or item.link or item.page %}
+                                            {% if item.category %}
+                                                {% set link = path('category',{'categoryId' : item.category.id, 'categoryName' : item.category.name}) %}
+                                            {% elseif item.page %}
+                                                {% if item.page.isUserpage %}
+                                                    {% set link = path('pages',{'route' : item.page.route}) %}
+                                                {% else %}
+                                                    {% set link = '/' ~ item.page.route %}
+                                                {% endif %}
+                                                {% set link = path('pages',{'route' : item.page.route}) %}
+                                            {% elseif item.link %}
+                                                {% set link = item.link %}
+                                            {% endif %}
+                                            <div class="header-menu-nav__item-block-title">
+                                                <a href="{{ link }}" class="title">{{ item.title }}</a>
+                                            </div>
+                                        {% else %}
+                                            <div class="header-menu-nav__item-block-title">
+                                                <a href="#" class="title">{{ item.title }}</a>
+                                            </div>
+                                        {% endif %}
+                                        {% if item.children | length > 0 %}
+                                            <div class="header-menu-nav__item-block-list">
+                                                {% for child in item.children %} {% if child.category %} {% set link = path('category',{'categoryId' : child.category.id, 'categoryName' : child.category.name}) %} {% elseif child.page %} {% if child.page.isUserpage %} {% set link = path('pages',{'route' : child.page.route}) %} {% else %} {% set link = '/' ~ child.page.route %} {% endif %} {% elseif child.link %} {% set link = child.link %} {% endif %} <a href="{{ link }}">{{ child.title }}</a>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    {% if i >= 4 %}
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+
+                        {% if toggleMenu.items | length > 0 %}
+                            {% set i = 0 %}
+                            {% for item in toggleMenu.items %}
+                                {% if not item.parent %}
+
+                                    {% if item.category or item.link or item.page %}
+                                        {% if item.category %}
+                                            {% set link = path('category',{'categoryId' : item.category.id, 'categoryName' : item.category.name}) %}
+                                        {% elseif item.page %}
+                                            {% if item.page.isUserpage %}
+                                                {% set link = path('pages',{'route' : item.page.route}) %}
+                                            {% else %}
+                                                {% set link = '/' ~ item.page.route %}
+                                            {% endif %}
+                                            {% set link = path('pages',{'route' : item.page.route}) %}
+                                        {% elseif item.link %}
+                                            {% set link = item.link %}
+                                        {% endif %}
+                                        {% if item.children | length == 0 %}
+                                            <div class="header-menu-nav__item header-menu-nav__item--mobile">
+                                                <div class="header-menu-nav__item-block">
+                                                    <div class="header-menu-nav__item-block-title">
+                                                        <a href="{{ link }}" class="title">{{ item.title }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+
+                    </div>
+
+                </div>
+            {% endif %}
+
+            <div class="header-search">
+                <input type="checkbox" id="searchToggler">
+                <label for="searchToggler" class="header-search__btn" title="Buscar">
+                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.75 14.2165C11.2018 14.2165 14 11.4082 14 7.94395C14 4.47971 11.2018 1.67139 7.75 1.67139C4.29822 1.67139 1.5 4.47971 1.5 7.94395C1.5 11.4082 4.29822 14.2165 7.75 14.2165Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16.5013 16.7258L12.168 12.3768" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+                <form class="header-search-form" action="{{ path('search') }}" method="post">
+                    <button type="submit" class="header-search-form__submit">
+                        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.75 14.2165C11.2018 14.2165 14 11.4082 14 7.94395C14 4.47971 11.2018 1.67139 7.75 1.67139C4.29822 1.67139 1.5 4.47971 1.5 7.94395C1.5 11.4082 4.29822 14.2165 7.75 14.2165Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.5013 16.7258L12.168 12.3768" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <input name="searchText" type="text" class="header-search-form__input" placeholder="Buscar..." autocomplete="off" />
+                    <label for="searchToggler" class="header-search-form__close"></label>
+                </form>
+            </div>
+
+            {% if topMenu %}
+                <nav class="header-nav">
+                    {% if topMenu.items | length > 0 %}
+                        {% for item in topMenu.items %}
+
+                            {% if not item.parent %}
+                                <div class="header-nav-item">
+                                    {% set active = '' %}
+                                    {% if item.category or item.link or item.page %}
+                                        {% if item.category %}
+                                            {% set link = path('category',{'categoryId' : item.category.id, 'categoryName' : item.category.name}) %}
+                                            {% if routeParameters and routeParameters.categoryId is defined %}
+                                                {% if item.category.isUseChildrensLikeType %}
+                                                    {% if item.category.children %}
+                                                        {% for child in item.category.children %}
+                                                            {% if child.id == routeParameters.categoryId %}
+                                                                {% set active = 'active' %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endif %}
+                                                {% if item.category.id == routeParameters.categoryId %}
+                                                    {% set active = 'active' %}
+                                                {% endif %}
+                                            {% endif %}
+                                        {% elseif item.page %}
+                                            {% if item.page.isUserpage %}
+                                                {% set link = path('pages',{'route' : item.page.route}) %}
+                                            {% else %}
+                                                {% set link = '/' ~ item.page.route %}
+                                            {% endif %}
+                                            {% set link = path('pages',{'route' : item.page.route}) %}
+                                        {% elseif item.link %}
+                                            {% if route == 'dealers' or route == 'services' %}
+                                                {% set active = 'active' %}
+                                            {% endif %}
+                                            {% set link = item.link %}
+                                        {% endif %}
+
+                                        <a href="{{ link }}" class="header-nav-item__main {{ active }}">{{ item.title }}</a>
+                                    {% else %}
+                                        {% if route == 'dealers' or route == 'services' %}
+                                            {% set active = 'active' %}
+                                        {% endif %}
+                                        <a href="javascript:void(0)" class="header-nav-item__main {{ active }}">{{ item.title }}</a>
+                                    {% endif %}
+                                    {% if item.children | length > 0 %}
+                                        <div class="header-nav-item__sub">
+                                            {% if item.children | length > 6 %}
+                                                {% set num = item.children | length / 2 %}
+                                                {% set num = num | round(0, 'ceil') %}
+                                                <ul class="reset">
+                                                    {% for i in 0..num-1 %}
+                                                        {% if item.children[i].category %}
+                                                            {% set link = path('category',{'categoryId' : item.children[i].category.id, 'categoryName' : item.children[i].category.name}) %}
+                                                        {% elseif item.children[i].page %}
+                                                            {% if item.children[i].page.isUserpage %}
+                                                                {% set link = path('pages',{'route' : item.children[i].page.route}) %}
+                                                            {% else %}
+                                                                {% set link = '/' ~ item.children[i].page.route %}
+                                                            {% endif %}
+                                                        {% elseif item.children[i].link %}
+                                                            {% set link = item.children[i].link %}
+                                                        {% endif %}
+                                                        <li><a href="{{ link }}">{{ item.children[i].title }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                                <ul class="reset">
+                                                    {% for i in num..item.children | length - 1 %}
+                                                        {% if item.children[i].category %}
+                                                            {% set link = path('category',{'categoryId' : item.children[i].category.id, 'categoryName' : item.children[i].category.name}) %}
+                                                        {% elseif item.children[i].page %}
+                                                            {% if item.children[i].page.isUserpage %}
+                                                                {% set link = path('pages',{'route' : item.children[i].page.route}) %}
+                                                            {% else %}
+                                                                {% set link = '/' ~ item.children[i].page.route %}
+                                                            {% endif %}
+                                                        {% elseif item.children[i].link %}
+                                                            {% set link = item.children[i].link %}
+                                                        {% endif %}
+                                                        <li><a href="{{ link }}">{{ item.children[i].title }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% else %}
+                                                <ul class="reset">
+                                                    {% for child in item.children %}
+                                                        {% if child.category %}
+                                                            {% set link = path('category',{'categoryId' : child.category.id, 'categoryName' : child.category.name}) %}
+                                                        {% elseif child.page %}
+                                                            {% if child.page.isUserpage %}
+                                                                {% set link = path('pages',{'route' : child.page.route}) %}
+                                                            {% else %}
+                                                                {% set link = '/' ~ child.page.route %}
+                                                            {% endif %}
+                                                        {% elseif child.link %}
+                                                            {% set link = child.link %}
+                                                        {% endif %}
+                                                        <li><a href="{{ link }}">{{ child.title }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+                    {% endif %}
+                </nav>
+            {% endif %}
+
+            {% if app.user %}
+                {% if app.user.roles[0].role != "ROLE_SERVICE" %}
+                    <a href="{{ path('addAdvert') }}" class="header-new">
+                        <div class="header-new__plus"></div>
+                        <span class="header-new__text">{% trans %}Добавить объявление{% endtrans %}</span>
+                    </a>
+                {% endif %}
+            {% else %}
+                <a href="{{ path('login') }}" class="header-new">
+                    <div class="header-new__plus"></div>
+                    <span class="header-new__text">{% trans %}Добавить объявление{% endtrans %}</span>
+                </a>
+            {% endif %}
+
+        </div>
+    </div>
+</header>
+<!-- end of header -->

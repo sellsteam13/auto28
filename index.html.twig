@@ -1,0 +1,340 @@
+{# checked #}
+{% extends 'DashboardCommonBundle:Common:base.html.twig' %}
+
+{% block title %}{{ page.metaTagTitle }}{% endblock %}
+{% block metatags %}
+    <meta content="{{ page.metaTagDescription }}" name="description"/>
+    <meta content="{{ page.metaTagAuthor }}" name="author"/>
+    <meta content="{{ page.metaTagRobots }}" name="robots"/>
+    <meta content="{{ page.metaTagKeywords }}" name="keywords"/>
+{% endblock %}
+
+{% block body %}
+    <section class="welcome">
+    <div class="welcome-filter">
+        <div class="welcome-filter-wrap limiter">
+            <h1 class="welcome-title">{% trans %}Продажа автомобилей{% endtrans %}</h1>
+            <div class="welcome-filter-inner">
+                {% include 'DashboardCommonBundle:Default:filtersForm.html.twig' with {'categories' : categories, 'request' : app.request, 'roles' : roles} %}
+            </div>
+        </div>
+        {{ render(controller('DashboardCommonBundle:Default:getBanners', {'position' : 'A8'})) }}
+    </div>
+
+    <div class="welcome-offers">
+        <div class="welcome-offers-wrap limiter">
+            <h2 class="welcome-offers__title">
+                {% trans %}Доска бесплатных объявлений в Испании{% endtrans %}
+            </h2>
+            <div class="welcome-offers__list">
+                {# Поиск #}
+                <div class="welcome-offers__item">
+                    <div class="welcome-offers__item-title">
+                        {% trans %}Найти<br/>транспорт{% endtrans %}
+                    </div>
+
+                    <form action="{{ path('search') }}" method="post" class="welcome-offers__item-search">
+                        <input name="searchText" type="text" placeholder="{% trans %}Найти{% endtrans %}..." {% if app.request.get('searchText') %} value="{{ app.request.get('searchText') }}" {% endif %} autocomplete="off"/>
+
+                        <button class="call-location" type="button">
+                            <svg viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.9999 6.13965C9.28069 6.13965 8.57764 6.34402 7.97964 6.72691C7.38164 7.1098 6.91556 7.65401 6.64033 8.29073C6.3651 8.92746 6.29309 9.62809 6.4334 10.304C6.57371 10.98 6.92004 11.6009 7.42859 12.0882C7.93715 12.5755 8.58509 12.9074 9.29048 13.0418C9.99586 13.1763 10.727 13.1073 11.3915 12.8435C12.0559 12.5798 12.6239 12.1332 13.0234 11.5601C13.423 10.9871 13.6363 10.3134 13.6363 9.62422C13.6363 8.70006 13.2531 7.81374 12.5712 7.16026C11.8892 6.50677 10.9643 6.13965 9.9999 6.13965ZM9.9999 11.3665C9.64029 11.3665 9.28877 11.2643 8.98977 11.0729C8.69077 10.8814 8.45773 10.6093 8.32011 10.291C8.1825 9.9726 8.14649 9.62229 8.21665 9.28432C8.2868 8.94635 8.45997 8.6359 8.71425 8.39224C8.96852 8.14858 9.29249 7.98264 9.64519 7.91541C9.99788 7.84819 10.3635 7.88269 10.6957 8.01456C11.0279 8.14643 11.3119 8.36974 11.5117 8.65626C11.7114 8.94278 11.8181 9.27963 11.8181 9.62422C11.8181 10.0863 11.6265 10.5295 11.2855 10.8562C10.9446 11.1829 10.4821 11.3665 9.9999 11.3665Z"></path>
+                                <path d="M10 0.0419922C7.34785 0.0419922 4.8043 1.05158 2.92894 2.84866C1.05357 4.64575 0 7.08311 0 9.62457C0 17.822 9.09092 24.0159 9.48183 24.2772L10 24.6257L10.5182 24.2772C10.9091 24.0159 20 17.822 20 9.62457C20 7.08311 18.9465 4.64575 17.0711 2.84866C15.1957 1.05158 12.6522 0.0419922 10 0.0419922ZM10 22.4739C8.11819 21.0627 1.81818 15.8532 1.81818 9.62457C1.81818 7.5452 2.6802 5.55099 4.21459 4.08065C5.74898 2.61031 7.83006 1.78428 10 1.78428C12.17 1.78428 14.2511 2.61031 15.7854 4.08065C17.3198 5.55099 18.1818 7.5452 18.1818 9.62457C18.1818 15.8532 11.8818 21.0627 10 22.4739Z"></path>
+                            </svg>
+                            <span>
+                                {% if sessionCity %}
+                                    {{ sessionCity.name }}
+                                {% else %}
+                                    {% trans %}Испания{% endtrans %}
+                                {% endif %}
+                            </span>
+                        </button>
+
+                        <button type="submit">
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.75 14.2165C11.2018 14.2165 14 11.4082 14 7.94395C14 4.47971 11.2018 1.67139 7.75 1.67139C4.29822 1.67139 1.5 4.47971 1.5 7.94395C1.5 11.4082 4.29822 14.2165 7.75 14.2165Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M16.5013 16.7258L12.168 12.3768" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <div class="welcome-offers__item-text">
+                        {% trans %}Напишите интересующую Вас модель или воспользуйтесь{% endtrans %} <a href="{{ path('search') }}">{% trans %}расширенным поиском{% endtrans %}</a>
+                    </div>
+                </div>
+
+                {# Публикация объявления #}
+                <div class="welcome-offers__item">
+                    <div class="welcome-offers__item-title">
+                        {% trans %}Продать<br/>свой транспорт{% endtrans %}
+                    </div>
+
+                    <div class="welcome-offers__item-request">
+                        {% if app.user and app.user.roles[0].role != "ROLE_SERVICE" %}
+                            <a href="{{ path('addAdvert') }}" class="def-btn">{% trans %}Отправить заявку{% endtrans %}</a>
+                        {% else %}
+                            <a href="{{ path('login') }}" class="def-btn">{% trans %}Отправить заявку{% endtrans %}</a>
+                        {% endif %}
+                    </div>
+
+                    <div class="welcome-offers__item-text">
+                        <a href="{{ path('register') }}">{% trans %}Зарегистрируйтесь</a> и добавляйте объявления{% endtrans %}
+                    </div>
+                </div>
+
+                {# Сервисам и дилерам #}
+                <div class="welcome-offers__item">
+                    <div class="welcome-offers__item-title">
+                        {% trans %}Услуги{% endtrans %}
+                    </div>
+
+                    <div class="welcome-offers__item-manage">
+                        <a href="{{ path('services') }}">{% trans %}Сервисы1{% endtrans %}</a>
+                        <a href="{{ path('dealers') }}">{% trans %}Дилеры1{% endtrans %}</a>
+                    </div>
+                    <div class="welcome-offers__item-text">{% trans %}Узнайте где можно воспользоваться сервисами, взять или застраховать авто{% endtrans %}</div>
+                </div>
+
+                {# Баннер A3 #}
+                <div class="welcome-offers__item is-banner">
+                    {{ render(controller('DashboardCommonBundle:Default:getBanners', {'position' : 'A3'})) }}
+                </div>
+            </div>
+            <div class="welcome-offers-map">
+                            <div class="welcome-offers-map__wrap">
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Exa Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                                <a href="#" class="welcome-offers-map__item">
+                                    <span>Example1</span>
+                                </a>
+                            </div>
+                            <button class="welcome-offers-map__expand def-btn">
+                    <span>Todas</span>
+                    <span>Скрыть</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="welcome-pwa">
+        <div class="pwa">
+            <div class="pwa-wrap limiter">
+                <div class="pwa-inner">
+                    <div class="pwa-content">
+                        <div class="pwa-content__title">Descargar la aplicación Auto28.es en cualquier dispositivo.</div>
+                        <div class="pwa-content__subtitle">Comprar y vender vehículos de forma rápida y conveniente</div>
+                        <pwa-install style="background-color: transparent !important; padding: 0 !important;"><button class="pwa-content__install def-btn">Descargar</button></pwa-install>
+                    </div>
+                    <div class="pwa-illstr">
+                        <img src="{{ asset('bundles/Default/img/svg/pwa-handle.png') }}" alt="pwa handle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if settings.mainPageDefaultCategory %}
+        <div class="welcome-cars">
+            <div class="welcome-cars-wrap limiter">
+                <h3 class="welcome-cars__title">{{ settings.mainPageDefaultCategory.title }}</h3>
+
+                {% if settings.mainPageDefaultCategory.children | length > 0 %}
+                    <div class="welcome-cars__list">
+                        {% if settings.mainPageDefaultCategory.children | length > settings.categoryPanelItemsNumber %}
+
+                            {% set i = 0 %}
+                            {% for child in settings.mainPageDefaultCategory.children %}
+                                {% if i >= settings.categoryPanelItemsNumber %}
+                                    {% set hide = ' hideCategory' %}
+                                {% else %}
+                                    {% set hide = '' %}
+                                {% endif %}
+                                {% if child.isActive %}
+                                    {% if child.image %}
+                                        <a href="{{ path('category',{'categoryId' : child.id, 'categoryName' : child.name}) }}" class="welcome-cars__list-item {{ hide }}">{{ child.image | raw }}<span>{{ child.title }}</span></a>
+                                    {% else %}
+                                        <a href="{{ path('category',{'categoryId' : child.id, 'categoryName' : child.name}) }}" class="welcome-cars__list-item {{ hide }}"><span>{{ child.title }}</span></a>
+                                    {% endif %}
+                                {% endif %}
+                                {% set i = i + 1 %}
+                            {% endfor %}
+
+                        {% else %}
+                            {% for child in settings.mainPageDefaultCategory.children %}
+                                {% if child.isActive %}
+                                    {% if child.image %}
+                                        <a href="{{ path('category',{'categoryId' : child.id, 'categoryName' : child.name}) }}" class="welcome-cars__list-item {{ hide }}">{{ child.image | raw }}<span>{{ child.title }}</span></a>
+                                    {% else %}
+                                        <a href="{{ path('category',{'categoryId' : child.id, 'categoryName' : child.name}) }}" class="welcome-cars__list-item {{ hide }}"><span>{{ child.title }}</span></a>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <a href="#" class="welcome-cars__all">
+                        <span>{% trans %}Показать все{% endtrans %}</span>
+                        <span>{% trans %}Свернуть{% endtrans %}</span>
+                    </a>
+                {% endif %}
+
+                <div class="welcome-cars__banner banner c1">
+                    {{ render(controller('DashboardCommonBundle:Default:getBanners',{'position' : 'A2'})) }}
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </section>
+    {% endif %}
+{% endblock %}
