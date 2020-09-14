@@ -162,7 +162,7 @@ body {
             left: 0;
             right: 0;
             transition: transform $trans;
-            z-index: 15;
+            z-index: 20;
             &.is-fixed {
                 transform: translateY(-35px);
                 transition: transform $trans;

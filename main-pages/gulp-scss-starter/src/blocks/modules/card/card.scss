@@ -475,6 +475,7 @@
                 top: -15px;
                 bottom: -10px;
                 padding-left: 58px;
+                padding-top: 4px;
                 min-width: 150px;
                 background-color: $white;
                 box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
@@ -482,12 +483,28 @@
                 opacity: 0;
                 pointer-events: none;
                 transition: opacity $trans;
+                display: flex;
+                align-items: center;
+                a {
+                    margin-right: 7px;
+                    flex-shrink: .4;
+                    transition: transform $trans;
+                    &:nth-child(3) {
+                        margin-right: 3px;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    &:hover {
+                        transform: translateY(-3px);
+                        transition: transform $trans;
+                    }
+                }
                 @media (max-width: 1650px) {
                     top: -10px;
                     bottom: -5px;
                     left: -10px;
                     padding-left: 40px;
-                    min-width: 100px;
                 }
             }
         }

@@ -432,6 +432,9 @@ input[type="checkbox"] {
     margin-left: -1px;
     margin-right: -1px;
     z-index: 101;
+    @media (max-width: 600px) {
+        max-height: 140px;
+    }
 }
 
 .select-cover.active .select-options {

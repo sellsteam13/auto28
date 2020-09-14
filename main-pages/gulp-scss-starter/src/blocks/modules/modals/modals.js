@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalBind(".modal-report", ".call-report");
     modalBind(".modal-friend", ".call-friend");
     modalBind(".modal-order", ".call-order");
+    modalBind(".modal-message", ".call-message");
 });
 
 // Бинд модалки

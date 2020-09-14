@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuAccordions();
     stickyMobile()
     window.addEventListener('resize', () => {
-        menuAccordions();
         stickyMobile();
     });
 });
@@ -23,18 +22,20 @@ const focusTrigger = () => {
 // Аккордеоны меню на мобилке
 
 const menuAccordions = () => {
-    if (document.querySelector('.header') && window.innerWidth < 760) {
+    if (document.querySelector('.header')) {
         const allInners = document.querySelectorAll('.header-menu-nav__item-block');
         allInners.forEach(each => {
             const trigger = each.querySelector('.header-menu-nav__item-block-title');
             trigger.addEventListener('click', () => {
-                if (!each.classList.contains('is-opened')) {
-                    allInners.forEach(each => {
+                if (window.innerWidth < 760) {
+                    if (!each.classList.contains('is-opened')) {
+                        allInners.forEach(btn => {
+                            btn.classList.remove('is-opened');
+                        });
+                        each.classList.add('is-opened');
+                    } else {
                         each.classList.remove('is-opened');
-                    });
-                    each.classList.add('is-opened');
-                } else {
-                    each.classList.remove('is-opened');
+                    }
                 }
             });
         });

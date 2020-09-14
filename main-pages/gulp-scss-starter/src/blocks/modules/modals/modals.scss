@@ -368,6 +368,48 @@
     }
 }
 
+.modal-message {
+    width: 400px;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0;
+    @media (max-width: 650px) {
+        max-width: calc(100% - 40px);
+        margin: 0 20px;
+        padding: 25px 20px 35px;
+    }
+    &__title {
+        margin-bottom: 20px;
+        text-align: center;
+        @media (max-width: 650px) {
+            margin-bottom: 15px;
+        }
+    }
+    &__textarea {
+        width: 320px;
+        max-width: 100%;
+        min-height: 120px;
+        resize: none;
+        margin-bottom: 20px;
+        background: $white;
+        border: 1px solid #DFE1E5;
+        border-radius: 2px;
+        padding: 10px;
+        font-size: rem(16);
+        line-height: 1;
+        color: $lgray;
+        transition: border-color $trans;
+        &:focus {
+            outline: none;
+            border: 1px solid $orange;
+            transition: border-color $trans;
+        }
+    }
+    &__submit {
+        padding: 0 20px;
+    }
+}
+
 .notification {
     &s-inner {
         display: none;

@@ -74,18 +74,5 @@
         "shave": "^2.5.9",
         "smart-grid": "^2.1.2",
         "swiper": "^6.2.0"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "!(_*).scss": [
-            "stylelint --fix --color --config ./.stylelintrc"
-        ],
-        "*.js": [
-            "eslint --fix --color"
-        ]
     }
 }
