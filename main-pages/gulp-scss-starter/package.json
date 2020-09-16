@@ -69,9 +69,6 @@
         "yargs": "^15.4.1"
     },
     "dependencies": {
-        "choices.js": "^9.0.1",
-        "shave": "^2.5.9",
-        "smart-grid": "^2.1.2",
         "swiper": "^6.2.0"
     }
 }
