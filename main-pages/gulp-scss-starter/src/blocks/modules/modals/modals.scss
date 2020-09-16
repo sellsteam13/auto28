@@ -13,6 +13,10 @@
     background: rgba(#000, .4);
     opacity: 0;
     transition: opacity $trans;
+    @media (max-width: 992px) {
+        align-items: flex-start;
+        padding-top: 130px;
+    }
 }
 
 .overlay-toggled .overlay {

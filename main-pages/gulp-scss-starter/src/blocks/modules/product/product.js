@@ -59,7 +59,6 @@ const popupGalleryInit = () => {
             spaceBetween: 10,
             slidesPerView: 'auto',
             centeredSlides: true,
-            allowTouchMove: false,
             initialSlide: centerSlide
         });
         const galleryTopSlider = new Swiper('.product-gallery-popup-main-master', {
@@ -71,6 +70,9 @@ const popupGalleryInit = () => {
             allSlides.forEach(videoSlides => {
                 stopVideoFunc(videoSlides);
             });
+        });
+        galleryThumbsSlider.on('slideChange', function(index) {
+            galleryTopSlider.slideTo(galleryThumbsSlider.activeIndex);
         });
         document.querySelector('.product-gallery-popup-main__next').addEventListener('click', () => {
             galleryTopSlider.slideNext();

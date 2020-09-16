@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     mobileBind();
-    window.addEventListener('resize', () => {
-        mobileBind();
-    });
 });
 
 

@@ -14,6 +14,9 @@
     }
     &-wrap {
         display: flex;
+        @media (max-width: 1650px) {
+            flex-wrap: wrap;
+        }
         @media (max-width: 1170px) {
             display: block;
         }
@@ -27,18 +30,41 @@
         position: sticky;
         top: 20px;
         overflow-x: hidden;
-        @media (max-width: 1170px) {
-            display: flex;
-            margin-top: 20px;
-            >* {
-                margin-right: 20px;
-                @media (max-width: 550px) {
-                    margin-right: 0;
-                }
-                &:last-child {
-                    margin-right: 0;
-                }
+        >* {
+            @media (max-width: 1650px) {
+                margin-bottom: 0;
+                height: 300px !important;
+                width: 300px !important;
             }
+            @media (max-width: 992px) {
+                margin-bottom: 0;
+                height: unset !important;
+                width: calc(50% - 5px) !important;
+            }
+            @media (max-width: 550px) {
+                width: 100% !important;
+                margin-bottom: 10px;
+            }
+        }
+        @media (max-width: 1650px) {
+            position: static;
+            width: calc(100% - 220px);
+            display: flex;
+            margin-top: 60px;
+            justify-content: space-around;
+            padding: 0 100px;
+        }
+        @media (max-width: 1170px) {
+            width: 100%;
+        }
+        @media (max-width: 992px) {
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 0;
+        }
+        @media (max-width: 550px) {
+            flex-wrap: wrap;
+            justify-content: normal;
         }
         @media (max-width: 550px) {
             flex-direction: column;
@@ -57,7 +83,7 @@
                 width: 200px;
                 margin-left: 20px;
             }
-            @media (max-width: 1170px) {
+            @media (max-width: 1650px) {
                 flex-direction: row;
                 width: 100%;
                 margin-left: 0;
@@ -84,12 +110,6 @@
             margin-bottom: 60px;
             @media (max-width: 1650px) {
                 margin-bottom: 30px;
-            }
-            @media (max-width: 768px) {
-                margin-bottom: 0;
-            }
-            @media (max-width: 992px) {
-                margin-bottom: 5px;
             }
         }
     }
@@ -310,6 +330,13 @@
         margin-bottom: 10px;
         display: flex;
         flex-wrap: wrap;
+        .card--premium .card-manage {
+            @media (max-width: 1200px) and (min-width: 941px) {
+                background-color: white;
+                padding: 10px 10px 3px;
+                top: 15px;
+            }
+        }
         .card {
             margin-bottom: 20px;
             @media (max-width: 940px) {
@@ -394,6 +421,9 @@
             padding: 0;
             margin-bottom: 100px;
             border-radius: 0;
+            @media (max-width: 1170px) {
+                margin-bottom: 30px;
+            }
             @media (max-width: 550px) {
                 margin-top: 70px;
             }

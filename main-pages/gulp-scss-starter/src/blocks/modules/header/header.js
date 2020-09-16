@@ -27,15 +27,13 @@ const menuAccordions = () => {
         allInners.forEach(each => {
             const trigger = each.querySelector('.header-menu-nav__item-block-title');
             trigger.addEventListener('click', () => {
-                if (window.innerWidth < 760) {
-                    if (!each.classList.contains('is-opened')) {
-                        allInners.forEach(btn => {
-                            btn.classList.remove('is-opened');
-                        });
-                        each.classList.add('is-opened');
-                    } else {
-                        each.classList.remove('is-opened');
-                    }
+                if (!each.classList.contains('is-opened') && window.innerWidth < 760) {
+                    allInners.forEach(btn => {
+                        btn.classList.remove('is-opened');
+                    });
+                    each.classList.add('is-opened');
+                } else {
+                    each.classList.remove('is-opened');
                 }
             });
         });
