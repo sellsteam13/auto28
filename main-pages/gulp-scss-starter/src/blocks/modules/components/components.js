@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     tabsInit();
     accordionInit();
-    if (document.querySelector('.filter')) {
-        document.querySelector('.filter').style.display = 'block';
-    }
 });
 
 // Функция инициализации табов

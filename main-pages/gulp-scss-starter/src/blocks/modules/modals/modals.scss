@@ -485,17 +485,13 @@
         }
     }
     &.is-good {
-        background-color: #0CCA4A;
+        background-color: $yellow;
         .notification {
             &__progress {
-                background-color: darken(#0CCA4A, 5%);
+                background-color: darken(#EB840B, 5%);
                 &-bar {
-                    background-color: #0CCA4A;
+                    background-color: #EB840B;
                 }
-            }
-            &__title,
-            &__text {
-                color: $white;
             }
         }
     }
