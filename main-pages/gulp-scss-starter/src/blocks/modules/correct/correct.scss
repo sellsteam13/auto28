@@ -554,3 +554,26 @@
         right: calc((100vw - 1254px) / 2 + 20px) !important;
     }
 }
+
+.mapListItemInfoText {
+    >a {
+        transition: opacity $trans;
+        &:hover {
+            text-decoration: underline;
+            opacity: .7;
+            transition: opacity $trans;
+        }
+    }
+}
+
+.x7236fhs92 {
+    @media (max-width: 992px) {
+        padding-top: 10px;
+    }
+}
+
+#addDealerSalonPhoneModal {
+    @media (max-width: 1280px) {
+        position: static !important;
+    }
+}
