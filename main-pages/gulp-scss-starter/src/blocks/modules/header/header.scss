@@ -758,6 +758,11 @@ body {
         transition: background-color $trans;
         transform: translateY(-2px);
         z-index: 2;
+        &.is-disabled {
+            opacity: 0 !important;
+            pointer-events: none !important;
+            visibility: hidden !important;
+        }
         @media (max-width: 1170px) {
             position: fixed;
             right: 25px;

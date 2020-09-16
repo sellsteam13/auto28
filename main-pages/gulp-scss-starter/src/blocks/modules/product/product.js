@@ -35,10 +35,15 @@ const productGalleryInit = () => {
 const noteBind = () => {
     if (document.querySelector('.product-contacts-manage__note')) {
         const triggers = document.querySelectorAll('.product-contacts-manage__note');
-        const noteInner = document.querySelector('.product-note');
+        const parent = document.querySelector('.product-main-right');
         triggers.forEach(each => {
             each.addEventListener('click', (e) => {
-                noteInner.classList.toggle('is-opened');
+                if (parent.querySelector('.productNoteForm')) {
+                    parent.querySelector('.productNoteForm').classList.toggle('is-opened');
+                }
+                if (parent.querySelector('.productNoteText')) {
+                    parent.querySelector('.productNoteText').classList.toggle('is-hidden');
+                }
             });
         });
     }

@@ -3,8 +3,8 @@ import jquery from 'jquery';
 document.addEventListener('DOMContentLoaded', () => {
     tabsInit();
     accordionInit();
-    selectsBind();
-    $(".select-module select").customSelect();
+    // selectsBind();
+    // $(".select-module select").customSelect();
     if (document.querySelector('.filter')) {
         document.querySelector('.filter').style.display = 'block';
     }

@@ -63,6 +63,36 @@
 }
 
 .legacy-isolated {
+    .dealerSalon {
+        .accountAdvertFunctions.right {
+            .accountAdvertFunction {
+                width: 50%;
+                >button {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    .mapListItemImageSrc img {
+        @media (max-width: 630px) {
+            width: unset !important;
+        }
+    }
+    .rateButtons {
+        @media (max-width: 430px) {
+            .rateActiveTime, svg {
+                display: none;
+            }
+            .buttonServicePrice {
+                white-space: nowrap;
+                padding-left: 5px;
+            }
+        }
+    }
+    .modal .accountSettingsFormBlock .formParemetersItem .formParameter {
+        margin-right: 0;
+    }
     .mapServiceLogo {
         margin-top: 15px;
     }
@@ -273,5 +303,254 @@
 }
 
 .productNoteFormContainer {
+    position: relative;
+    z-index: 1;
+    margin-right: -10px;
+    width: calc(100% + 10px);
+    @media (max-width: 1280px) {
+        margin-right: 0;
+        width: 100%;
+    }
+    .productNoteForm {
+        display: none;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #e7e7e7;
+        &.is-opened {
+            display: flex;
+        }
+        @media (max-width: 1280px) {
+            flex-wrap: wrap;
+        }
+        >svg {
+            width: 25px;
+            height: unset;
+            margin: 0 10px;
+            @media (max-width: 1280px) {
+                display: none;
+            }
+        }
+        textarea {
+            width: calc(100% - 205px);
+            margin-right: 15px;
+            min-height: 50px;
+            background: $white;
+            border: 1px solid #AAAAAA;
+            box-sizing: border-box;
+            border-radius: 2px;
+            font-size: 13px;
+            padding: 10px;
+            transition: border-color $trans;
+            resize: none;
+            @media (max-width: 1280px) {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+                min-height: 70px;
+            }
+            &:focus {
+                outline: none;
+                border-color: $orange;
+                transition: border-color $trans;
+            }
+        }
+        .cookieAlertButton {
+            @media (max-width: 1280px) {
+                width: 100%;
+            }
+            button {
+                width: 145px;
+                @media (max-width: 1280px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .productNoteText {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        &.is-hidden {
+            display: none;
+        }
+        @media (max-width: 1280px) {
+            position: relative;
+        }
+        >svg {
+            width: 25px;
+            height: unset;
+            margin-right: 20px;
+            @media (max-width: 1280px) {
+                display: none;
+            }
+        }
+        .productNoteTextInner {
+            padding: 20px;
+            flex-grow: 1;
+            background-color: antiquewhite;
+            word-break: break-word;
+            hyphens: auto;
+            @media (max-width: 1280px) {
+                padding: 15px 45px 15px 10px;
+            }
+        }
+        button {
+            margin-left: 20px;
+            @media (max-width: 1280px) {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-left: 0;
+                padding: 0;
+                right: 10px;
+                height: 26px;
+            }
+        }
+    }
+}
+
+.is-grid .productNoteFormContainer {
+    margin-right: 0;
+    width: 100%;
+    .productNoteForm {
+        flex-wrap: wrap;
+        svg {
+            display: none;
+        }
+        textarea {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+            min-height: 60px;
+        }
+        .cookieAlertButton {
+            width: 100%;
+            button {
+                width: 100%;
+            }
+        }
+    }
+    .productNoteText {
+        position: relative;
+        >svg {
+            display: none;
+        }
+        >button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 0;
+            padding: 0;
+            right: 10px;
+            height: 26px;
+        }
+        .productNoteTextInner {
+            padding-right: 45px;
+        }
+    }
+}
+
+.inputMessage {
     display: none;
+    font-size: 13px;
+    color: red;
+    line-height: 15px;
+    margin-top: 5px;
+}
+
+.product {
+    .productNoteFormContainer {
+        position: relative;
+        z-index: 1;
+        margin-top: 20px;
+        width: 100%;
+        margin-right: 0;
+        @media (max-width: 550px) {
+            margin-top: 0;
+        }
+        .productNoteForm {
+            display: none;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #e7e7e7;
+            flex-wrap: wrap;
+            &.is-opened {
+                display: flex;
+            }
+            >svg {
+                display: none;
+            }
+            textarea {
+                background: $white;
+                border: 1px solid #AAAAAA;
+                box-sizing: border-box;
+                border-radius: 2px;
+                font-size: 13px;
+                padding: 10px;
+                transition: border-color $trans;
+                resize: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+                min-height: 70px;
+                &:focus {
+                    outline: none;
+                    border-color: $orange;
+                    transition: border-color $trans;
+                }
+            }
+            .cookieAlertButton {
+                width: 100%;
+                max-width: 340px;
+                margin: 0 auto;
+                button {
+                    width: 100%;
+                }
+            }
+        }
+        .productNoteText {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            &.is-hidden {
+                display: none;
+            }
+            >svg {
+                display: none;
+            }
+            .productNoteTextInner {
+                padding: 15px 45px 15px 10px;
+                flex-grow: 1;
+                background-color: antiquewhite;
+                word-break: break-word;
+                hyphens: auto;
+            }
+            button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-left: 0;
+                padding: 0;
+                right: 10px;
+                height: 26px;
+            }
+        }
+    }
+}
+
+.swiper-slide .card-manage {
+    display: none !important;
+}
+
+@media (max-width: 1400px) and (min-width: 1361px) {
+    .legacy-isolated .dealerPageImages {
+        right: calc((100vw - 1254px) / 2 + 20px) !important;
+    }
 }

@@ -12,27 +12,47 @@ document.addEventListener('DOMContentLoaded', () => {
 // Бинд на Открытие и закрытие заметки в карточке
 
 const noteBind = () => {
-    if (document.querySelector('.card-note')) {
+    if (document.querySelector('.card')) {
         const allCards = document.querySelectorAll('.card');
         allCards.forEach(each => {
             const note = each.querySelector('.card-note');
             const noteBtn = each.querySelector('.card-manage .card-manage__note');
             noteBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                note.classList.toggle('is-opened');
+                if (note) {
+                    note.classList.toggle('is-opened');
+                }
+                if (each.querySelector('.productNoteForm')) {
+                    each.querySelector('.productNoteForm').classList.toggle('is-opened');
+                }
+                if (each.querySelector('.productNoteText')) {
+                    each.querySelector('.productNoteText').classList.toggle('is-hidden');
+                }
                 noteBtn.classList.toggle('is-active');
+                document.body.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('productNoteFormButton') && noteBtn && noteBtn.classList.contains('is-active')) {
+                        noteBtn.classList.remove('is-active');
+                    }
+                })
             });
             if (each.querySelector('.card-note__close')) {
                 const closeBtn = each.querySelector('.card-note__close');
                 closeBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    note.classList.remove('is-opened');
+                    if (note) {
+                        note.classList.remove('is-opened');
+                    }
                     noteBtn.classList.remove('is-active');
                 });
             }
             document.addEventListener('click', (e) => {
                 if (!each.contains(e.target)) {
-                    note.classList.remove('is-opened');
+                    if (note) {
+                        note.classList.remove('is-opened');
+                    }
+                    if (noteBtn) {
+                        noteBtn.classList.remove('is-active');
+                    }
                 }
             });
         });
