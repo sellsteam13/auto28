@@ -3,7 +3,7 @@ import "%modules%/modals/modals";
 import "%modules%/category/category";
 import "%modules%/components/components";
 import "%modules%/card/card";
-// import "%modules%/add/add";
+import "%modules%/add/add";
 import "%modules%/product/product";
 import "%modules%/filter/filter";
 import "%modules%/footer/footer";
