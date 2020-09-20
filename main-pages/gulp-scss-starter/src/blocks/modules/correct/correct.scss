@@ -577,3 +577,220 @@
         position: static !important;
     }
 }
+
+// years dropdown
+.yearsOlder a {
+    font-weight: normal;
+    color: #494949;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.yearsOlder a:hover,
+.yearsOlder a:focus {
+    text-decoration: none;
+    background: none;
+}
+
+.yearsOlder {
+    position: relative;
+    @media (max-width: 1170px) {
+        display: none !important;
+    }
+}
+
+.yearsOlderItems {
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    background: #fff;
+    z-index: 9;
+}
+
+.yearsOlderItem {
+    position: relative;
+}
+
+.advertFiltersItemValue .yearsOlderItem a {
+    font-weight: normal;
+    color: #222B2A;
+    font-size: rem(16);
+    line-height: 2;
+    display: block;
+    text-align: center;
+    padding: 3px 16px;
+    border-radius: 0;
+}
+
+.yearsOlderItem a:hover,
+.yearsOlderItem a:focus {
+    text-decoration: none;
+    background: #F5AA01;
+}
+
+.yearsOlderItems {
+    display: none;
+    max-height: 290px;
+    overflow-y: scroll;
+    box-shadow: 0px 5px 32px rgba(0, 0, 0, 0.19);
+}
+
+.yearsOlder .olderBloakcTrigger {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    svg {
+        margin-left: 10px !important;
+    }
+}
+
+.yearsOlder .olderBloakcTrigger.is-active {
+    font-weight: normal;
+    color: #222B2A;
+    font-size: rem(22);
+    background: #F5AA01;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.yearsOlder .yearsOlderItem a {
+    color: #222B2A;
+    font-size: rem(16);
+    line-height: 2;
+    display: block;
+    text-align: center;
+    padding: 3px 16px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.add-row-item__content.add-photo {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    cursor: pointer;
+    justify-content: flex-start;
+}
+
+@media (max-width: 943px) {
+    .add-row-item__content.add-photo {
+        justify-content: space-between;
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 630px) {
+    .add-row-item__content.add-photo {
+        display: flex;
+        justify-content: unset;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0;
+    }
+    .add-row-item__content.add-photo .dz-preview {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .add-row-item__content.add-photo .dz-preview {
+        width: calc(100% - 20px);
+    }
+    .add-row-item__content.add-photo .dz-preview img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 5px;
+    }
+    .add-row-item__content.add-photo .addFotoIcon {
+        width: calc(100% - 20px);
+        margin: 0;
+    }
+}
+
+.dz-preview {
+    position: relative;
+    margin: 15px;
+    @media (min-width: 1171px) {
+        width: calc(33.33% - 30px);
+    }
+    @media (max-width: 1170px) and (min-width: 470px) {
+        width: calc(50% - 30px);
+    }
+}
+
+.dz-image img {
+    width: 100%;
+}
+
+.dz-preview .dz-remove {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    z-index: 3;
+}
+
+.add-photo .dz-preview.dz-processing .dz-progress {
+    opacity: 1;
+    transition: all 0.2s linear;
+}
+
+.add-photo .dz-preview.dz-complete .dz-progress {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+.add-photo .dz-preview:not(.dz-processing) .dz-progress {
+    animation: pulse 6s ease infinite;
+}
+
+.add-photo .dz-preview .dz-progress {
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: none;
+    position: absolute;
+    height: 16px;
+    left: 50%;
+    top: 50%;
+    margin-top: -8px;
+    width: 80px;
+    margin-left: -40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.add-photo .dz-preview .dz-progress .dz-upload {
+    background: #333;
+    background: linear-gradient(to bottom, #666666, #444444);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition: width 300ms ease-in-out;
+}
+
+.add-photo .dz-preview .dz-progress .dz-upload {
+    background: #333;
+    background: linear-gradient(to bottom, #666666, #444444);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition: width 300ms ease-in-out;
+}
+
+.add-photo__inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    color: #acacac;
+}

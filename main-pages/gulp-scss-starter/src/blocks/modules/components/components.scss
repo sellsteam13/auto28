@@ -384,6 +384,8 @@ input[type="checkbox"] {
     position: relative;
     border: 1px solid #dfe1e5;
     padding: 11px 15px;
+    min-height: 40px;
+    max-height: 60px;
     padding-right: 25px;
     background: #fff;
     font-size: rem(13);
