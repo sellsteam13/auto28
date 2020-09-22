@@ -10,12 +10,17 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     background: rgba(#000, .4);
     opacity: 0;
     transition: opacity $trans;
     @media (max-width: 992px) {
         align-items: flex-start;
-        padding-top: 130px;
+        padding: 130px 0 30px;
+    }
+    @media only screen and (orientation: landscape) and (max-width: 992px) {
+        padding-top: 40px;
     }
 }
 
@@ -124,7 +129,7 @@
     @media (max-width: 650px) {
         width: calc(100% - 40px);
         margin: 0 20px;
-        padding: 25px 20px 60px;
+        padding: 25px 20px;
     }
     form {
         @media (max-width: 650px) {
@@ -134,6 +139,7 @@
     &-inputs {
         display: flex;
         flex-direction: column;
+        align-items: center;
         @media (max-width: 650px) {
             max-width: 100%;
         }
@@ -373,7 +379,7 @@
 }
 
 .modal-message {
-    width: 400px;
+    width: 600px;
     align-items: center;
     text-align: center;
     padding: 30px 0;
@@ -381,6 +387,9 @@
         max-width: calc(100% - 40px);
         margin: 0 20px;
         padding: 25px 20px 35px;
+    }
+    form {
+        width: 100%;
     }
     &__title {
         margin-bottom: 20px;
@@ -390,7 +399,7 @@
         }
     }
     &__textarea {
-        width: 320px;
+        width: 470px;
         max-width: 100%;
         min-height: 120px;
         resize: none;
@@ -410,7 +419,9 @@
         }
     }
     &__submit {
-        padding: 0 20px;
+        padding: 0 35px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
 
@@ -580,7 +591,20 @@
     right: 0;
     z-index: 100001;
     @media (max-width: 1070px) {
-        padding: 15px 0;
+        padding: 15px 0 40px;
+    }
+    @media (max-width: 500px) {
+        padding: 150px 30px 30px;
+        top: 0;
+        z-index: 10;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .cookieAlertLink {
+            order: 2;
+        }
+        .cookieAlertButton {
+            margin: 20px 0 0;
+        }
     }
 }
 

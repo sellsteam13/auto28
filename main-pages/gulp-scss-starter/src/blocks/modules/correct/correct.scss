@@ -594,7 +594,7 @@
 
 .yearsOlder {
     position: relative;
-    @media (max-width: 1170px) {
+    @media (max-width: 1401px) {
         display: none !important;
     }
 }
@@ -793,4 +793,97 @@
     align-items: flex-end;
     padding-bottom: 15px;
     color: #acacac;
+}
+
+#editForm ul {
+    @media (max-width: 1401px) {
+        display: none;
+    }
+}
+
+#editForm {
+    .advertFiltersItemValue.fotos {
+        @media (max-width: 943px) {
+            padding: 20px !important;
+        }
+    }
+}
+
+.advertFiltersItemValue__mobile {
+    display: none;
+    width: 100%;
+    @media (max-width: 1401px) {
+        display: block;
+    }
+}
+
+.legacy-isolated #advertFiltersItemsTable .parameterValue {
+    padding: 9px 15px;
+}
+
+.legacy-isolated .padination {
+    padding: 35px 0 0 !important;
+}
+
+.map-modal {
+    iframe {
+        border-radius: 0 0 12px 12px;
+    }
+}
+
+.main>.legacy-isolated {
+    margin-bottom: 60px;
+    @media (max-width: 800px) {
+        margin-bottom: 40px;
+    }
+}
+
+.legacy-isolated .accountAdvert {
+    &:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+.add-row-item__content {
+    .label.guarantee {
+        filter: grayscale(1);
+        cursor: pointer;
+        transition: filter $trans;
+        will-change: filter;
+        +.label {
+            margin-left: 30px;
+        }
+        input {
+            display: none;
+        }
+        button {
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            transform: translate(50%, -50%);
+            right: 0;
+            display: none;
+        }
+        &:hover {
+            filter: grayscale(0.7);
+            transition: filter $trans;
+        }
+        &.is-active {
+            cursor: default;
+            filter: grayscale(0) !important;
+            transition: filter $trans;
+            button {
+                display: block;
+            }
+        }
+    }
+    &-guarantee {
+        @media (max-width: 415px) {
+            flex-direction: column;
+            align-items: flex-start;
+            .label {
+                margin-left: 12px !important;
+            }
+        }
+    }
 }

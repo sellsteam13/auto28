@@ -700,15 +700,19 @@ html {
         flex-grow: 1;
         max-width: 500px;
         display: none;
-        @media (max-width: 1170px) {
+        @media (max-width: 1401px) {
             display: block;
+            min-width: 150px;
+        }
+        @media (max-width: 1170px) {
+            min-width: 200px;
         }
         @media (max-width: 550px) {
             width: 100%;
             margin-bottom: 10px;
         }
         +* {
-            @media (max-width: 1170px) {
+            @media (max-width: 1401px) {
                 margin-left: 15px;
             }
             @media (max-width: 550px) {
@@ -812,7 +816,7 @@ html {
         color: #222B2A;
         margin-right: 10px;
         padding: 3px 8px 0;
-        @media (max-width: 1170px) {
+        @media (max-width: 1401px) {
             display: none;
         }
         &:last-child {
@@ -839,7 +843,7 @@ html {
         display: inline-flex;
         align-items: center;
         transition: filter $trans;
-        @media (max-width: 1170px) {
+        @media (max-width: 1401px) {
             display: none;
         }
         &:hover {
@@ -939,6 +943,9 @@ html {
     overflow-y: hidden;
     overflow-x: auto;
     max-width: 100%;
+    @media (max-width: 1401px) {
+        overflow: unset;
+    }
     &::-webkit-scrollbar {
         display: none;
     }
@@ -982,7 +989,7 @@ html {
     justify-content: center;
     margin-right: 15px;
     border: 1px solid #ABABAB;
-    @media (max-width: 1170px) {
+    @media (max-width: 1401px) {
         display: none;
     }
     @media (max-width: 800px) {
@@ -1909,5 +1916,16 @@ html {
 .add-year {
     @media (min-width: 1171px) {
         align-items: center;
+    }
+}
+
+.add-row-not-found {
+    font-weight: 500;
+    justify-content: center;
+    color: var(--orange);
+    text-transform: uppercase;
+    text-align: center;
+    @media (max-width: 1050px) {
+        text-transform: unset;
     }
 }
