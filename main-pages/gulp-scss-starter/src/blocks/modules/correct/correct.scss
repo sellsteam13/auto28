@@ -594,7 +594,7 @@
 
 .yearsOlder {
     position: relative;
-    @media (max-width: 1401px) {
+    @media (max-width: 1450px) {
         display: none !important;
     }
 }
@@ -796,7 +796,7 @@
 }
 
 #editForm ul {
-    @media (max-width: 1401px) {
+    @media (max-width: 1450px) {
         display: none;
     }
 }
@@ -812,7 +812,7 @@
 .advertFiltersItemValue__mobile {
     display: none;
     width: 100%;
-    @media (max-width: 1401px) {
+    @media (max-width: 1450px) {
         display: block;
     }
 }
@@ -886,4 +886,71 @@
             }
         }
     }
+}
+
+@media (min-width: 631px) {
+    .legacy-isolated .accountOrderUserInfo ul li {
+        &:last-child {
+            order: 4;
+            padding: 0 0 0 15px !important;
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .card-note__close {
+        &:before,
+        &:after {
+            width: 20px;
+        }
+    }
+    .productNoteText button svg {
+        transform: scale(.7);
+    }
+}
+
+.legacy-isolated .accountAdvert.cube .inner {
+    border-radius: 9px !important;
+}
+
+.legacy-isolated .accountAdvert.cube .productNoteText {
+    position: relative;
+    padding: 0 !important;
+    >button {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        margin-left: 0;
+        >svg {
+            margin-right: 0;
+        }
+    }
+}
+
+.legacy-isolated .accountAdvertServiceButton.rateButton {
+    .buttonServiceName {
+        margin-right: 5px;
+    }
+}
+
+.legacy-isolated .advert-category-adverts>* {
+    &:nth-child(1) {
+        margin-bottom: 30px;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .legacy-isolated .accountMenuItem span.numberNewItems {
+        width: 28px !important;
+        height: 28px !important;
+        left: -28px !important;
+        background-size: 100% 100%;
+    }
+}
+
+.cookies-accepted .cookieAlertBlock {
+    display: none;
 }

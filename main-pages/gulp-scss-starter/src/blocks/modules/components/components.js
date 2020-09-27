@@ -48,6 +48,9 @@ const accordionInit = () => {
                     });
                     accordionBody.style.height = animatingHeight;
                     accordion.classList.add('is-opened');
+                    setTimeout(() => {
+                        accordionBody.style.height = 'auto';
+                    }, 300);
                 } else {
                     accordionBody.style.height = 0 + 'px';
                     accordion.classList.remove('is-opened');

@@ -12,6 +12,37 @@
         max-width: 1278px;
         @media (max-width: 800px) {
             flex-direction: column;
+            position: relative;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                z-index: 1;
+                background: rgb(249, 249, 249);
+            }
+            &:after {
+                right: -20px;
+                background: linear-gradient(90deg, rgba(249, 249, 249, 0) 0%, rgba(249, 249, 249, 1) 100%);
+            }
+            &:before {
+                left: -20px;
+                background: linear-gradient(-90deg, rgba(249, 249, 249, 0) 0%, rgba(249, 249, 249, 1) 100%);
+            }
+            .tabs-triggers {
+                display: flex;
+                align-items: center;
+                overflow-x: auto;
+                overflow-y: hidden;
+                margin: 0 -20px 20px;
+                padding: 0 20px;
+                justify-content: space-between;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
         }
         &-inner {
             background: #FFFFFF;
@@ -32,20 +63,32 @@
             position: relative;
             cursor: pointer;
             display: block;
+            &.is-active {
+                span {
+                    border-color: $yellow;
+                    transition: border-color $trans;
+                }
+            }
             @media (max-width: 800px) {
-                width: 100%;
-                padding-left: 0;
+                width: auto;
+                padding: 0 20px 0 0;
+                flex-shrink: 0;
+                margin-bottom: 3px;
+                &:last-child {
+                    margin-bottom: 3px;
+                }
             }
             @media (max-width: 630px) {
-                margin-bottom: 0;
+                margin-bottom: 3px;
                 &:last-child {
-                    margin-bottom: 15px;
+                    margin-bottom: 3px;
                 }
             }
             span {
                 border-bottom: 2px solid transparent;
                 transition: border-color $trans;
                 padding-bottom: 2px;
+                font-size: rem(16);
             }
             &:hover span {
                 border-color: $yellow;

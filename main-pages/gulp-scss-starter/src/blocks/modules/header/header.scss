@@ -766,7 +766,7 @@ body {
         @media (max-width: 1170px) {
             position: fixed;
             right: 25px;
-            top: calc(100vh - 100px);
+            top: calc(100vh - 146px);
             width: 56px;
             height: 56px;
             border: none;
@@ -777,7 +777,7 @@ body {
         @media (max-width:550px) {
             opacity: 0;
             transition: opacity $trans;
-            top: calc(100vh - 50px);
+            top: calc(100vh - 146px);
         }
         &__plus {
             width: 28px;

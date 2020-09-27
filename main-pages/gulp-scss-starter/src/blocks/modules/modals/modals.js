@@ -5,20 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
     modalBind(".modal-friend", ".call-friend");
     modalBind(".modal-order", ".call-order");
     modalBind(".modal-message", ".call-message");
-    // const cookie = document.querySelector('.cookieAlertBlock');
-    // if (cookie && window.innerWidth < 501) {
-    //     document.body.style.overflow = 'hidden';
-    //     cookie.querySelector('.cookieAlertButton').addEventListener('click', () => {
-    //         document.body.style.overflow = '';
-    //     });
-    //     window.addEventListener('resize', () => {
-    //         if (window.innerWidth > 500 && cookie.querySelector('.cookieAlertButton')) {
-    //             document.body.style.overflow = '';
-    //         } else if (window.innerWidth < 501 && cookie.querySelector('.cookieAlertButton')) {
-    //             document.body.style.overflow = 'hidden';
-    //         }
-    //     });
-    // }
+    const body = document.body;
+    if (body.classList.contains('cookies-non-accepted')) {
+        let canDisable = true;
+        const triggerBtn = document.querySelector('.cookieAlerts .cookieAlertButton button');
+        if (body.classList.contains('cookies-non-accepted') && canDisable) {
+            body.style.overflow = 'hidden';
+        }
+        if (triggerBtn) {
+            triggerBtn.addEventListener('click', () => {
+                body.style.overflow = '';
+                canDisable = false;
+            });
+        }
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 501 && canDisable) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        })
+    }
 });
 
 // Бинд модалки

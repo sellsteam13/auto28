@@ -164,6 +164,10 @@
             }
             &:last-child {
                 border-bottom: none;
+                padding-bottom: 40px;
+                @media (max-width: 750px) {
+                    padding-bottom: 20px;
+                }
             }
             &-left {
                 width: calc(100% - 230px);

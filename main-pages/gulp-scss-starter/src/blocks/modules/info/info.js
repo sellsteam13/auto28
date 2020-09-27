@@ -9,10 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const setLocalHash = () => {
+    const allTriggers = document.querySelectorAll('.info-tabs .tabs-triggers a');
     if (target.length > 0 && document.querySelector(target)) {
         document.querySelector(target).style.display = 'block';
+        if (allTriggers) {
+            allTriggers.forEach(each => {
+                if (each.getAttribute('href') == 'target') {
+                    each.classList.add('is-active');
+                }
+            });
+        }
     } else {
         document.querySelector('.info-tabs-block').style.display = 'block';
+        allTriggers[0].classList.add('is-active');
     }
     tabsBinding();
 };
@@ -27,6 +36,10 @@ const tabsBinding = () => {
                 allBlocks.forEach(block => {
                     block.style.display = 'none';
                 });
+                allTriggers.forEach(link => {
+                    link.classList.remove('is-active');
+                });
+                each.classList.add('is-active');
                 document.querySelector(each.hash).style.display = 'block';
             }
         });

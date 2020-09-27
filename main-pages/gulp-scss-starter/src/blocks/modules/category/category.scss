@@ -32,15 +32,21 @@
         overflow-x: hidden;
         @media (max-width: 992px) {
             overflow-x: unset;
+            justify-content: space-between;
         }
         >* {
             @media (max-width: 1650px) {
                 margin-bottom: 0;
                 height: 300px !important;
                 width: 300px !important;
+                margin-right: 65px;
+                &:last-child {
+                    margin-right: 0;
+                }
             }
             @media (max-width: 992px) {
                 margin-bottom: 0;
+                margin-right: 0;
                 height: unset !important;
                 width: calc(50% - 5px) !important;
             }
@@ -54,7 +60,7 @@
             width: calc(100% - 220px);
             display: flex;
             margin-top: 60px;
-            justify-content: space-around;
+            justify-content: center;
             padding: 0 100px;
         }
         @media (max-width: 1170px) {
