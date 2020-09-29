@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (body.classList.contains('cookies-non-accepted')) {
         let canDisable = true;
         const triggerBtn = document.querySelector('.cookieAlerts .cookieAlertButton button');
-        if (body.classList.contains('cookies-non-accepted') && canDisable) {
+        if (body.classList.contains('cookies-non-accepted') && canDisable && window.innerWidth < 501 && triggerBtn) {
             body.style.overflow = 'hidden';
         }
         if (triggerBtn) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         window.addEventListener('resize', () => {
-            if (window.innerWidth < 501 && canDisable) {
+            if (window.innerWidth < 501 && canDisable && triggerBtn) {
                 body.style.overflow = 'hidden';
             } else {
                 body.style.overflow = '';

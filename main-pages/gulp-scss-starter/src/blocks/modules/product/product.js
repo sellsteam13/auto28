@@ -18,8 +18,7 @@ const productGalleryInit = () => {
             navigation: {
                 nextEl: '.product-gallery-master__next',
                 prevEl: '.product-gallery-master__prev',
-            },
-            loop: true,
+            }
         })
         document.querySelector('.product-gallery-master__next').addEventListener('click', () => {
             slider.slideNext();
@@ -27,6 +26,17 @@ const productGalleryInit = () => {
         document.querySelector('.product-gallery-master__prev').addEventListener('click', () => {
             slider.slidePrev();
         });
+        const allSlides = Array.from(document.querySelector('.product-gallery-master').querySelectorAll('.swiper-slide'));
+        if (allSlides.length > 0) {
+            slider.on('slideChange', function() {
+                let index = slider.previousIndex;
+                const plyrVideoContainer = allSlides[index].querySelector('.plyr');
+                if (plyrVideoContainer) {
+                    const varName = plyrVideoContainer.getAttribute('id');
+                    window[varName].pause();
+                }
+            });
+        }
     }
 };
 
@@ -70,11 +80,17 @@ const popupGalleryInit = () => {
             slidesPerView: 1,
             initialSlide: centerSlide,
         });
-        galleryTopSlider.on('slideChange', () => {
+        const allSlidesAnother = Array.from(document.querySelector('.product-gallery-popup-main-master').querySelectorAll('.swiper-slide'));
+        galleryTopSlider.on('slideChange', function() {
             galleryThumbsSlider.slideTo(galleryTopSlider.activeIndex);
-            allSlides.forEach(videoSlides => {
-                stopVideoFunc(videoSlides);
-            });
+            if (allSlidesAnother.length > 0) {
+                let index = galleryTopSlider.previousIndex;
+                const plyrVideoContainerAnother = allSlidesAnother[index].querySelector('.plyr');
+                if (plyrVideoContainerAnother) {
+                    const varNameAnother = plyrVideoContainerAnother.getAttribute('id');
+                    window[varNameAnother].pause();
+                }
+            }
         });
         galleryThumbsSlider.on('slideChange', function(index) {
             galleryTopSlider.slideTo(galleryThumbsSlider.activeIndex);
@@ -93,6 +109,16 @@ const popupGalleryInit = () => {
                 galleryTopSlider.slideTo(index);
             });
         });
+        const thumbsTriggersMain = Array.from(document.querySelectorAll('.product-gallery-thumbs__item'));
+        if (thumbsTriggersMain.length > 0) {
+            thumbsTriggersMain.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    let index = thumbsTriggersMain.indexOf(trigger);
+                    galleryThumbsSlider.slideTo(index);
+                    galleryTopSlider.slideTo(index);
+                });
+            });
+        }
     }
 };
 
@@ -125,25 +151,19 @@ const galleryPopupBind = () => {
                 body.classList.remove('gallery-popup-toggled');
                 body.style.overflow = '';
                 popup.classList.remove('is-opened');
+                const allSlidesPopup = Array.from(document.querySelector('.product-gallery-popup-main-master').querySelectorAll('.swiper-slide'));
+                allSlidesPopup.forEach(each => {
+                    const plyrVideoContainerPopup = each.querySelector('.plyr');
+                    if (plyrVideoContainerPopup) {
+                        const varNamePopup = plyrVideoContainerPopup.getAttribute('id');
+                        window[varNamePopup].pause();
+                    }
+                });
                 setTimeout(() => {
                     popup.style.display = 'none';
                 }, 300);
             }
         });
-    }
-};
-
-// Остановка видео при переключении
-
-var stopVideo = function(element) {
-    var iframe = element.querySelector('iframe');
-    var video = element.querySelector('video');
-    if (iframe) {
-        var iframeSrc = iframe.src;
-        iframe.src = iframeSrc;
-    }
-    if (video) {
-        video.pause();
     }
 };
 

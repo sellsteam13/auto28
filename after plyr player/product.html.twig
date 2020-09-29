@@ -1,0 +1,625 @@
+{# checked #}
+{% extends 'DashboardCommonBundle:Common:base.html.twig' %}
+
+{% if app.user %}
+    {% form_theme orderForm _self %}
+    {% form_theme friendMessageForm _self %}
+    {% form_theme complaintMessageForm _self %}
+
+    {%- block form_widget_simple -%}
+        {%- set type = type|default('text') -%}
+        <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+    {%- endblock form_widget_simple -%}
+
+    {%- block checkbox_widget -%}
+        {%- for attrname, attrvalue in attr -%}
+            {%- if attrname in ['id'] -%}
+                <div class="div-checkbox {% if checked %} active {% endif %}" data-checkbox="{{ attrvalue }}"></div> {% trans %}Sūtiet man vēstules kopiju{% endtrans %}
+            {%- endif -%}
+        {%- endfor -%}
+        <input type="checkbox" {{ block('widget_attributes') }} value="1" {% if checked %} checked="checked"{% endif %} />
+    {%- endblock checkbox_widget -%}
+{% endif %}
+
+{% block title %}
+    {{ product.name }} {% if product.info.modification %}{{ product.info.modification.label }}{% endif %}
+{% endblock %}
+
+{% block metatags %}
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <meta content="" name="robots"/>
+    <meta content="" name="keywords"/>
+{% endblock %}
+
+{% block metasocials %}
+    {% if product.fotos | length > 0 %}
+        <link rel="image_src" href="{{ absolute_url(asset('bundles/images/products/' ~ product.fotos[0].foto)) }}"/>
+    {% endif %}
+    <meta property="og:title" content="{{ product.name }} {% if product.info.modification %}{{ product.info.modification.label }}{% endif %}"/>
+    <meta property="og:description" content="{{ product.name }} {% if product.info.modification %}{{ product.info.modification.label }}{% endif %}"/>
+    {% if product.fotos | length > 0 %}
+        <meta property="og:image" content="{{ absolute_url(asset('bundles/images/products/' ~ product.fotos[0].foto)) }}"/>
+    {% endif %}
+    <meta property="og:url" content="{{ absolute_url(path('product', {'productId' : product.id, 'productName' : product.translit})) }}"/>
+    <meta property="og:site_name" content="{{ settings.siteName }}"/>
+    <link rel="canonical" href="{{ absolute_url(path('product', {'productId' : product.id, 'productName' : product.translit})) }}"/>
+{% endblock %}
+
+{% block body %}
+    {% if settings.isShowCaptcha %}
+        <script>
+            var productOrderCaptcha;
+            var onloadCallback = function () {
+                productOrderCaptcha = grecaptcha.render('productOrderCaptcha', {
+                    'sitekey': '6Lc6wCkTAAAAAHoOUvGPxIsIVZ67R09ZYGhmILND'
+                });
+            };
+        </script>
+    {% endif %}
+    <!-- for plyr video player -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.2/plyr.min.js" integrity="sha512-5HcOw3x/g3GAUpNNyvKYB2/f8ivVNBVebdqCxz3Mmdftx7vXOdbYvonB2Det6RVcA1IDxYeYWTAzxRg+c6uvYQ==" crossorigin="anonymous"></script>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-wrap limiter">
+            <a href="{{ path('main') }}" class="breadcrumbs__link">{% trans %}Главная{% endtrans %}</a>
+            {% if categoriesBread %}
+                {% for cat in categoriesBread %}
+                    <a href="{{ path('category', {'categoryId' : cat.id, 'categoryName' : cat.name}) }}" class="breadcrumbs__link">{% if cat.hTitle %}{{ cat.hTitle }}{% else %}{{ cat.title }}{% endif %}</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <section class="product">
+        <div class="product-wrap limiter">
+            <div class="product-main">
+                <div class="product-main-left">
+                    <h1 class="product-main__title">{{ product.name }}</h1>
+
+                    <div class="product-main-subinfo">
+                        <div class="product-main-subinfo__descr">
+                            {{ product.info.year }} {% trans %}г.{% endtrans %},
+                            {% if product.info.modification %}
+                                {{ product.info.modification.size }} {% trans %}см³{% endtrans %}, {{ product.info.modification.power }} {% trans %}л.с.{% endtrans %},
+                            {% else %}
+                                {{ product.info.size }} {% trans %}см³{% endtrans %}, {{ product.info.power }} {% trans %}л.с.{% endtrans %},
+                            {% endif %}
+                            {% if product.info.gasType %}{{ product.info.gasType.value }}, {% endif %}{% if product.info.gearType %}{{ product.info.gearType.value }}, {% endif %}
+                            {{ product.city.name }}
+                        </div>
+                        <div class="product-main-subinfo__views">
+                            <img src="{{ asset('bundles/Default/img/svg/eye.svg') }}" alt="eye">
+                            <span>{{ product.views }}</span>
+                        </div>
+                        <div class="product-main-subinfo__id">{{ product.dateAdded | date("d.m.Y") }} #{{ product.id }}</div>
+                    </div>
+
+                    <div class="product-gallery">
+                        {% if product.fotos | length > 0 %}
+                            <div class="product-gallery-master">
+                                <div class="swiper-wrapper galleryPopupTrigger">
+                                    {% for foto in product.fotos %}
+                                        <div class="swiper-slide">
+                                            <img src="{{ asset('bundles/images/products/' ~ foto.foto) }}" alt="{{ product.name }}">
+                                        </div>
+                                    {% endfor %}
+                                    {% if product.info.getEmbedVideo() %}
+                                        <div class="swiper-slide">
+                                            <div class="plyr__video-embed youtube-slide">
+                                                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ product.info.getEmbedVideo() }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                                <iframe
+                                                    src="https://www.youtube.com/embed/{{ product.info.getEmbedVideo() }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                                                    allowfullscreen
+                                                    allowtransparency
+                                                ></iframe>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="product-gallery-master-controls">
+                                    <button class="product-gallery-master__arrow product-gallery-master__prev">
+                                        <img src="{{ asset('bundles/Default/img/svg/slider-arrow.svg') }}" alt="slider arrow">
+                                    </button>
+                                    <button class="product-gallery-master__arrow product-gallery-master__next">
+                                        <img src="{{ asset('bundles/Default/img/svg/slider-arrow.svg') }}" alt="slider arrow">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-gallery-thumbs">
+                                {% if product.info.getEmbedVideo() %}
+                                    {% if product.fotos | length > 3 %}
+                                        {% set num = 0 %}
+                                        {% for i in 0 .. 1 %}
+                                            <div class="product-gallery-thumbs__item galleryPopupTrigger">
+                                                <img src="{{ asset('bundles/images/products/' ~ product.fotos[i].foto) }}" alt="{{ product.name }}">
+                                            </div>
+                                            {% set num = i %}
+                                        {% endfor %}
+                                        <div class="product-gallery-thumbs__item galleryPopupTrigger">
+                                            <img src="{{ asset('bundles/images/products/thumbs/' ~ product.fotos[num + 1].foto) }}" alt="{{ product.name }}">
+                                            <div class="product-gallery-thumbs__item-more">{% trans %}Еще{% endtrans %} {{ product.fotos | length - 3 }} {% if product.fotos | length - 3 > 1 %}{% trans %}фотос{% endtrans %}{% else %}{% trans %}фото{% endtrans %}{% endif %}</div>
+                                        </div>
+                                        {% if product.info.getEmbedVideo() %}
+                                            <div class="product-gallery-thumbs__item is-youtube-iframe galleryPopupTrigger">
+                                                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ product.info.getEmbedVideo() }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                            </div>
+                                        {% endif %}
+                                    {% else %}
+                                        {% for foto in product.fotos %}
+                                            <div class="product-gallery-thumbs__item galleryPopupTrigger">
+                                                <img src="{{ asset('bundles/images/products/' ~ foto.foto) }}" alt="{{ product.name }}">
+                                            </div>
+                                        {% endfor %}
+                                        {% if product.info.getEmbedVideo() %}
+                                            <div class="product-gallery-thumbs__item is-youtube-iframe galleryPopupTrigger">
+                                                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ product.info.getEmbedVideo() }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% else %}
+                                    {% if product.fotos | length > 4 %}
+                                        {% set num = 0 %}
+                                        {% for i in 0 .. 2 %}
+                                            <div class="product-gallery-thumbs__item galleryPopupTrigger">
+                                                <img src="{{ asset('bundles/images/products/' ~ product.fotos[i].foto) }}" alt="{{ product.name }}">
+                                            </div>
+                                            {% set num = i %}
+                                        {% endfor %}
+                                        <div class="product-gallery-thumbs__item galleryPopupTrigger">
+                                            <img src="{{ asset('bundles/images/products/thumbs/' ~ product.fotos[num + 1].foto) }}" alt="{{ product.name }}">
+                                            <div class="product-gallery-thumbs__item-more">{% trans %}Еще{% endtrans %} {{ product.fotos | length - 4 }} {% if product.fotos | length - 4 > 1 %}{% trans %}фотос{% endtrans %}{% else %}{% trans %}фото{% endtrans %}{% endif %}</div>
+                                        </div>
+                                    {% else %}
+                                        {% for foto in product.fotos %}
+                                            <div class="product-gallery-thumbs__item galleryPopupTrigger">
+                                                <img src="{{ asset('bundles/images/products/' ~ foto.foto) }}" alt="{{ product.name }}">
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="product-main__pricing">
+                        <div class="product-main__pricing-general">{{ product.info.price }} {{ locale.currency.label | raw }}</div>
+                        <div class="product-main__pricing-credit">
+                            {% if product.info.nds %}{% trans %}НДС включен{% endtrans %}{% else %}{% trans %}без НДС{% endtrans %}{% endif %}
+                            {% if product.info.isFinance %} / {% trans %}Кредит{% endtrans %}{% endif %}
+                        </div>
+                    </div>
+
+                    <h3 class="product-main__subtitle">{% trans %}Технические характеристики{% endtrans %}</h3>
+                    <div class="product-main__general">
+                        <div class="product-main__general-item">
+                            <span>{% trans %}Год выпуска{% endtrans %}</span><span>{{ product.info.year }}</span>
+                        </div>
+                        <div class="product-main__general-item">
+                            <span>{% trans %}Пробег{% endtrans %}</span><span>{{ product.info.probeg }} {% trans %}км{% endtrans %}</span>
+                        </div>
+                        {% if product.info.garant %}
+                            <div class="product-main__general-item label guarantee">
+                                <span>{{ product.info.garant }}</span> {% trans %}Гарантия{% endtrans %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="product-main__rows">
+                        {% if categoriesBread %}
+                            <div class="product-main__rows-item"><span>{% trans %}Марка{% endtrans %}</span><span>{{ categoriesBread[1].title }}</span></div>
+                        {% endif %}
+                        {% if product.info.color %}
+                            <div class="product-main__rows-item"><span>{% trans %}Цвет{% endtrans %}</span><span>{{ product.info.color.value }}</span></div>
+                        {% endif %}
+                        {% if categoriesBread %}
+                            <div class="product-main__rows-item"><span>{% trans %}Модель{% endtrans %}</span><span>{{ categoriesBread[2].title }}</span></div>
+                        {% endif %}
+                        <div class="product-main__rows-item"><span>{% trans %}Руль{% endtrans %}</span><span>{% if product.info.wheel %}{% trans %}правый{% endtrans %}{% else %}{% trans %}левый{% endtrans %}{% endif %}</span></div>
+                        {# <div class="product-main__rows-item"><span>Поколение</span><span>III Рестайлинг 3</span></div> #} {# TODO: нет данных #}
+                        {% if product.info.owners %}
+                            <div class="product-main__rows-item"><span>{% trans %}Владельцы{% endtrans %}</span><span>{{ product.info.owners }}</span></div>
+                        {% endif %}
+                        {% if product.info.board %}
+                            <div class="product-main__rows-item"><span>{% trans %}Кузов{% endtrans %}</span><span>{{ product.info.board.value }}</span></div>
+                        {% endif %}
+                        {# <div class="product-main__rows-item"><span>Владение</span><span>2 месяца</span></div> #} {# TODO: нет данных #}
+                        <div class="product-main__rows-item">
+                            <span>{% trans %}Двигатель{% endtrans %}</span>
+                            <span>
+                                {% if product.info.modification %}
+                                    {{ product.info.modification.size }} {% trans %}см³{% endtrans %} / {{ product.info.modification.power }} {% trans %}л.с.{% endtrans %}{% if product.info.gasType %} / {% endif %}
+                                {% else %}
+                                    {{ product.info.size }} {% trans %}см³{% endtrans %} / {{ product.info.power }} {% trans %}л.с.{% endtrans %}{% if product.info.gasType %} / {% endif %}
+                                {% endif %}
+                                {% if product.info.gasType %}{{ product.info.gasType.value }}{% endif %}
+                            </span>
+                        </div>
+                        {% if product.info.shape %}
+                            <div class="product-main__rows-item"><span>{% trans %}Состояние{% endtrans %}</span><span>{{ product.info.shape.title }}</span></div>
+                        {% endif %}
+                        {% if product.info.gearType %}
+                            <div class="product-main__rows-item"><span>{% trans %}Коробка{% endtrans %}</span><span>{{ product.info.gearType.value }}</span></div>
+                        {% endif %}
+                        <div class="product-main__rows-item"><span>{% trans %}Торг{% endtrans %}</span><span>{% if product.info.torg %}{% trans %}да{% endtrans %}{% else %}{% trans %}нет{% endtrans %}{% endif %}</span></div>
+                        {% if product.info.transmissionType %}
+                            <div class="product-main__rows-item"><span>{% trans %}Привод{% endtrans %}</span><span>{{ product.info.transmissionType.value }}</span></div>
+                        {% endif %}
+                        {% if product.info.isGasBaloon %}
+                            <div class="product-main__rows-item"><span>{% trans %}GAS{% endtrans %}</span><span>{% trans %}Есть{% endtrans %}</span></div>
+                        {% endif %}
+                        {# <div class="product-main__rows-item"><span>Обмен</span><span>Нет</span></div> #} {# TODO: нет данных #}
+                    </div>
+
+                    {% if productFilters | length > 0 %}
+                        {% set first = true %}
+                        {% for productFilter in productFilters %}
+                            <div class="product-main__checks accordion accordion--def {% if first %}is-opened{% endif %}">
+                                <div class="accordion-head">{{ productFilter.filter.name }}</div>
+                                <div class="accordion-body">
+                                    {% if productFilter.values | length > 0 %}
+                                        {% if productFilter.columnized.c1 | length > 0 %}
+                                            <div class="column">
+                                                {% for filter in productFilter.columnized.c1 %}
+                                                    <div class="product-main__checks-item">{{ filter.value }}</div>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                        {% if productFilter.columnized.c2 | length > 0 %}
+                                            <div class="column">
+                                                {% for filter in productFilter.columnized.c2 %}
+                                                    <div class="product-main__checks-item">{{ filter.value }}</div>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                        {% if productFilter.columnized.c3 | length > 0 %}
+                                            <div class="column">
+                                                {% for filter in productFilter.columnized.c3 %}
+                                                    <div class="product-main__checks-item">{{ filter.value }}</div>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% set first = false %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if product.info.description %}
+                        <div class="product-main__descr">
+                            <div class="product-main__descr-title">{% trans %}Комментарий продавца{% endtrans %}</div>
+                            <div class="product-main__descr-text">
+                                {% autoescape 'html' %}
+                                    {{ product.info.description|nl2br }}
+                                {% endautoescape %}
+                            </div>
+                            <button class="product-main__descr-status">
+                                <span>{% trans %}Показать полностью{% endtrans %}</span><span>{% trans %}Скрыть{% endtrans %}</span>
+                            </button>
+                        </div>
+                    {% endif %}
+
+                    {#<div class="product-main__manage">
+                        {% include 'DashboardCommonBundle:Default:Products/tools.html.twig' with {'product' : product, 'user' : user} %}
+                    </div>#}
+                </div>
+
+                <div class="product-main-right">
+                    <div class="product-main__price">
+                        <div class="product-main__price-master">{{ product.info.price }} {{ locale.currency.label | raw }}</div>
+                        <div class="product-main__price-details">
+                            {% if product.info.nds %}{% trans %}НДС включен{% endtrans %}{% else %}{% trans %}без НДС{% endtrans %}{% endif %}
+                            {% if product.info.isFinance %} / {% trans %}Кредит{% endtrans %}{% endif %}
+                        </div>
+                    </div>
+                    <div class="product-contacts">
+                        <div class="product-contacts-manage">
+                            <a href="#" class="def-btn call-report">{% trans %}Пожаловаться{% endtrans %}</a>
+                            {% if user %}
+                                <a href="javascript:void(0);" onclick="_addFavoriteProduct({{ product.id }}, $(this))" class="product-contacts-manage__favorite {% if isFavorite %}is-active{% endif %}">
+                                    <svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.3807 2.59231C19.8676 2.08781 19.2583 1.68761 18.5878 1.41456C17.9172 1.14151 17.1985 1.00098 16.4727 1.00098C15.7468 1.00098 15.0281 1.14151 14.3576 1.41456C13.687 1.68761 13.0778 2.08781 12.5646 2.59231L11.4997 3.63883L10.4348 2.59231C9.39834 1.57373 7.99258 1.0015 6.52679 1.0015C5.06099 1.0015 3.65523 1.57373 2.61876 2.59231C1.58229 3.61088 1 4.99236 1 6.43284C1 7.87332 1.58229 9.25481 2.61876 10.2734L3.68367 11.3199L11.4997 19.001L19.3158 11.3199L20.3807 10.2734C20.8941 9.76912 21.3013 9.1704 21.5791 8.51143C21.857 7.85246 22 7.14614 22 6.43284C22 5.71954 21.857 5.01323 21.5791 4.35426C21.3013 3.69529 20.8941 3.09657 20.3807 2.59231V2.59231Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            {% else %}
+                                <a href="#" class="product-contacts-manage__favorite call-auth">
+                                    <svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.3807 2.59231C19.8676 2.08781 19.2583 1.68761 18.5878 1.41456C17.9172 1.14151 17.1985 1.00098 16.4727 1.00098C15.7468 1.00098 15.0281 1.14151 14.3576 1.41456C13.687 1.68761 13.0778 2.08781 12.5646 2.59231L11.4997 3.63883L10.4348 2.59231C9.39834 1.57373 7.99258 1.0015 6.52679 1.0015C5.06099 1.0015 3.65523 1.57373 2.61876 2.59231C1.58229 3.61088 1 4.99236 1 6.43284C1 7.87332 1.58229 9.25481 2.61876 10.2734L3.68367 11.3199L11.4997 19.001L19.3158 11.3199L20.3807 10.2734C20.8941 9.76912 21.3013 9.1704 21.5791 8.51143C21.857 7.85246 22 7.14614 22 6.43284C22 5.71954 21.857 5.01323 21.5791 4.35426C21.3013 3.69529 20.8941 3.09657 20.3807 2.59231V2.59231Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            {% endif %}
+                            <div class="product-contacts-manage-share">
+                                <div class="product-contacts-manage-share__icon">
+                                    <svg viewBox="0 0 21 23" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.04117 12.5129L13.8712 16.4929M13.8612 5.51293L7.04117 9.49293M19.4512 4.00293C19.4512 5.65978 18.108 7.00293 16.4512 7.00293C14.7943 7.00293 13.4512 5.65978 13.4512 4.00293C13.4512 2.34608 14.7943 1.00293 16.4512 1.00293C18.108 1.00293 19.4512 2.34608 19.4512 4.00293ZM7.45117 11.0029C7.45117 12.6598 6.10803 14.0029 4.45117 14.0029C2.79432 14.0029 1.45117 12.6598 1.45117 11.0029C1.45117 9.34608 2.79432 8.00293 4.45117 8.00293C6.10803 8.00293 7.45117 9.34608 7.45117 11.0029ZM19.4512 18.0029C19.4512 19.6598 18.108 21.0029 16.4512 21.0029C14.7943 21.0029 13.4512 19.6598 13.4512 18.0029C13.4512 16.3461 14.7943 15.0029 16.4512 15.0029C18.108 15.0029 19.4512 16.3461 19.4512 18.0029Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="product-contacts-manage-share__links">
+                                    <a href="javascript:" class="btn-share share-whatsapp">
+                                        <img src="{{ asset('bundles/Default/img/social/whatsapp.svg') }}" alt="whatsapp" />
+                                    </a>
+                                    <a href="javascript:" class="btn-share share-tlg">
+                                        <img src="{{ asset('bundles/Default/img/social/telegram.svg') }}" alt="telegram" />
+                                    </a>
+                                    <a href="javascript:" class="btn-share share-fbmsg">
+                                        <img src="{{ asset('bundles/Default/img/social/messenger.svg') }}" alt="facebook-messenger" />
+                                    </a>
+                                    <a href="javascript:" class="btn-share share-fb">
+                                        <img src="{{ asset('bundles/Default/img/social/facebook.svg') }}" alt="facebook" />
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="product-contacts-manage__note {% if not user %}call-auth{% endif %}">
+                                <svg viewBox="0 0 19 23" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4512 1.00293H3.45117C2.92074 1.00293 2.41203 1.21364 2.03696 1.58872C1.66189 1.96379 1.45117 2.4725 1.45117 3.00293V19.0029C1.45117 19.5334 1.66189 20.0421 2.03696 20.4171C2.41203 20.7922 2.92074 21.0029 3.45117 21.0029H15.4512C15.9816 21.0029 16.4903 20.7922 16.8654 20.4171C17.2405 20.0421 17.4512 19.5334 17.4512 19.0029V7.00293M11.4512 1.00293L17.4512 7.00293M11.4512 1.00293V7.00293H17.4512M6.45117 14.0029H12.4512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product-contacts-main">
+                            <div class="product-contacts-main__title">{{ product.name }}</div>
+                            <div class="product-contacts-main-dealer">
+                                <a href="#" class="product-contacts-main-dealer__title">
+                                    {% if product.authorName %}
+                                        {{ product.authorName }}
+                                    {% else %}
+                                        {% if product.user.roles[0].role == "ROLE_DEALER" %}
+                                            {{ product.user.dealerinfo.company }}
+                                        {% else %}
+                                            {{ product.user.userinfo.firstname }} {{ product.user.userinfo.lastname }}
+                                        {% endif %}
+                                    {% endif %}
+                                </a>
+                                {% if product.user.roles[0].role == "ROLE_DEALER" %}
+                                    <div class="product-contacts-main-dealer__spec">{% trans %}Дилер{% endtrans %}</div>
+                                    <div class="product-contacts-main-dealer__rate">
+                                        <div class="product-contacts-main-dealer__rate-stars">
+                                            {% set reviews = 0 %}
+                                            {% set rating  = 0 %}
+                                            {% if product.user.targetReviews | length > 0 %}
+                                                {% for review in product.user.targetReviews %}
+                                                    {% if review.status.id == locale.settings.publicReviewStatus.id %}
+                                                        {% set reviews = reviews + 1 %}
+                                                        {% set rating = rating + review.rating %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+
+                                            {% if reviews > 0 %}
+                                                {% set reviewRating = (rating/reviews) | round %}
+                                            {% else %}
+                                                {% set reviewRating = 0 %}
+                                            {% endif %}
+
+                                            {# TODO: рейтинги с половинками #}
+                                            {% if reviewRating > 0 %}
+                                                {% for i in 1..reviewRating %}
+                                                    <img src="{{ asset('bundles/Default/img/svg/rate-stars/star-filled.svg') }}" alt="rate star">
+                                                {% endfor %}
+                                            {% endif %}
+                                            {% if reviewRating < 5 %}
+                                                {% for i in (reviewRating + 1)..5 %}
+                                                    <img src="{{ asset('bundles/Default/img/svg/rate-stars/star-empty.svg') }}" alt="rate star">
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                        <div class="product-contacts-main-dealer__rate-summary">{{ reviews }}</div>
+                                    </div>
+                                    <a href="{{ path('dealerPage', {'dealerId' : product.user.dealerinfo.id}) }}#dealerPageProducts" class="product-contacts-main-dealer__link">{% trans %}Все объявления продавца{% endtrans %}</a>
+                                    <a href="{{ path('dealerReviewsPage', {'dealerId' : product.user.dealerinfo.id }) }}"  class="product-contacts-main-dealer__link">{% trans %}Отзывы о продавце{% endtrans %}</a>
+                                {% endif %}
+                            </div>
+                            <div class="product-contacts-main-info">
+                                <div class="product-contacts-main-info__title">{% trans %}Контактная информация{% endtrans %}:</div>
+                                {% if product.user.roles[0].role == "ROLE_DEALER" %}
+                                    <div class="product-contacts-main-info__working" id="dealerWorktime{{ product.user.id }}"></div>
+                                    <script>
+                                        window.addEventListener('load', function () {
+                                            _getDealerWorkTime($("#dealerWorktime{{ product.user.id }}"), {{ product.user.id }});
+                                        });
+                                    </script>
+                                {% endif %}
+                                <div class="product-contacts-main-info__tel">
+                                    <img src="{{ asset('bundles/Default/img/svg/cont-phone.svg') }}" alt="phone icon">
+                                    <label onclick="_showSellerNumber({{ product.id }})">
+                                        <input type="checkbox">
+                                        <span>{% trans %}Показать телефон{% endtrans %}</span>
+                                        <a class="contactPhones_{{ product.id }}"></a>
+                                    </label>
+                                </div>
+                                <button class="product-contacts-main-info__chat {% if user %}call-message{% else %}call-auth{% endif %}">
+                                    <img src="{{ asset('bundles/Default/img/svg/cont-mess.svg') }}" alt="mess">
+                                    <span>{% trans %}Написать сообщение{% endtrans %}</span>
+                                </button>
+                                {#{% if product.user.id != user.id %}#}
+                                    <a href="#" class="def-btn product-contacts-main-info__order call-order">{% trans %}Оставить заявку{% endtrans %}</a>
+                                {#{% endif %}#}
+                            </div>
+                        </div>
+                    </div>
+
+                    {# User's note #}
+                    {% if user %}
+                        <div class="productNoteFormContainer productNoteFormContainer{{ product.id }}">
+                            {% set noteText = '' %}
+                            {% if product.notes | length > 0 %}
+                                {% for note in product.notes %}
+                                    {% if note.user.id == user.id %}
+                                        <div class="productNoteText">
+                                            <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11 1.00195H3C2.46957 1.00195 1.96086 1.21267 1.58579 1.58774C1.21071 1.96281 1 2.47152 1 3.00195V19.002C1 19.5324 1.21071 20.0411 1.58579 20.4162C1.96086 20.7912 2.46957 21.002 3 21.002H15C15.5304 21.002 16.0391 20.7912 16.4142 20.4162C16.7893 20.0411 17 19.5324 17 19.002V7.00195M11 1.00195L17 7.00195M11 1.00195V7.00195H17M6 14.002H12" stroke="#616161" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <div class="productNoteTextInner">{{ note.text }}</div>
+                                            <button onclick="_deleteProductNote({{ product.id }},'{% trans %}Хотите удалить заметку?{% endtrans %}')">
+                                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M26 1.4524L24.5476 0L13 11.5578L1.4524 0L0 1.4524L11.5578 13L0 24.5476L1.4524 26L13 14.4422L24.5476 26L26 24.5476L14.4422 13L26 1.4524Z" fill="#616161"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        {% set noteText = note.text %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <div class="productNoteForm">
+                                <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1.00195H3C2.46957 1.00195 1.96086 1.21267 1.58579 1.58774C1.21071 1.96281 1 2.47152 1 3.00195V19.002C1 19.5324 1.21071 20.0411 1.58579 20.4162C1.96086 20.7912 2.46957 21.002 3 21.002H15C15.5304 21.002 16.0391 20.7912 16.4142 20.4162C16.7893 20.0411 17 19.5324 17 19.002V7.00195M11 1.00195L17 7.00195M11 1.00195V7.00195H17M6 14.002H12" stroke="#616161" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <textarea maxlength="60" name="productNoteText{{ product.id }}" placeholder="{% trans %}Заметка об этом объявлении (ее увидите только вы, не более 60 символов){% endtrans %}">{% if noteText %}{{ noteText }}{% endif %}</textarea>
+                                <div class="cookieAlertButton">
+                                    <button class="productNoteFormButton" onclick="_saveProductNote({{ product.id }}, '{% trans %}Поле для заметки пустое. Заполните его{% endtrans %}', $(this))">{% trans %}Сохранить{% endtrans %}</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if product.user.roles[0].role == "ROLE_DEALER" and product.user.dealerinfo.address %}
+                        <div class="product-map">
+                            <div class="product-map__title">{% trans %}Посмотреть на карте:{% endtrans %}</div>
+                            <div class="product-map__address">
+                                <img src="{{ asset('bundles/Default/img/svg/geo.svg') }}" alt="geo">
+                                <span>{{ product.user.dealerinfo.city.name }}, {{ product.user.dealerinfo.address }}</span>
+                            </div>
+                            <label class="product-map__inner">
+                                <input type="checkbox">
+                                <img src="{{ asset('bundles/Default/img/svg/map.svg') }}" alt="map">
+                                <div class="product-map__inner-map">
+                                    <iframe src="https://www.google.com/maps/embed/v1/place?key={{ settings.googleMapsKey }}&q={{ product.user.dealerinfo.address }}, {{ product.user.dealerinfo.city.name }}" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>
+                            </label>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- offer slider -->
+                {% if sameProducts | length > 0 %}
+                    {% include 'DashboardCommonBundle:Default:Category/specialProducts.html.twig' with {'specialProducts' : sameProducts, 'locale' : locale, 'user' : user, 'type' : 'sameProducts'} %}
+                {% endif %}
+
+                <!-- offer slider -->
+                {% if dealerProducts | length > 0 %}
+                    {% include 'DashboardCommonBundle:Default:Category/specialProducts.html.twig' with {'specialProducts' : dealerProducts, 'locale' : locale, 'user' : user, 'type' : 'dealerNewInProduct'} %}
+                {% endif %}
+
+                <div class="product-main-banner">
+                    <div class="banner c1">
+                        {{ render(controller('DashboardCommonBundle:Default:getBanners',{'position' : 'C2'})) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-banners-track">
+                <div class="product-banners">
+                    <div class="banner b2">
+                        {{ render(controller('DashboardCommonBundle:Default:getBanners', {'position' : 'B1'})) }}
+                    </div>
+                    <div class="banner banner-default">
+                        {{ render(controller('DashboardCommonBundle:Default:getBanners', {'position' : 'B2'})) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="product-gallery-popup">
+        {% if product.fotos | length > 0 %}
+            <main class="product-gallery-popup-main">
+                <div class="product-gallery-popup-main-master">
+                    <div class="swiper-wrapper">
+                        {% for foto in product.fotos %}
+                            <div class="swiper-slide">
+                                <img src="{{ asset('bundles/images/products/' ~ foto.foto) }}" alt="{{ product.name }}">
+                            </div>
+                        {% endfor %}
+                        {% if product.info.getEmbedVideo() %}
+                            <div class="swiper-slide">
+                                 <div class="plyr__video-embed youtube-slide">
+                                    <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ product.info.getEmbedVideo() }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                    <iframe
+                                        src="https://www.youtube.com/embed/{{ product.info.getEmbedVideo() }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                                        allowfullscreen
+                                        allowtransparency
+                                    ></iframe>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="product-gallery-popup-main-thumbs">
+                    <div class="swiper-wrapper">
+                        {% for foto in product.fotos %}
+                            <div class="swiper-slide">
+                                <img src="{{ asset('bundles/images/products/' ~ foto.foto) }}" alt="{{ product.name }}">
+                            </div>
+                        {% endfor %}
+                        {% if product.info.getEmbedVideo() %}
+                            <div class="swiper-slide is-youtube-iframe">
+                                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ product.info.getEmbedVideo() }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="product-gallery-popup-main-controls">
+                    <button class="product-gallery-popup-main__arrow product-gallery-popup-main__prev">
+                        <img src="{{ asset('bundles/Default/img/svg/slider-arrow.svg') }}" alt="arrow">
+                    </button>
+                    <button class="product-gallery-popup-main__arrow product-gallery-popup-main__next">
+                        <img src="{{ asset('bundles/Default/img/svg/slider-arrow.svg') }}" alt="arrow">
+                    </button>
+                </div>
+            </main>
+        {% endif %}
+        <aside class="product-gallery-popup-aside">
+            <div class="product-gallery-popup-aside__title">{{ product.name }}</div>
+            <div class="product-gallery-popup-aside-pricing">
+                <div class="product-gallery-popup-aside-pricing__main">{{ product.info.price }} {{ locale.currency.label | raw }}</div>
+                <div class="product-gallery-popup-aside-pricing__credit">
+                    {% if product.info.nds %}{% trans %}НДС включен{% endtrans %}{% else %}{% trans %}без НДС{% endtrans %}{% endif %}
+                    {% if product.info.isFinance %} / {% trans %}Кредит{% endtrans %}{% endif %}
+                </div>
+            </div>
+            <div class="product-gallery-popup-aside-seller">
+                {% if product.authorName %}
+                    <span>{{ product.authorName }}</span>
+                {% else %}
+                    {% if product.user.roles[0].role == "ROLE_DEALER" %}
+                        <span>{{ product.user.dealerinfo.company }}</span>
+                    {% else %}
+                        <span>{{ product.user.userinfo.firstname }} {{ product.user.userinfo.lastname }}</span>
+                    {% endif %}
+                {% endif %}
+                {% if product.user.roles[0].role == "ROLE_DEALER" %}
+                    <span>{% trans %}Дилер{% endtrans %}</span>
+                {% endif %}
+            </div>
+            <div class="product-gallery-popup-aside-contacts">
+                <div class="product-gallery-popup-aside-contacts__title">{% trans %}Контактная информация{% endtrans %}:</div>
+                {% if product.user.roles[0].role == "ROLE_DEALER" %}
+                    <div class="product-gallery-popup-aside-contacts__working" id="dealerWorktime{{ product.user.id }}"></div>
+                    <script>
+                        window.addEventListener('load', function () {
+                            _getDealerWorkTime($("#dealerWorktime{{ product.user.id }}"), {{ product.user.id }});
+                        });
+                    </script>
+                {% endif %}
+                <div class="product-gallery-popup-aside-contacts__tel">
+                    <img src="{{ asset('bundles/Default/img/svg/cont-phone.svg') }}" alt="phone">
+                    <label onclick="_showSellerNumber({{ product.id }})">
+                        <input type="checkbox">
+                        <span>{% trans %}Показать телефон{% endtrans %}</span>
+                        <a class="contactPhones_{{ product.id }}"></a>
+                    </label>
+                </div>
+                <button class="product-gallery-popup-aside-contacts__chat {% if user %}call-message{% else %}call-auth{% endif %}">
+                    <img src="{{ asset('bundles/Default/img/svg/cont-mess.svg') }}" alt="mess">
+                    <span>{% trans %}Написать сообщение{% endtrans %}</span>
+                </button>
+                <div class="product-gallery-popup-aside-contacts__order">
+                    <a href="#" class="def-btn call-order">{% trans %}Оставить заявку{% endtrans %}</a>
+                </div>
+            </div>
+        </aside>
+        <button class="product-gallery-popup__close">
+            <img src="{{ asset('bundles/Default/img/svg/slider-cross.svg') }}" alt="cross">
+        </button>
+    </div>
+{% endblock %}

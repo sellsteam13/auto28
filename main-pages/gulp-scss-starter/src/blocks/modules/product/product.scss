@@ -546,6 +546,24 @@
             border-radius: 9px;
             height: 540px;
             cursor: pointer;
+            @media (min-width: 769px) {
+                .plyr__video-wrapper {
+                    >* {
+                        &:not(.plyr__poster) {
+                            display: none !important;
+                        }
+                    }
+                }
+                .plyr__controls {
+                    display: none !important;
+                }
+                .plyr>button.plyr__control {
+                    pointer-events: none;
+                }
+                .plyr {
+                    pointer-events: none;
+                }
+            }
             @media (max-width: 1360px) {
                 width: calc(100% - 150px);
                 margin-right: 15px;
@@ -1238,6 +1256,7 @@ body.gallery-popup-toggled {
                     left: 0;
                     bottom: 0;
                     right: 0;
+                    z-index: 2;
                     border: 2px solid transparent;
                     transition: border-color $trans;
                 }
@@ -1252,6 +1271,13 @@ body.gallery-popup-toggled {
                     opacity: 0;
                     z-index: 1;
                     transition: opacity $trans;
+                }
+                &.is-youtube-iframe {
+                    &:after {
+                        opacity: 1;
+                        background: $white url('../img/default/media.svg') no-repeat center;
+                        background-size: 35%;
+                    }
                 }
                 &:hover {
                     &:after {
@@ -1490,4 +1516,24 @@ body.gallery-popup-toggled {
             }
         }
     }
+}
+
+.is-youtube-iframe {
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $white url('../img/default/media.svg') no-repeat center;
+        background-size: 35%;
+    }
+    iframe {
+        display: none;
+    }
+}
+
+.plyr {
+    width: 100%;
 }

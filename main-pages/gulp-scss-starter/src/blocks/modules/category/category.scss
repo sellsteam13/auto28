@@ -525,6 +525,9 @@
                 transform: rotate(90deg);
             }
         }
+        .card-info__labels {
+            display: none !important;
+        }
     }
     &-pagination {
         display: flex;

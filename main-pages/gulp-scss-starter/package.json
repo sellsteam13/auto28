@@ -69,6 +69,7 @@
         "yargs": "^15.4.1"
     },
     "dependencies": {
+        "plyr": "^3.6.2",
         "swiper": "^6.2.0"
     }
 }
