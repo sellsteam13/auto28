@@ -946,9 +946,6 @@ html {
     @media (max-width: 1450px) {
         overflow: unset;
     }
-    &::-webkit-scrollbar {
-        display: none;
-    }
 }
 
 .add-modification {
