@@ -1,0 +1,25 @@
+{# checked #}
+{% extends 'DashboardCommonBundle:Common:base.html.twig' %}
+
+{% block mainClass %}page-error{% endblock %}
+
+{% block title %}{{ page.metaTagTitle }}{% endblock %}
+{% block metatags %}
+    <meta content="{{ page.metaTagDescription }}" name="description"/>
+    <meta content="{{ page.metaTagAuthor }}" name="author"/>
+    <meta content="{{ page.metaTagRobots }}" name="robots"/>
+    <meta content="{{ page.metaTagKeywords }}" name="keywords"/>
+{% endblock %}
+
+{% block before_main %}
+    {% include 'DashboardCommonBundle:Common:breadcrumbs.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    <div class="page-error__main" style="line-height: 1">404</div>
+    <div class="page-error__sub">
+        <span>Página no encontrada</span>
+        <span>Volver a la <a href="#">página de inicio</a></span>
+    </div>
+
+{% endblock %}

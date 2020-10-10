@@ -1,0 +1,193 @@
+{# checked #}
+{% extends 'DashboardCommonBundle:Common:base.html.twig' %}
+
+{% form_theme registerForm _self %}
+
+{%- block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{%- endblock form_widget_simple -%}
+
+{%- block button_row -%}
+    <button class="message-button-answer" type="submit">{{ form_label(form) }}</button>
+{%- endblock button_row -%}
+
+{%- block checkbox_widget -%}
+    {%- for attrname, attrvalue in attr -%}
+        {%- if attrname in ['id'] -%}
+            <div class="div-checkbox small-margin {% if checked %} active {% endif %}" data-checkbox="{{ attrvalue }}"></div>
+        {%- endif -%}
+    {%- endfor -%}
+
+    <input type="checkbox" {{ block('widget_attributes') }} value="1" {% if checked %} checked="checked"{% endif %} />
+{%- endblock checkbox_widget -%}
+
+{% block title %}{% trans %}Регистрация сервиса{% endtrans %}{% endblock %}
+
+{% block breadcrumbs %}
+    {% set crumbs = [{'uri' : path('serviceRegister'), 'title' : 'Регистрация сервиса'|trans}] %}
+    {% include 'DashboardCommonBundle:Common:breadcrumbs.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    {% if success %}
+        <div class="auth auth-bussines">
+            <div class="auth-wrap limiter">
+                <form class="auth-main">
+                    <div class="auth-reg-send__title">{% trans %}Регистрация{% endtrans %}</div>
+                    <div class="auth-reg-send__text">
+                        {% trans %}Ваш аккаунт зарегистрирован в системе. Данные для подтверждения аккаунта отправлены на введенный Вами адрес электронной почты.{% endtrans %}
+                    </div>
+                    <div class="auth-reg-send__mail">{{ email }}</div>
+                    <div class="auth-reg-send__login">
+                        {% trans %}<a href="/login">Войдите</a>, используя свои данные.{% endtrans %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% else %}
+        <div class="bussines-reg">
+            {{ form_start(registerForm, {'method':'POST', 'attr': {'class': 'bussines-reg-form', 'id' : 'dealerinfo', 'onsubmit' : 'return _checkPasswordLength()'}}) }}
+                <div class="bussines-reg-form__title">{% trans %}Регистрация сервиса{% endtrans %}</div>
+                <div class="bussines-reg-form__subtitle">{% trans %}Данные компании{% endtrans %}</div>
+                <div class="bussines-reg-form-inputs">
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.dealerinfo.company) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.dealerinfo.company, {'attr' : {"autocomplete" : "off", 'placeholder': 'Edeltime SL'}}) }}
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.dealerinfo.nifNumber) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.dealerinfo.nifNumber, {'attr' : {"autocomplete" : "off", 'placeholder': 'B67486928'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="bussines-reg-form__item required">
+                        <span>{% trans %}Регион{% endtrans %}</span>
+                        <div class="bussines-reg-form__item-input select-module" id="regionContainer">
+                            {{ form_widget(registerForm.dealerinfo.region,{'id' : 'dealerRegion'})}}
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item required">
+                        <span>{% trans %}Город{% endtrans %}</span>
+                        <div class="bussines-reg-form__item-input select-module" id="cityContainer">
+                            {{ form_widget(registerForm.dealerinfo.city,{'id' : 'dealerCity'}) }}
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item">
+                        <span>{% trans %}Индекс{% endtrans %}</span>
+                        <div class="bussines-reg-form__item-input input-module" id="codeContainer">
+                            {{ form_widget(registerForm.dealerinfo.cityCode,{'id' : 'dealerCityCode', 'maxlength' : '5'}) }}
+                            <div class="codesListBlock"></div>
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.dealerinfo.address) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.dealerinfo.address, {'attr' : {"autocomplete" : "off", 'placeholder': 'C / Balmes 211, ppal 20'}}) }}
+                        </div>
+                    </div>
+                    <script>
+                        window.addEventListener('load', function () {
+                            $(document).on('change', '#dealerRegion', function () {
+                                $("#dealerCityCode").val(null);
+                                $("#dealerCityCode").parent().find('.codesListBlock').hide();
+                                _changeRegionForm(false, $(this));
+                            });
+                            $(document).on('change', '#dealerCity', function () {
+                                $("#dealerCityCode").val(null);
+                                $("#dealerCityCode").parent().find('.codesListBlock').hide();
+                                _changeRegionForm(false, $(this));
+                            });
+                            $(document).on('keyup', '#dealerCityCode', function () {
+                                var len = $(this).val().length;
+                                if (len === 5) {
+                                    _changeRegionForm(true, $(this));
+                                } else {
+                                    _getCityCodes($(this).val(), $(this));
+                                }
+                            });
+                        });
+                    </script>
+
+                    <div class="bussines-reg-form__item">
+                        <span>{{ form_label(registerForm.dealerinfo.website) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">{{ form_widget(registerForm.dealerinfo.website, {'attr' : {"autocomplete" : "off", 'placeholder': 'auto28.es'}}) }}</div>
+                    </div>
+                </div>
+                <div class="bussines-reg-form__subtitle">{% trans %}Данные пользователя{% endtrans %}</div>
+                <div class="bussines-reg-form-inputs">
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.userinfo.firstname) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.userinfo.firstname, {'attr' : {"autocomplete" : "off"}}) }}
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.userinfo.lastname) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.userinfo.lastname, {'attr' : {"autocomplete" : "off"}}) }}
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.email) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.email, {'attr' : {"autocomplete" : "off", 'placeholder': 'info@auto28.es'}}) }}
+                            {{ form_widget(registerForm.dealerinfo.user) }}
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.userinfo.phone) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.userinfo.phone, {'attr' : {"autocomplete" : "off"}}) }}
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.password.first) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.password.first, {'id' : 'userRegisterPassword', 'attr': {'placeholder' : 'Tu contraseña'}}) }}
+                            <div class="inputMessage">{% trans %}Пароль должен содержать не менее 6 символов{% endtrans %}</div>
+                        </div>
+                    </div>
+                    <div class="bussines-reg-form__item required">
+                        <span>{{ form_label(registerForm.password.second) }}</span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {{ form_widget(registerForm.password.second, {'attr': {'placeholder' : 'Tu contraseña'}}) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="bussines-reg-form__note">
+                    <span>*</span> - Este campo es obligatorio
+                </div>
+                {% if settings.isShowCaptcha %}
+                    <div class="bussines-reg-form__item required">
+                        <span></span>
+                        <div class="bussines-reg-form__item-input input-module">
+                            {% if settings.isShowCaptcha %}
+                                <script>
+                                    var registerCaptcha;
+                                    var onloadCallback = function() {
+                                        registerCaptcha = grecaptcha.render('registerCaptcha', {
+                                            'sitekey' : '6Lc6wCkTAAAAAHoOUvGPxIsIVZ67R09ZYGhmILND'
+                                        });
+                                    };
+                                </script>
+                                <div class="register-password-block">
+                                    <div class="g-recaptcha" id="registerCaptcha"></div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="bussines-reg-form__submit">
+                    <button type="submit" class="def-btn">{% trans %}Зарегистрироваться{% endtrans %}</button>
+                </div>
+                <div class="bussines-reg-form__privacy">
+                    {% trans with {'%link1%': '/pages/politica-privacidad#block2', '%link2%' : '/pages/politica-privacidad#block3'} %}Нажимая кнопку я соглашаюсь с <a href="%link1%">Условиями обслуживания</a> и <a href="%link2%">Политикой конфиденциальности</a>{% endtrans %}
+                </div>
+            {{ form_end(registerForm) }}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -113,6 +113,12 @@
                     color: $orange;
                 }
             }
+            ul {
+                padding-left: 17px;
+                li {
+                    list-style: square;
+                }
+            }
             &-accordions {
                 margin-top: 30px;
                 .accordion {

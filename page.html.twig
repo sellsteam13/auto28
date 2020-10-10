@@ -1,0 +1,65 @@
+{% extends 'DashboardCommonBundle:Common:base.html.twig' %}
+
+{% block title %}{{ page.metaTagTitle}}{% endblock %}
+{% block metatags %}
+<meta content="{{ page.metaTagDescription }}" name="description" />
+<meta content="{{ page.metaTagAuthor }}" name="author" />
+<meta content="{{ page.metaTagRobots }}" name="robots" />
+<meta content="{{ page.metaTagKeywords }}" name="keywords" />
+{% endblock %}
+
+{% block body %}
+<main class="main">
+
+    <!-- offer module -->
+    <div class="offer">
+        <div class="offer-wrap limiter">
+            <div class="offer-left">
+                <h1 class="offer__title">{{ page.title }}</h1>
+                <div class="offer-banner">
+                    <div class="offer-banner__text">
+                        {{ page.text | raw }}
+                    </div>
+                    <div class="offer-banner__btns">
+                        {% if user %}
+                            <a onclick="showFlashMessage('warning', '{% trans %}Вы уже авторизованы в системе. Выйдете для регистрации нового пользователя.{% endtrans %}')" href="javascript: void(0)" class="def-btn">{% trans %}Стать клиентом{% endtrans %}</a>
+                        {% else %}
+                            <a href="{% if locale.isDefault %}{{ path('serviceRegister') }}{% else %}{{ path('serviceRegisterLocale',{'_locale':locale.code}) }}{% endif %}" class="def-btn">{% trans %}Стать клиентом{% endtrans %}</a>
+                        {% endif %}
+                        <a href="https://services.auto28.es/" target="_blank" class="def-btn def-btn--gray">{% trans %}Презентация{% endtrans %}</a>
+                    </div>
+                </div>
+                {% if page.blocks | length > 0 %}
+                    {% for block in page.blocks %}
+                        {{ block.blockContent | raw }}
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="offer-right">
+                <div class="offer-right-inner">
+                    <div class="offer-right__title">{{ page.title }}</div>
+                    <div class="offer-right-list">
+                            <a class="offer-right-list__item" href="#adv">- {% trans %}Преимущества{% endtrans %}</a>
+                            <a class="offer-right-list__item" href="#pricing">- {% trans %}Стоимость размещения{% endtrans %}</a>
+                            <a class="offer-right-list__item" href="{{ path('dealer') }}">{% trans %}Для дилеров{% endtrans %}</a>
+                            <a class="offer-right-list__item" href="{{ path('media') }}">{% trans %}Медийная реклама{% endtrans %}</a>
+                            <a class="offer-right-list__item" href="/pages/politica-privacidad#block3">{% trans %}Правовая информация{% endtrans %}</a>
+                            <a class="offer-right-list__item" href="/pages/about-project">{% trans %}О проекте{% endtrans %}</a>
+                            <a class="offer-right-list__item" href="{{ path('faq') }}">{% trans %}FAQ{% endtrans %}</a>
+                            <a class="offer-right-list__item" href="{{ path('contact') }}">{% trans %}Обратная связь{% endtrans %}</a>
+                    </div>
+                    <div class="offer-right__btn">
+                        {% if user %}
+                            <a onclick="showFlashMessage('warning', '{% trans %}Вы уже авторизованы в системе. Выйдете для регистрации нового пользователя.{% endtrans %}')" href="javascript: void(0)" class="def-btn">{% trans %}Стать клиентом{% endtrans %}</a>
+                        {% else %}
+                            <a href="{{ path('serviceRegister') }}" class="def-btn">{% trans %}Стать клиентом{% endtrans %}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

@@ -66,7 +66,7 @@
                     {% endif %}
 
                     <a href="{{ path('logout') }}" class="header-sub-auth__login">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 1.9rem;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H7" stroke="#616161" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M14 15L19 10L14 5" stroke="#616161" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M19 10H7" stroke="#616161" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -314,6 +314,11 @@
                         <div class="header-new__plus"></div>
                         <span class="header-new__text">{% trans %}Добавить объявление{% endtrans %}</span>
                     </a>
+                {% else %}
+                    <a href="" class="header-new is-disabled">
+                        <div class="header-new__plus"></div>
+                        <span class="header-new__text">{% trans %}Добавить объявление{% endtrans %}</span>
+                    </a>
                 {% endif %}
             {% else %}
                 <a href="{{ path('login') }}" class="header-new">
@@ -325,4 +330,21 @@
         </div>
     </div>
 </header>
+<!-- end of header -->
+<!-- header new for mobile -->
+{% if app.user %}
+                {% if app.user.roles[0].role != "ROLE_SERVICE" %}
+                    <a href="{{ path('addAdvert') }}" class="header-new--mobile">
+                        <div class="header-new__plus"></div>
+                    </a>
+                {% else %}
+                    <a href="" class="is-disabled header-new--mobile">
+                        <div class="header-new__plus"></div>
+                    </a>
+                {% endif %}
+            {% else %}
+                <a href="{{ path('login') }}" class="header-new--mobile">
+                    <div class="header-new__plus"></div>
+                </a>
+            {% endif %}
 <!-- end of header -->
