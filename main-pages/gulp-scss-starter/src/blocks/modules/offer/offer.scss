@@ -106,6 +106,10 @@
                 align-items: center;
                 margin-bottom: 18px;
                 position: relative;
+                &:last-child,
+                &:nth-last-child(2) {
+                    margin-bottom: 0;
+                }
                 @media (max-width: 750px) {
                     width: 50%;
                     padding-right: 10px;
@@ -116,10 +120,6 @@
                     &:nth-last-child(2) {
                         margin-bottom: 18px;
                     }
-                }
-                &:last-child,
-                &:nth-last-child(2) {
-                    margin-bottom: 0;
                 }
                 span {
                     &:nth-child(1) {
