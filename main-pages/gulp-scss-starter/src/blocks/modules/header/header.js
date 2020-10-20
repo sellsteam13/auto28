@@ -27,7 +27,7 @@ const menuAccordions = () => {
         allInners.forEach(each => {
             const trigger = each.querySelector('.header-menu-nav__item-block-title');
             trigger.addEventListener('click', () => {
-                if (!each.classList.contains('is-opened') && window.innerWidth < 760) {
+                if (!each.classList.contains('is-opened') && window.innerWidth < 801) {
                     allInners.forEach(btn => {
                         btn.classList.remove('is-opened');
                     });

@@ -1,0 +1,292 @@
+{# checked #}
+{% extends 'DashboardCommonBundle:Common:base.html.twig' %}
+{% use 'DashboardCommonBundle:Common:legacy.html.twig' %}
+
+{% block title %}{{ page.metaTagTitle }}{% endblock %}
+{% block metatags %}
+    <meta content="{{ page.metaTagDescription }}" name="description"/>
+    <meta content="{{ page.metaTagAuthor }}" name="author"/>
+    <meta content="{{ page.metaTagRobots }}" name="robots"/>
+    <meta content="{{ page.metaTagKeywords }}" name="keywords"/>
+{% endblock %}
+
+{% block body %}
+    <div class="legacy-isolated bg-not-white">
+        <div class="dealersContainer servicesContainerCorrect">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5">
+                        {% if app.request.get('serviceAuto') or app.request.get('serviceJob') or app.request.get('serviceSearchAction') %}
+                            <div class="searchReturnBlock">
+                                <a href="{{ path('services') }}">
+                                    <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.9127 6.97806L8.18122 13.0222L13.024 18.9775" stroke="#222B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    {% trans %}Вернутся на главную{% endtrans %}
+                                </a>
+                            </div>
+                        {% endif %}
+                        <form action="{{ path('services') }}" method="POST">
+                            <div class="mapListSearchBlock">
+                                <div class="mapListSearchBlockForm">
+                                    <div class="formParameterField dealerSearchFormItem {% if app.request.get('serviceJob') %}active{% endif %}" id="selectServiceJob">
+                                        <input name="serviceJob" type="text" placeholder="{% trans %}Тип работ{% endtrans %}" value="{% if app.request.get('serviceJob') %}{{ app.request.get('serviceJob') }}{% endif %}"/>
+                                        <button type="button" onclick="clearServiceJob($(this), event)">
+                                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11 0.614477L10.3855 0L5.5 4.88985L0.614477 0L0 0.614477L4.88985 5.5L0 10.3855L0.614477 11L5.5 6.11015L10.3855 11L11 10.3855L6.11015 5.5L11 0.614477Z" fill="#494949"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="formParameterField dealerSearchFormItem {% if app.request.get('serviceAuto') %}active{% endif %}" id="selectServiceAuto">
+                                        <input name="serviceAuto" type="text" placeholder="{% trans %}Марка авто{% endtrans %}" value="{% if app.request.get('serviceAuto') %}{{ app.request.get('serviceAuto') }}{% endif %}"/>
+                                        <button type="button" onclick="clearServiceAuto($(this), event)">
+                                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11 0.614477L10.3855 0L5.5 4.88985L0.614477 0L0 0.614477L4.88985 5.5L0 10.3855L0.614477 11L5.5 6.11015L10.3855 11L11 10.3855L6.11015 5.5L11 0.614477Z" fill="#494949"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="formParameterField button">
+                                        <input name="serviceAutoId" type="hidden" value="{% if app.request.get('serviceAutoId') %}{{ app.request.get('serviceAutoId') }}{% endif %}"/>
+                                        <input name="jobCategoryId" type="hidden" value="{% if app.request.get('jobCategoryId') %}{{ app.request.get('jobCategoryId') }}{% endif %}"/>
+                                        <input name="serviceSearchAction" type="hidden" value="1"/>
+                                        <button type="submit" class="find" id="formFindButton">{% trans %}Найти{% endtrans %}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="servicesContentInnerBlock" style="position: relative;">
+                                {% if autos | length > 0 %}
+                                    <div class="mapListItems hide" id="serviceAutosList">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                {% for auto in autos %}
+                                                    <div class="col-xs-3 mapListAutoLabel {% if app.request.get('dealerAutoId') and app.request.get('dealerAutoId') == auto.id %}active{% endif %}">
+                                                        <a href="javascript:void(0)" class="mapListAuto" onclick="selectServiceAuto({{ auto.id }},'{{ auto.title }}',$(this))">
+                                                            <span class="mapListAutoLogo">{{ auto.image | raw }}</span>
+                                                            <span class="mapListAutoName">{{ auto.title }}</span>
+                                                        </a>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if categories | length > 0 %}
+                                    <div class="mapListItems hide" id="serviceJobsList">
+                                        <div class="col-lg-12">
+                                            <div class="servicesPageJobsList">
+                                                {% for jobCategory in categories %}
+                                                    {% set checked = 0 %}
+                                                    {% if app.request.get('jobCategory') %}
+                                                        {% for categoryId in app.request.get('jobCategory') %}
+                                                            {% if jobCategory.id == categoryId %}
+                                                                {% set checked = 1 %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                    <div class="servicesPageServiceBlock {% if checked %}active{% endif %}">
+                                                        <div class="servicesPageServiceName">
+                                                            <div class="servicesPageServiceNameIcon">
+                                                                <div class="servicesPageServiceNameIconImage">{{ jobCategory.icon | raw }}</div>
+                                                                <div class="servicesPageServiceMainCheckbox">
+                                                                    <div class="style-checkbox {% if checked %}checked{% endif %}" onclick="setJobCategory($(this), event)" id="jobCategoryId{{ jobCategory.id }}">
+                                                                        <input type="checkbox" name="jobCategory[]" data-value="{{ jobCategory.name }}" value="{{ jobCategory.id }}" {% if checked %}checked="checked"{% endif %} />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="servicesPageServiceNameTitle" onclick="$(this).parents('.servicesPageServiceBlock').toggleClass('active')">
+                                                                {{ jobCategory.name }}
+                                                            </div>
+                                                        </div>
+                                                        {% if jobCategory.jobs | length > 0 %}
+                                                            <div class="servicesPageServiceSubBlock">
+                                                                {% for job in jobCategory.jobs %}
+                                                                    {% set checkedJob = 0 %}
+                                                                    {% if app.request.get('job') %}
+                                                                        {% for jobId in app.request.get('job') %}
+                                                                            {% if job.id == jobId %}
+                                                                                {% set checkedJob = 1 %}
+                                                                            {% endif %}
+                                                                        {% endfor %}
+                                                                    {% endif %}
+                                                                    <div class="servicesPageServiceSubBlockItem subjob{{ jobCategory.id }}" onclick="setJob($(this), event)">
+                                                                        <div class="servicesPageServiceNameIcon">
+                                                                            <div class="style-checkbox {% if checkedJob %}checked{% endif %}">
+                                                                                <input type="checkbox" name="job[]" value="{{ job.id }}" data-value="{{ job.name }}" {% if checkedJob %}checked="checked"{% endif %} />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="servicesPageServiceSubBlockItemName">{{ job.name }}</div>
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if app.request.get('serviceAuto') or app.request.get('serviceJob') or app.request.get('serviceSearchAction') %}
+                                    <div class="mapListItems" id="mainServicesList">
+                                        {% if services | length > 0 %}
+                                            {% for service in services %}
+                                                {% if service.dealerinfo.salons | length > 0 %}
+                                                    {% for salon in service.dealerinfo.salons %}
+                                                        {% if salon.isActive %}
+                                                            {% include 'DashboardCommonBundle:Office:item.html.twig' with {'salon' : salon, 'service' : service} %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% else %}
+                                            <div class="serviceSearchNotFound">{% trans %}Сервисов с желаемыми параметрами не найдено{% endtrans %}</div>
+                                        {% endif %}
+                                    </div>
+                                {% else %}
+                                    <div class="mapListItems" id="mainServicesList">
+                                        <div class="row">
+                                            {% if categories %}
+                                                {% for category in categories %}
+                                                    {% if category.image %}
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <div class="mapListPopularService" onclick="selectAjaxServicesList('{{ category.name }}', $('input[name=serviceJob]'), {{ category.id }}, $('input[name=jobCategoryId]'))">
+                                                                <a href="javascript:void(0)">
+                                                                    <div class="mapListPopularServiceImage">
+                                                                        <img src="{{ asset('bundles/images/jobs/' ~ category.image) }}" alt="" title=""/>
+                                                                    </div>
+                                                                    <div class="mapListPopularServiceName">
+                                                                        {{ category.name }}
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                {% if categories %}
+                                                    <div class="mapListServicesJobs">
+                                                        <div class="pageContentJobsLists">
+                                                            {% for i in 1..2 %}
+                                                                <div class="pageContentJobsList">
+                                                                    {% for j in jobsPerList*i - jobsPerList..jobsPerList*i - 1 %}
+                                                                        <div class="pageContentJobsItem" onclick="selectAjaxServicesList('{{ allCategories[j].name }}', $('input[name=serviceJob]'), {{ allCategories[j].id }}, $('input[name=jobCategoryId]'))">
+                                                                            <div class="pageContentJobsItemIcon">
+                                                                                {{ allCategories[j].icon | raw }}
+                                                                            </div>
+                                                                            <div class="pageContentJobsItemTitle">
+                                                                                <a href="javascript:void(0)">{{ allCategories[j].name }}</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    {% endfor %}
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="mapListItemsHeader">{% trans %}Популярные марки{% endtrans %}</div>
+                                        {% if autos | length > 0 %}
+                                            {% if autos | length > settings.categoryPanelItemsNumber %}
+                                                <div class="mapAutoNamesList">
+                                                    {% for child in autos | slice(0, settings.categoryPanelItemsNumber ) %}
+                                                        <div class="mapAutoName">
+                                                            <a href="javascript:void(0)" onclick="selectAjaxServicesList('{{ child.title }}', $('input[name=serviceAuto]'), {{ child.id }}, $('input[name=serviceAutoId]'))">{{ child.title }}</a>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="mapAutoNamesList hide">
+                                                    {% for child in autos %}
+                                                        <div class="mapAutoName">
+                                                            <a href="javascript:void(0)" onclick="selectAjaxServicesList('{{ child.title }}', $('input[name=serviceAuto]'), {{ child.id }}, $('input[name=serviceAutoId]'))">{{ child.title }}</a>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="mainPageAutoListShowAll">
+                                                    <button type="button" class="mb3" onclick="showHideAllServicesCategories($(this))" data-text="{% trans %}Свернуть{% endtrans %}">{% trans %}Показать все марки{% endtrans %}</button>
+                                                </div>
+                                            {% else %}
+                                                <div class="mapAutoNamesList">
+                                                    {% for child in autos %}
+                                                        <div class="mapAutoName">
+                                                            <a href="javascript:void(0)" onclick="selectAjaxServicesList('{{ child.title }}', $('input[name=serviceAuto]'), {{ child.id }}, $('input[name=serviceAutoId]'))">{{ child.title }}</a>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            {% endif %}
+                                        {% endif %}
+                                        <div class="mapListItemsHeader">{% trans %}Популярные сервисы{% endtrans %}</div>
+                                        {% for service in services %}
+                                            {% if service.dealerinfo.salons | length > 0 %}
+                                                {% for salon in service.dealerinfo.salons %}
+                                                    {% if salon.isActive %}
+                                                        {% include 'DashboardCommonBundle:Office:item.html.twig' with {'salon' : salon, 'service' : service} %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </form>
+                    </div>
+                    <div id="map" class="mapImage"></div>
+                    <script>
+                        var map;
+
+                        function initMap() {
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                center: {lat: {{ settings.centerLat }}, lng: {{ settings.centerLng }} },
+                                zoom: 6
+                            });
+
+                            var dealerWindows = [];
+                            {% for service in services %}
+                                {% if service.dealerinfo.salons | length > 0 %}
+                                    {% for salon in service.dealerinfo.salons %}
+                                        {% if salon.isActive %}
+                                            dealerWindows[{{ salon.id }}] = '<div class="mapListItem" style="border:none;margin:0;" id="dealer{{ salon.id }}" ><a href="{{ path('servicePage',{'serviceId' : salon.id,'serviceName' : salon.name}) }}" class="mapListItemLink"></a><div class="mapListItemImage">{% if salon.logotype %}<div class="mapListItemImageSrc"><img src="{{ asset('bundles/images/dealers/salons/' ~ salon.logotype) }}" alt="{{ salon.name }}" title="{{ salon.name }}" /></div>{% else %}<div class="mapListItemImageSrc"><svg width="114" height="42" viewBox="0 0 114 42" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="91.5" cy="17.5" r="14.5" fill="#DFE1E5"/><path d="M11.418 19V12.114C11.418 9.012 9.746 7.208 6.314 7.208C4.422 7.208 3.168 7.604 1.892 8.176L2.618 10.31C3.674 9.87 4.642 9.584 5.94 9.584C7.788 9.584 8.8 10.464 8.8 12.07V12.29C7.898 12.004 6.996 11.806 5.588 11.806C2.882 11.806 0.88 13.038 0.88 15.612C0.88 17.988 2.816 19.242 5.016 19.242C6.776 19.242 7.986 18.516 8.778 17.57V19H11.418ZM8.844 14.798C8.844 16.25 7.524 17.24 5.764 17.24C4.51 17.24 3.52 16.624 3.52 15.524C3.52 14.358 4.51 13.676 6.182 13.676C7.216 13.676 8.162 13.874 8.844 14.138V14.798ZM18.5881 19.242C20.3921 19.242 21.4701 18.296 22.2181 17.196V19H24.8801V7.384H22.2181V13.94C22.2181 15.744 21.1401 16.822 19.6001 16.822C18.0161 16.822 17.1141 15.788 17.1141 13.984V7.384H14.4521V14.776C14.4521 17.482 15.9701 19.242 18.5881 19.242ZM32.1207 19.198C33.1107 19.198 33.8587 18.978 34.5187 18.604V16.426C33.9907 16.69 33.4627 16.822 32.8687 16.822C31.9667 16.822 31.4387 16.404 31.4387 15.37V9.672H34.5627V7.384H31.4387V4.194H28.7767V7.384H27.3027V9.672H28.7767V15.788C28.7767 18.34 30.1627 19.198 32.1207 19.198ZM42.4499 19.264C46.0359 19.264 48.6759 16.514 48.6759 13.214C48.6759 9.848 46.0579 7.142 42.4939 7.142C38.9299 7.142 36.2899 9.892 36.2899 13.214C36.2899 16.558 38.9079 19.264 42.4499 19.264ZM42.4939 16.954C40.4259 16.954 38.9519 15.238 38.9519 13.214C38.9519 11.146 40.3159 9.474 42.4499 9.474C44.5399 9.474 46.0139 11.168 46.0139 13.214C46.0139 15.26 44.6499 16.954 42.4939 16.954ZM50.7928 19H61.9248V16.624H54.5988L57.7668 13.984C60.4728 11.74 61.7708 10.442 61.7708 8.022C61.7708 5.228 59.7028 3.38 56.6888 3.38C53.9388 3.38 52.4868 4.546 51.0128 6.614L52.9268 8.11C54.1148 6.57 55.0828 5.8 56.4908 5.8C57.8988 5.8 58.9768 6.68 58.9768 8.198C58.9768 9.584 58.2068 10.574 56.0948 12.356L50.7928 16.866V19ZM70.137 19.22C73.503 19.22 76.011 17.504 76.011 14.754C76.011 12.884 74.911 11.784 73.239 11.014C74.537 10.332 75.483 9.298 75.483 7.582C75.483 5.162 73.217 3.38 70.137 3.38C67.057 3.38 64.791 5.184 64.791 7.538C64.791 9.298 65.737 10.332 67.035 11.014C65.297 11.74 64.263 12.906 64.263 14.776C64.263 17.46 66.771 19.22 70.137 19.22ZM70.137 10.112C68.553 10.112 67.387 9.166 67.387 7.824C67.387 6.614 68.487 5.646 70.137 5.646C71.787 5.646 72.887 6.614 72.887 7.802C72.887 9.166 71.721 10.112 70.137 10.112ZM70.137 16.954C68.113 16.954 66.903 15.898 66.903 14.644C66.903 13.192 68.311 12.268 70.137 12.268C71.963 12.268 73.371 13.192 73.371 14.6C73.371 15.92 72.161 16.954 70.137 16.954Z" fill="#AAAAAA"/><path d="M3.084 37.12C4.404 37.12 5.436 36.46 5.436 35.128C5.436 33.964 4.392 33.544 3.468 33.256C3.432 33.244 3.384 33.232 3.348 33.22C2.652 32.992 2.04 32.8 2.04 32.368C2.04 31.972 2.364 31.708 2.928 31.708C3.456 31.708 4.104 31.936 4.716 32.308L5.292 31.276C4.62 30.832 3.756 30.556 2.964 30.556C1.704 30.556 0.708 31.288 0.708 32.488C0.708 33.724 1.752 34.108 2.688 34.384C2.724 34.396 2.76 34.408 2.796 34.42C3.492 34.624 4.104 34.792 4.104 35.26C4.104 35.704 3.744 35.968 3.12 35.968C2.472 35.968 1.728 35.704 1.044 35.188L0.396 36.172C1.188 36.796 2.184 37.12 3.084 37.12ZM6.936 29.692H8.496V28.312H6.936V29.692ZM6.996 37H8.448V30.664H6.996V37ZM10.3456 37H11.7976V33.424C11.7976 32.44 12.3856 31.852 13.2256 31.852C14.0896 31.852 14.5816 32.416 14.5816 33.4V37H16.0336V32.968C16.0336 31.492 15.2056 30.532 13.7776 30.532C12.7936 30.532 12.2056 31.048 11.7976 31.648V30.664H10.3456V37ZM21.7087 37H23.1607V31.912H24.8167V30.712H23.1367V30.364C23.1367 29.704 23.4247 29.404 23.9767 29.404C24.2887 29.404 24.5407 29.464 24.8287 29.56V28.336C24.5047 28.24 24.1567 28.168 23.6527 28.168C23.0287 28.168 22.5607 28.336 22.2247 28.672C21.8887 29.008 21.7087 29.536 21.7087 30.244V30.7H20.9047V31.912H21.7087V37ZM28.7912 37.144C30.7472 37.144 32.1872 35.644 32.1872 33.844C32.1872 32.008 30.7592 30.532 28.8152 30.532C26.8712 30.532 25.4312 32.032 25.4312 33.844C25.4312 35.668 26.8592 37.144 28.7912 37.144ZM28.8152 35.884C27.6872 35.884 26.8832 34.948 26.8832 33.844C26.8832 32.716 27.6272 31.804 28.7912 31.804C29.9312 31.804 30.7352 32.728 30.7352 33.844C30.7352 34.96 29.9912 35.884 28.8152 35.884ZM35.7899 37.108C36.3299 37.108 36.7379 36.988 37.0979 36.784V35.596C36.8099 35.74 36.5219 35.812 36.1979 35.812C35.7059 35.812 35.4179 35.584 35.4179 35.02V31.912H37.1219V30.664H35.4179V28.924H33.9659V30.664H33.1619V31.912H33.9659V35.248C33.9659 36.64 34.7219 37.108 35.7899 37.108ZM41.424 37.144C43.38 37.144 44.82 35.644 44.82 33.844C44.82 32.008 43.392 30.532 41.448 30.532C39.504 30.532 38.064 32.032 38.064 33.844C38.064 35.668 39.492 37.144 41.424 37.144ZM41.448 35.884C40.32 35.884 39.516 34.948 39.516 33.844C39.516 32.716 40.26 31.804 41.424 31.804C42.564 31.804 43.368 32.728 43.368 33.844C43.368 34.96 42.624 35.884 41.448 35.884ZM48.4707 37.12C49.7907 37.12 50.8227 36.46 50.8227 35.128C50.8227 33.964 49.7787 33.544 48.8547 33.256C48.8187 33.244 48.7707 33.232 48.7347 33.22C48.0387 32.992 47.4267 32.8 47.4267 32.368C47.4267 31.972 47.7507 31.708 48.3147 31.708C48.8427 31.708 49.4907 31.936 50.1027 32.308L50.6787 31.276C50.0067 30.832 49.1427 30.556 48.3507 30.556C47.0907 30.556 46.0947 31.288 46.0947 32.488C46.0947 33.724 47.1387 34.108 48.0747 34.384C48.1107 34.396 48.1467 34.408 48.1827 34.42C48.8787 34.624 49.4907 34.792 49.4907 35.26C49.4907 35.704 49.1307 35.968 48.5067 35.968C47.8587 35.968 47.1147 35.704 46.4307 35.188L45.7827 36.172C46.5747 36.796 47.5707 37.12 48.4707 37.12Z" fill="#AAAAAA"/><path d="M95.996 19.264C98.13 19.264 99.648 18.406 100.748 17.086L99.186 15.7C98.262 16.602 97.338 17.086 96.04 17.086C94.324 17.086 92.982 16.03 92.696 14.138H101.232C101.254 14.006 101.276 13.566 101.276 13.39C101.276 10.046 99.406 7.142 95.71 7.142C92.388 7.142 90.034 9.87 90.034 13.192C90.034 16.822 92.63 19.264 95.996 19.264ZM92.674 12.378C92.916 10.574 94.06 9.32 95.688 9.32C97.448 9.32 98.46 10.662 98.636 12.378H92.674ZM107.931 19.22C110.351 19.22 112.243 18.01 112.243 15.568C112.243 13.434 110.329 12.664 108.635 12.136C108.569 12.114 108.481 12.092 108.415 12.07C107.139 11.652 106.017 11.3 106.017 10.508C106.017 9.782 106.611 9.298 107.645 9.298C108.613 9.298 109.801 9.716 110.923 10.398L111.979 8.506C110.747 7.692 109.163 7.186 107.711 7.186C105.401 7.186 103.575 8.528 103.575 10.728C103.575 12.994 105.489 13.698 107.205 14.204C107.271 14.226 107.337 14.248 107.403 14.27C108.679 14.644 109.801 14.952 109.801 15.81C109.801 16.624 109.141 17.108 107.997 17.108C106.809 17.108 105.445 16.624 104.191 15.678L103.003 17.482C104.455 18.626 106.281 19.22 107.931 19.22Z" fill="#AAAAAA"/></svg></div>{% endif %}<div class="mapListItemImageRating"><div class="accountReviewRating">{% set reviewRating = salon.rating %}{% if reviewRating > 0 %}{% for i in 1..reviewRating %}<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.4741 16.4598C10.187 16.2624 9.81297 16.2624 9.52586 16.4598L4.59695 19.8476C3.89851 20.3277 3.01742 19.5906 3.32918 18.7871L5.46858 13.2727C5.61869 12.8858 5.4854 12.4433 5.14908 12.2121L0.382204 8.93567C-0.321474 8.45201 0.0106287 7.32113 0.856344 7.32113H6.00222C6.35174 7.32113 6.66604 7.10174 6.79585 6.76715L9.20637 0.553979C9.49293 -0.184659 10.5071 -0.18466 10.7936 0.553978L13.2041 6.76715C13.334 7.10174 13.6483 7.32113 13.9978 7.32113H19.1437C19.9894 7.32113 20.3215 8.45201 19.6178 8.93567L14.8509 12.2121C14.5146 12.4433 14.3813 12.8858 14.5314 13.2727L16.6708 18.7871C16.9826 19.5906 16.1015 20.3277 15.403 19.8476L10.4741 16.4598Z" fill="#F5AA01"/></svg>{% endfor %}{% endif %}{% if reviewRating < 5 %}{% for i in (reviewRating + 1)..5 %}<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.7574 16.0477C10.2996 15.7331 9.70036 15.7331 9.24264 16.0477L4.31373 19.4356C4.17172 19.5332 4.02319 19.514 3.90506 19.4152C3.78475 19.3146 3.7243 19.151 3.79532 18.9679L5.93472 13.4536C6.16664 12.8558 5.96433 12.1658 5.4323 11.8001L0.665424 8.52362C0.516486 8.42125 0.469212 8.25402 0.517993 8.08791C0.566447 7.92292 0.689557 7.82113 0.856344 7.82113H6.00222C6.56535 7.82113 7.06021 7.46811 7.262 6.948L9.67251 0.734829C9.79399 0.421724 10.206 0.421724 10.3275 0.734829L12.738 6.948C12.9398 7.46811 13.4346 7.82113 13.9978 7.82113H19.1437C19.3104 7.82113 19.4336 7.92291 19.482 8.08791C19.5308 8.25402 19.4835 8.42125 19.3346 8.52362L14.5677 11.8001C14.0357 12.1658 13.8334 12.8558 14.0653 13.4536L16.2047 18.9679C16.2757 19.151 16.2153 19.3146 16.0949 19.4152C15.9768 19.514 15.8283 19.5332 15.6863 19.4356L10.7574 16.0477Z" stroke="#F5AA01"/></svg>{% endfor %}{% endif %}</div><div class="accountReviewRatingNum">{{ salon.reviews | length }}</div></div></div><div class="mapListItemInfo"><div class="mapListItemInfoName">{{ salon.name }}</div>{% if salon.website %}<div class="mapListItemInfoText">Web: <a href="http://{{ salon.website }}">{{ salon.website }}</a></div>{% endif %}{% if salon.phones | length > 0 %}<div class="mapListItemInfoText">{% trans %}Телефоны{% endtrans %}:{% set i = 0 %}{% for phone in salon.phones %}{{ phone.phone }}{% if i < salon.phones | length - 1 %},{% endif %}{% set i = i + 1 %}{% endfor %}</div>{% endif %}<div class="mapListItemInfoText"><svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C4.58867 1 1 4.37117 1 8.51358C1 14.7178 8.46733 20.6752 8.78533 20.9258C8.84474 20.9733 8.92012 20.9995 8.99818 21C9.07624 21.0005 9.15196 20.9751 9.212 20.9283C9.53 20.682 17 14.8272 17 8.51358C17 4.37117 13.4113 1 9 1ZM9.00133 20.2733C7.774 19.2452 1.66667 13.8616 1.66667 8.51358C1.66667 4.71491 4.95667 1.62499 9 1.62499C13.0433 1.62499 16.3333 4.71491 16.3333 8.51358C16.3333 13.9522 10.232 19.259 9.00133 20.2733Z" stroke="#616161"/><path d="M9 5C6.794 5 5 6.794 5 9C5 11.206 6.794 13 9 13C11.206 13 13 11.206 13 9C13 6.794 11.206 5 9 5ZM9 12.3333C7.162 12.3333 5.66667 10.838 5.66667 9C5.66667 7.162 7.162 5.66667 9 5.66667C10.838 5.66667 12.3333 7.162 12.3333 9C12.3333 10.838 10.838 12.3333 9 12.3333Z" stroke="#616161"/></svg>{{ salon.address }}</div></div></div>';
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if coordinates | length > 0 %}
+                            var markers = locations.map(function (location, i) {
+                                var infowindow = new google.maps.InfoWindow({
+                                    content: dealerWindows[location.id]
+                                });
+
+                                var marker = new google.maps.Marker({position: {lat: location.lat, lng: location.lng}});
+
+                                marker.addListener('click', function () {
+                                    map.setZoom(20);
+                                    map.setCenter(marker.getPosition());
+                                    infowindow.open(map, marker);
+                                });
+
+                                return marker;
+                            });
+
+                            var markerCluster = new MarkerClusterer(map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+                            {% endif %}
+                        }
+                        {% if coordinates | length > 0 %}
+                        var locations = [
+                            {% for key, coordinate in coordinates %}
+                            {lat: {{ coordinate.lat }}, lng: {{ coordinate.lng }}, id: {{ key }} },
+                            {% endfor %}
+                        ]
+                        {% endif %}
+                    </script>
+                    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key={{ settings.googleMapsKey }}&callback=initMap" async defer></script>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalMap" tabindex="-1" role="dialog" aria-labelledby=""></div>
+    </div>
+{% endblock %}

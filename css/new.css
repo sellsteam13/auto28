@@ -1,0 +1,63 @@
+/** styles for feedback **/
+@media (max-width: 1025px) {
+  .feedback {
+    padding: 30px 0 50px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .feedback-title {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .feedback-form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 550px) {
+  .feedback-form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .feedback-form-inputs {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .feedback-form__textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1025px) {
+  .feedback-form__check {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .feedback-form__captcha {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1025px) {
+  .feedback-form__submit {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}

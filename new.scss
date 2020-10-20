@@ -1,0 +1,49 @@
+/** styles for feedback **/
+
+.feedback {
+    @media (max-width: 1025px) {
+        padding: 30px 0 50px;
+    }
+    &-title {
+        @media (max-width: 1025px) {
+            margin-bottom: 25px;
+        }
+    }
+    &-form {
+        @media (max-width: 1025px) {
+            flex-direction: column;
+        }
+        @media (max-width: 550px) {
+            padding: 20px;
+        }
+        &-inputs {
+            @media (max-width: 1025px) {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 25px;
+            }
+        }
+        &__textarea {
+            @media (max-width: 1025px) {
+                width: 100%;
+            }
+        }
+        &__check {
+            @media (max-width: 1025px) {
+                margin-left: 0;
+                width: 100%;
+                margin-top: 25px;
+            }
+        }
+        &__captcha {
+            @media (max-width: 1025px) {
+                margin-left: 0;
+            }
+        }
+        &__submit {
+            @media (max-width: 1025px) {
+                justify-content: center;
+            }
+        }
+    }
+}
