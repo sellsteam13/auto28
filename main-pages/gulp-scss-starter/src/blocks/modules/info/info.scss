@@ -50,6 +50,7 @@
             width: calc(100% - 220px);
             position: relative;
             z-index: 1;
+            border-radius: 8px;
             padding: 30px 35px 50px;
             @media (max-width: 800px) {
                 width: 100%;
@@ -147,23 +148,5 @@
                 }
             }
         }
-    }
-}
-
-#block1 {
-    &:target {
-        display: block;
-    }
-}
-
-#block2 {
-    &:target {
-        display: block;
-    }
-}
-
-#block3 {
-    &:target {
-        display: block;
     }
 }

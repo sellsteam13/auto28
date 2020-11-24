@@ -684,7 +684,7 @@
     }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 469px) {
     .add-row-item__content.add-photo {
         display: flex;
         justify-content: unset;
@@ -1010,4 +1010,8 @@
 .bg-not-white {
     flex-grow: 1;
     background-color: #f9f9f9;
+}
+
+.checkbox-cover {
+    flex-shrink: 0;
 }

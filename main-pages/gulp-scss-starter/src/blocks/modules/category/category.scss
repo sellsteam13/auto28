@@ -343,47 +343,89 @@
         margin-bottom: 10px;
         display: flex;
         flex-wrap: wrap;
-        .card--premium .card-manage {
-            @media (max-width: 1200px) and (min-width: 941px) {
-                background-color: white;
-                padding: 10px 10px 3px;
-                top: 15px;
+        @media (max-width: 1280px) {
+            margin-left: -4px;
+            margin-right: -4px;
+        }
+        @media (max-width: 780px) {
+            margin-left: -9px;
+            margin-right: -9px;
+        }
+        @media (max-width: 550px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .card {
+            &--premium {
+                @media (min-width: 941px) {
+                    width: calc(100% + 8px) !important;
+                }
+            }
+        }
+        &.is-grid {
+            margin-left: -4px;
+            margin-right: -4px;
+            .card {
+                margin-left: 4px;
+                margin-right: 4px;
+                width: calc(25% - 8px);
+                @media (max-width: 1650px) {
+                    width: calc(33.33% - 8px);
+                }
+                &:after {
+                    @media (max-width: 1650px) {
+                        display: none !important;
+                    }
+                    &:nth-child(4n+1) {
+                        display: none;
+                    }
+                }
+                &--premium {
+                    ~.card {
+                        &:nth-child(4n+2) {
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .card--premium {
+            .card-manage {
+                @media (max-width: 1200px) and (min-width: 941px) {
+                    background-color: white;
+                    padding: 10px 10px 3px;
+                    top: 15px;
+                }
             }
         }
         .card {
             margin-bottom: 20px;
-            @media (max-width: 940px) {
-                margin-right: 9px !important;
-                &:nth-child(3n) {
-                    margin-right: 0 !important;
+            @media (max-width: 1280px) {
+                &:after {
+                    display: none !important;
                 }
+            }
+            @media (max-width: 1280px) {
+                width: calc(33.33% - 8px);
+                margin-left: 4px;
+                margin-right: 4px;
             }
             @media (max-width: 780px) {
-                margin-right: 18px !important;
-                &:nth-child(3n) {
-                    margin-right: 18px !important;
-                }
-                &:nth-child(2n) {
-                    margin-right: 0 !important;
-                }
+                width: calc(50% - 18px);
+                margin-left: 9px;
+                margin-right: 9px;
+            }
+            @media (max-width: 550px) {
+                max-width: 320px;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
             }
             @media (max-width: 550px) and (min-width: 400px) {
-                margin-right: auto !important;
-                &:nth-child(3n) {
-                    margin-right: auto !important;
-                }
-                &:nth-child(2n) {
-                    margin-right: auto !important;
-                }
-            }
-            @media (max-width: 399px) {
-                margin-right: 0 !important;
-                &:nth-child(3n) {
-                    margin-right: 0 !important;
-                }
-                &:nth-child(2n) {
-                    margin-right: 0 !important;
-                }
+                margin-left: auto;
+                margin-right: auto;
             }
         }
         >.card.is-highlited {
@@ -643,7 +685,7 @@
         }
         &-manage {
             display: none;
-            @media (max-width: 940px) {
+            @media (max-width: 1025px) {
                 display: flex;
                 >* {
                     border: none !important;
@@ -720,8 +762,10 @@
             padding-right: 20px !important;
         }
         &:last-child {
-            border: none !important;
-            padding-bottom: 0 !important;
+            &:not(.is-highlited):not(.card--premium) {
+                border: none !important;
+                padding-bottom: 0 !important;
+            }
         }
     }
 }

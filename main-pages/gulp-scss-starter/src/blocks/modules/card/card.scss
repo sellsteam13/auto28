@@ -282,7 +282,7 @@
                 margin-bottom: 10px;
                 @media (max-width: 1650px) {
                     margin-right: 5px;
-                    margin-bottom: 5px;
+                    margin-bottom: 10px;
                 }
             }
         }
@@ -916,42 +916,15 @@
 .is-grid .card,
 .is-grid.card {
     &:not(.card--premium) {
-        width: calc(25% - 6px);
-        margin-right: 8px;
+        // width: calc(25% - 6px);
+        // margin-right: 8px;
         flex-direction: column;
         padding: 20px;
         flex-wrap: wrap;
         margin-bottom: 30px;
         @media (max-width: 1650px) {
-            width: calc(33.33% - 6px);
-            margin-right: 9px;
             &:after {
                 display: none !important;
-            }
-        }
-        @media (max-width: 780px) {
-            width: calc(50% - 9px);
-        }
-        @media (max-width: 550px) {
-            width: 100% !important;
-        }
-        &:nth-child(4n+1) {
-            margin-right: 0;
-            @media (max-width: 1650px) {
-                margin-right: 9px;
-            }
-        }
-        &:nth-child(3n+1) {
-            @media (max-width: 1650px) {
-                margin-right: 0;
-            }
-        }
-        &:nth-child(4n+2) {
-            &:after {
-                display: none;
-                @media (max-width: 1650px) {
-                    display: block;
-                }
             }
         }
         &:after {
@@ -1097,42 +1070,13 @@
 .card {
     @media (max-width: 1280px) {
         &:not(.card--premium) {
-            width: calc(25% - 6px);
-            margin-right: 8px;
             flex-direction: column;
             padding: 20px;
             flex-wrap: wrap;
             margin-bottom: 20px;
-            @media (max-width: 1650px) {
-                width: calc(33.33% - 6px);
-                margin-right: 9px;
-                &:after {
-                    display: none !important;
-                }
-            }
-            @media (max-width: 780px) {
-                width: calc(50% - 9px);
-            }
-            @media (max-width: 550px) {
-                width: 100% !important;
-            }
-            &:nth-child(4n+1) {
-                margin-right: 0;
-                @media (max-width: 1650px) {
-                    margin-right: 9px;
-                }
-            }
-            &:nth-child(3n+1) {
-                @media (max-width: 1650px) {
-                    margin-right: 0;
-                }
-            }
             &:nth-child(4n+2) {
                 &:after {
                     display: none;
-                    @media (max-width: 1650px) {
-                        display: block;
-                    }
                 }
             }
             &:after {
@@ -1280,42 +1224,15 @@
 
 .card {
     @media (max-width: 940px) {
-        width: calc(25% - 6px);
-        margin-right: 8px;
+        // width: calc(25% - 6px);
+        // margin-right: 8px;
         flex-direction: column;
         padding: 20px;
         flex-wrap: wrap;
         margin-bottom: 20px;
         @media (max-width: 1650px) {
-            width: calc(33.33% - 6px);
-            margin-right: 9px;
             &:after {
                 display: none !important;
-            }
-        }
-        @media (max-width: 780px) {
-            width: calc(50% - 9px);
-        }
-        @media (max-width: 550px) {
-            width: 100% !important;
-        }
-        &:nth-child(4n+1) {
-            margin-right: 0;
-            @media (max-width: 1650px) {
-                margin-right: 9px;
-            }
-        }
-        &:nth-child(3n+1) {
-            @media (max-width: 1650px) {
-                margin-right: 0;
-            }
-        }
-        &:nth-child(4n+2) {
-            &:after {
-                display: none;
-                @media (max-width: 1650px) {
-                    display: block;
-                }
             }
         }
         &:after {
@@ -1472,6 +1389,16 @@
 
 .is-grid .card--premium {
     margin-bottom: 25px;
+    grid-column: 1 / span 4;
+    @media (max-width: 1650px) {
+        grid-column: 1 / span 3;
+    }
+    @media (max-width: 780px) {
+        grid-column: 1 / span 2;
+    }
+    @media (max-width: 550px) {
+        grid-column: unset;
+    }
 }
 
 .card.is-highlited {
@@ -1479,7 +1406,8 @@
     border-color: $yellow !important;
     background-color: $white;
     &:after {
-        display: none;
+        display: none !important;
+        visibility: hidden;
     }
     +.card {
         &:after {
@@ -1546,7 +1474,7 @@
         >* {
             width: calc(33.33% - 8px);
             height: 50px;
-            border: 1px solid #DFE1E5;
+            border: none;
             border-radius: 9px;
             display: flex;
             align-items: center;

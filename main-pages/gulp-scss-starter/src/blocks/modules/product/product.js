@@ -1,13 +1,15 @@
 import Swiper from 'swiper';
 document.addEventListener('DOMContentLoaded', () => {
+    popupGalleryInit();
+    galleryPopupBind();
     productGalleryInit();
     noteBind();
-    galleryPopupBind();
     newDisabler();
     window.addEventListener('resize', () => {
         newDisabler()
     });
     commentaryRowsAmount();
+    console.log(123);
 });
 
 
@@ -74,12 +76,12 @@ const popupGalleryInit = () => {
             spaceBetween: 10,
             slidesPerView: 'auto',
             centeredSlides: true,
-            initialSlide: centerSlide
         });
         const galleryTopSlider = new Swiper('.product-gallery-popup-main-master', {
             slidesPerView: 1,
-            initialSlide: centerSlide,
         });
+        window.galleryThumbsSlider = galleryThumbsSlider;
+        window.galleryTopSlider = galleryTopSlider;
         const allSlidesAnother = Array.from(document.querySelector('.product-gallery-popup-main-master').querySelectorAll('.swiper-slide'));
         galleryTopSlider.on('slideChange', function() {
             galleryThumbsSlider.slideTo(galleryTopSlider.activeIndex);
@@ -112,11 +114,22 @@ const popupGalleryInit = () => {
         const thumbsTriggersMain = Array.from(document.querySelectorAll('.product-gallery-thumbs__item'));
         if (thumbsTriggersMain.length > 0) {
             thumbsTriggersMain.forEach(trigger => {
-                trigger.addEventListener('click', () => {
-                    let index = thumbsTriggersMain.indexOf(trigger);
-                    galleryThumbsSlider.slideTo(index);
-                    galleryTopSlider.slideTo(index);
-                });
+                if (trigger.classList.contains('is-youtube-iframe')) {
+                    trigger.addEventListener('click', () => {
+                        setTimeout(() => {
+                            galleryThumbsSlider.slideTo(galleryThumbsSlider.slides.length - 1);
+                            galleryTopSlider.slideTo(galleryThumbsSlider.slides.length - 1);
+                        }, 0)
+                    });
+                } else {
+                    trigger.addEventListener('click', () => {
+                        setTimeout(() => {
+                            let index = thumbsTriggersMain.indexOf(trigger);
+                            galleryThumbsSlider.slideTo(index);
+                            galleryTopSlider.slideTo(index);
+                        }, 0)
+                    });
+                }
             });
         }
     }
@@ -137,9 +150,8 @@ const galleryPopupBind = () => {
                     body.classList.add('gallery-popup-toggled');
                     body.style.overflow = 'hidden';
                     popup.style.display = 'flex';
-                    if (!document.querySelector('.swiper-container-initialized.product-gallery-popup-main-master')) {
-                        popupGalleryInit();
-                    }
+                    galleryThumbsSlider.update();
+                    galleryTopSlider.update();
                     setTimeout(() => {
                         popup.classList.add('is-opened');
                     }, 100);

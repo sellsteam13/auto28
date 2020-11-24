@@ -14,7 +14,7 @@ const setLocalHash = () => {
         document.querySelector(target).style.display = 'block';
         if (allTriggers) {
             allTriggers.forEach(each => {
-                if (each.getAttribute('href') == 'target') {
+                if (each.getAttribute('href') == target) {
                     each.classList.add('is-active');
                 }
             });
@@ -29,6 +29,7 @@ const setLocalHash = () => {
 const tabsBinding = () => {
     const allTriggers = document.querySelectorAll('.info-tabs .tabs-triggers a');
     const allBlocks = document.querySelectorAll('.info-tabs-block');
+    const footerLinks = document.querySelectorAll('.footer-nav-block__trigger');
     allTriggers.forEach(each => {
         each.addEventListener('click', (e) => {
             e.preventDefault();
@@ -44,4 +45,29 @@ const tabsBinding = () => {
             }
         });
     });
+    if (footerLinks.length > 0) {
+        footerLinks.forEach(each => {
+            each.addEventListener('click', () => {
+                setTimeout(() => {
+                    let localHash = location.hash;
+                    const block = document.querySelector(localHash);
+                    console.log(localHash);
+                    allBlocks.forEach(block => {
+                        block.style.display = 'none';
+                    });
+                    block.style.display = 'block';
+                    allTriggers.forEach(link => {
+                        link.classList.remove('is-active');
+                        setTimeout(() => {
+                            if (link.getAttribute('href') == localHash) {
+                                link.classList.add('is-active');
+                                window.scrollTo(0, 0);
+                                window.location.hash = "";
+                            }
+                        }, 0)
+                    });
+                }, 0)
+            });
+        });
+    }
 };

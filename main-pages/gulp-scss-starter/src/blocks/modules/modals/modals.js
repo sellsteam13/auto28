@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalBind(".modal-friend", ".call-friend");
     modalBind(".modal-order", ".call-order");
     modalBind(".modal-message", ".call-message");
+    modalBind(".modal-reg", ".call-reg");
     const body = document.body;
     if (body.classList.contains('cookies-non-accepted')) {
         let canDisable = true;

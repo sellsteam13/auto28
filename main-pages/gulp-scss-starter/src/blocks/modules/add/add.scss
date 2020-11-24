@@ -113,7 +113,7 @@ html {
                 display: flex;
                 align-items: center;
                 margin: 40px 0;
-                @media (max-width: 800px) {
+                @media (max-width: 900px) {
                     margin: 20px 0;
                 }
             }
@@ -304,7 +304,7 @@ html {
 
 .step-marca {
     margin-top: 40px;
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         margin-top: 20px;
     }
     >* {
@@ -368,7 +368,7 @@ html {
                 align-items: center;
                 padding-right: 10px;
                 margin-bottom: 12px;
-                @media (max-width: 800px) {
+                @media (max-width: 900px) {
                     width: 33.33%;
                 }
                 @media (max-width: 550px) {
@@ -420,7 +420,7 @@ html {
                 border-radius: 12px 12px 0 0;
                 position: relative;
                 transition: box-shadow $trans, background-color $trans;
-                @media (max-width: 800px) {
+                @media (max-width: 900px) {
                     width: 25%;
                     height: 55px;
                     padding: 0;
@@ -591,7 +591,7 @@ html {
                 margin-bottom: 10px;
                 opacity: .9;
                 transition: opacity $trans;
-                @media (max-width: 800px) {
+                @media (max-width: 900px) {
                     width: 33.33%;
                 }
                 @media (max-width: 550px) {
@@ -607,7 +607,7 @@ html {
             margin-bottom: 30px;
             display: flex;
             align-items: center;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 margin-bottom: 10px;
             }
         }
@@ -650,7 +650,7 @@ html {
             position: relative;
             padding-left: 21px;
             margin-left: auto;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 font-size: rem(14);
             }
             &:hover {
@@ -679,7 +679,7 @@ html {
     &:nth-child(2n) {
         background-color: transparent;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         display: block;
         padding: 15px 20px;
     }
@@ -727,7 +727,7 @@ html {
         .add-row-item {
             width: auto;
             margin-right: 30px;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 margin-right: 0;
             }
             &:last-child {
@@ -738,7 +738,7 @@ html {
     &--half {
         .add-row-item {
             width: calc(50% - 15px);
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 width: 100%;
             }
             .add-input .input-module {
@@ -761,7 +761,7 @@ html {
     &-item {
         width: 100%;
         display: flex;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             display: block;
             margin-top: 10px;
             &:first-child {
@@ -776,7 +776,7 @@ html {
             color: #222B2A;
             align-self: center;
             padding-top: 2px;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 margin-bottom: 10px;
                 width: 100%;
             }
@@ -796,7 +796,7 @@ html {
         &__content {
             width: calc(100% - 180px);
             display: flex;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 width: 100%;
             }
             @media (max-width: 1170px) {
@@ -863,7 +863,7 @@ html {
         align-items: center;
         cursor: pointer;
         margin-right: 20px;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             display: inline-flex;
             margin-top: 0px;
         }
@@ -872,7 +872,7 @@ html {
         }
         input {
             margin-right: 10px;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 margin-right: 5px;
             }
         }
@@ -892,7 +892,7 @@ html {
         align-items: center;
         margin-bottom: 6px;
         padding: 4px 3px;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             flex-direction: column;
             align-items: flex-start;
             white-space: unset;
@@ -931,7 +931,7 @@ html {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                @media (max-width: 800px) {
+                @media (max-width: 900px) {
                     white-space: unset;
                 }
             }
@@ -966,7 +966,7 @@ html {
 
 .step-marca-details .add-row__h1 {
     margin-top: 60px;
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         margin-top: 30px;
     }
 }
@@ -989,7 +989,7 @@ html {
     @media (max-width: 1450px) {
         display: none;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         margin-right: 5px;
         width: 23px;
         height: 23px;
@@ -1006,7 +1006,7 @@ html {
         stroke-width: 3px;
         stroke: $white;
         display: none;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             width: 11px;
             height: 11px;
         }
@@ -1024,7 +1024,7 @@ html {
     align-items: center;
     &-row {
         border: 2px solid $orange;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             border: none;
         }
     }
@@ -1052,7 +1052,7 @@ html {
             min-height: 150px;
             max-height: 100%;
         }
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             min-width: 240px;
             margin-left: 0;
             margin-right: 0;
@@ -1069,7 +1069,7 @@ html {
             border: 2px dashed #DFE1E5;
             border-radius: 5px;
             transition: border $trans, background-color $trans;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 width: calc(100% - 10px);
             }
         }
@@ -1126,7 +1126,7 @@ html {
 .add-input {
     .input-module {
         min-width: 250px;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             width: 100%;
             min-width: auto;
         }
@@ -1135,7 +1135,7 @@ html {
 
 .step-checks-inner {
     margin: 60px 0 0;
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         margin-top: 0;
     }
     .accordion {
@@ -1168,7 +1168,7 @@ html {
                 font-size: rem(20);
                 font-weight: 700;
             }
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 font-weight: 400;
                 font-size: rem(16);
             }
@@ -1268,7 +1268,7 @@ html {
     .select-module {
         min-width: 250px;
         flex-grow: 1;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             min-width: auto;
         }
     }
@@ -1403,26 +1403,26 @@ html {
     .add-row-item {
         .add-row-item__title {
             width: 150px;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 width: 100%;
             }
         }
         .add-row-item__content {
             width: calc(100% - 150px);
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 width: 100%;
             }
         }
         &:nth-child(1) {
             .add-row-item__title {
                 width: 110px;
-                @media (max-width: 800px) {
+                @media (max-width: 900px) {
                     width: 100%;
                 }
             }
             .add-row-item__content {
                 width: calc(100% - 150px);
-                @media (max-width: 800px) {
+                @media (max-width: 900px) {
                     width: 100%;
                 }
             }
@@ -1437,7 +1437,7 @@ html {
     }
     &-triggers {
         display: flex;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             overflow-y: hidden;
             overflow-x: auto;
             &::-webkit-scrollbar {
@@ -1455,7 +1455,7 @@ html {
         padding: 0 20px;
         cursor: pointer;
         transition: border-color $trans, background-color $trans;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             min-width: 240px;
         }
         @media (max-width: 700px) {
@@ -1601,7 +1601,7 @@ html {
             position: relative;
             z-index: 1;
             min-height: 270px;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 display: block;
             }
         }
@@ -1617,7 +1617,7 @@ html {
             @media (max-width: 1400px) {
                 left: -240px;
             }
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 display: none;
             }
         }
@@ -1664,7 +1664,7 @@ html {
                 padding: 20px;
                 margin: 0;
             }
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 padding-top: 0px;
             }
             &-element {
@@ -1781,7 +1781,7 @@ html {
         .add-input .input-module {
             width: 60%;
             min-width: 500px;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 width: 100%;
                 min-width: auto;
             }
@@ -1793,7 +1793,7 @@ html {
             flex-grow: unset;
             width: 60%;
             min-width: 500px;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 width: 100%;
                 min-width: auto;
             }
@@ -1804,7 +1804,7 @@ html {
         .add-textarea textarea {
             width: 60%;
             min-width: 500px;
-            @media (max-width: 800px) {
+            @media (max-width: 900px) {
                 width: 100%;
                 min-width: auto;
             }
@@ -1814,7 +1814,7 @@ html {
         }
     }
     .add-row__check {
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             &:nth-child(2) {
                 margin-top: 5px;
             }
@@ -1835,7 +1835,7 @@ html {
     .input-module {
         min-width: 350px;
         margin-right: 35px;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             min-width: auto;
             margin-right: 0;
         }
@@ -1846,7 +1846,7 @@ html {
         max-width: calc(100% - 450px);
         transform: translateY(-2px);
         word-break: break-word;
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
             display: none;
         }
     }
@@ -1874,7 +1874,7 @@ html {
 }
 
 .add-row-item__content {
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         max-width: 100%;
         overflow-x: auto;
         overflow-y: auto;
@@ -1903,7 +1903,7 @@ html {
 }
 
 .step-details-inner-list {
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         .add-row-item {
             margin-bottom: 20px;
         }

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     tabsInit();
     accordionInit();
+    hidePwaBlock();
+    checkForInstall();
 });
 
 // Функция инициализации табов
@@ -57,5 +59,31 @@ const accordionInit = () => {
                 }
             });
         });
+    }
+};
+
+// pwa prompt and installation
+const checkForPwaIsInstalled = () => {
+    const pwaBtn = document.querySelector('pwa-install');
+    if (pwaBtn) {
+        return pwaBtn.getInstalledStatus();
+    } else {
+        return false;
+    }
+};
+const hidePwaBlock = () => {
+    if (checkForPwaIsInstalled()) {
+        if (document.querySelector('.welcome-pwa')) {
+            const pwaBlock = document.querySelector('.welcome-pwa');
+            pwaBlock.style.display = 'none';
+        }
+    }
+};
+const checkForInstall = () => {
+    if (location.hash == '#installApp') {
+        if (checkForPwaIsInstalled() != true) {
+            const pwaBtn = document.querySelector('pwa-install');
+            pwaBtn.openPrompt();
+        }
     }
 };
