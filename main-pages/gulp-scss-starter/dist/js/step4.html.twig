@@ -1,0 +1,193 @@
+{% if category %}
+    <div class="add-main">
+        <h1 class="add-main__title">
+            {% if categories %}
+                {% for cat in categories %}
+                    {% if cat.image %}{{ cat.image | raw }}{% endif %}
+                {% endfor %}
+                <span>
+                    {% set i = 0 %}
+                    {% for cat in categories %}
+                        {{ cat.title }} {% if i != categories | length - 1 %}/{% endif %}
+                        {% set i = i + 1 %}
+                    {% endfor %}
+                    {% if modification %}{{ modification.label }}{% endif %}
+                </span>
+            {% else %}
+                {% if category.image %}{{ category.image | raw }}{% endif %}
+                <span>{{ category.title }} {% if modification %}{{ modification.label }}{% endif %}</span>
+            {% endif %}
+        </h1>
+
+        <div class="add-main-steps">
+            <div class="add-main__step step-details is-active">
+                <div class="add-main__step-manage">
+                    <a href="javascript:void(0)" onclick="getStep3({{ category.id }}, '{{ locale.code }}')" class="add-main__step-back">
+                        {% trans %}Вернуться назад{% endtrans %}
+                    </a>
+                    <a href="javascript:void(0)" onclick="removeSession()" class="add-main__step-clear">{% trans %}Очистить{% endtrans %}</a>
+                </div>
+
+                <div class="step-details-inner">
+                    <div class="add-row__h1">{% trans %}Состояние автомобиля{% endtrans %}</div>
+                    <div class="add-row-list">
+
+                        <div class="add-row add-row--multi">
+                            <div class="add-row-item">
+                                <div class="add-row-item__title required">{% trans %}Пробег{% endtrans %}</div>
+                                <div class="add-row-item__content add-input">
+                                    <div class="input-module">
+                                        <input required="required" type="number" name="probeg" placeholder="{% trans %}Пробег (км){% endtrans %}" {% if advertInfo.probeg %}value="{{ advertInfo.probeg }}"{% endif %} data-null="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-row-item">
+                                <div class="add-row-item__title required">{% trans %}Состояние{% endtrans %}</div>
+                                <div class="add-row-item__content add-select">
+                                    <div class="select-module">
+                                        <select name="condition" placeholder="{% trans %}Выберите состояние{% endtrans %}" required="required">
+                                            {% if conditions %}
+                                                {% for condition in conditions %}
+                                                    <option value="{{ condition.id }}" {% if advertInfo.condition == condition.id %}selected="selected"{% endif %}>
+                                                        {{ condition.title }}
+                                                    </option>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="add-row add-row--multi">
+                            <div class="add-row-item">
+                                <div class="add-row-item__title required">{% trans %}Владельцы{% endtrans %}</div>
+                                <div class="add-row-item__content add-select">
+                                    <div class="select-module">
+                                        <select name="owners" placeholder="{% trans %}Количество владельцев{% endtrans %}" required="required">
+                                            <option value="-1" {% if advertInfo.owners == -1 %}selected="selected"{% endif %}>{% trans %}Нет{% endtrans %}</option>
+                                            <option value="1" {% if advertInfo.owners == 1 %}selected="selected"{% endif %}>{% trans %}Один{% endtrans %}</option>
+                                            <option value="2" {% if advertInfo.owners == 2 %}selected="selected"{% endif %}>{% trans %}Два{% endtrans %}</option>
+                                            <option value="3" {% if advertInfo.owners == 3 %}selected="selected"{% endif %}>{% trans %}Три{% endtrans %}</option>
+                                            <option value="1000" {% if advertInfo.owners == 1000 %}selected="selected"{% endif %}>{% trans %}Больше трех{% endtrans %}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-row-item">
+                                <div class="add-row-item__title">{% trans %}VIN Номер{% endtrans %}</div>
+                                <div class="add-row-item__content add-input">
+                                    <div class="input-module">
+                                        <input type="text" name="vin" placeholder="{% trans %}VIN (17 знаков){% endtrans %}" {% if advertInfo.vin %}value="{{ advertInfo.vin }}"{% endif %} />
+                                    </div>
+                                    <span>{% trans %}Номер VIN на сайте не показывается{% endtrans %}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="add-row">
+                            <div class="add-row-item">
+                                <div class="add-row-item__title">
+                                    {% trans %}Дополнительное описание{% endtrans %}
+                                    <span>{% trans %}Не более 3000 знаков{% endtrans %}</span>
+                                </div>
+                                <div class="add-row-item__content add-textarea">
+                                    <textarea name="description">{% if advertInfo.description %}{{ advertInfo.description }}{% endif %}</textarea>
+                                    <div class="add-textarea-details">
+                                        <span>¿Sobre qué vale la pena escribir?:</span>
+                                        <span>- Puede escribir dónde ver vehículo y contactos adicionales</span>
+                                        <span>- Escriba algunas palabras sobre el estado técnico y externo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="add-row__h1">{% trans %}Стоимость{% endtrans %}</div>
+                    <div class="add-row-list step-details-inner-list">
+                        <div class="add-row add-row--multi">
+
+                            <div class="add-row-item">
+                                <div class="add-row-item__title required">{% trans %}Цена{% endtrans %}</div>
+                                <div class="add-row-item__content add-input">
+                                    <div class="input-module">
+                                        <input required="required" type="number" maxlength="7" name="price" placeholder="{% trans %}Цена{% endtrans %}" {% if advertInfo.price %}value="{{ advertInfo.price }}"{% endif %} />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <label class="add-row__check">
+                                <input name="isfinance" type="checkbox" value="1" {% if advertInfo.isfinance %}checked="checked"{% endif %} />
+                                <span>{% trans %}Кредит{% endtrans %}</span>
+                            </label>
+                            <label class="add-row__check">
+                                <input name="NDS" type="checkbox" value="1" {% if advertInfo.nds %}checked="checked"{% endif %} />
+                                <span>{% trans %}НДС включен{% endtrans %}</span>
+                            </label>
+                            <label class="add-row__check">
+                                <input name="torg" type="checkbox" value="1" {% if advertInfo.torg %}checked="checked"{% endif %} />
+                                <span>{% trans %}Торг{% endtrans %}</span>
+                            </label>
+                        </div>
+
+                        {% if user.roles[0].role == 'ROLE_DEALER' %}
+                            <div class="add-row">
+                                <div class="add-row-item">
+                                    <div class="add-row-item__title">
+                                        {% trans %}Гарантия{% endtrans %}
+                                    </div>
+                                    <div class="add-row-item__content add-row-item__content-guarantee">
+                                        <div class="label guarantee {% if advertInfo.garant == 1 %}is-active{% endif %}" onclick="selectGarant($(this))">
+                                            <span>1</span> {% trans %}Гарантия{% endtrans %}
+                                            <input name="garant" value="1" type="checkbox" {% if advertInfo.garant == 1 %}checked="checked"{% endif %} />
+                                            <button onclick="resetGarant($(this).parent(), event)">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff" />
+                                                    <path d="M15 9L9 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 9L15 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <div class="label guarantee {% if advertInfo.garant == 3 %}is-active{% endif %}" onclick="selectGarant($(this))">
+                                            <span>3</span> {% trans %}Гарантия{% endtrans %}
+                                            <input name="garant" value="3" type="checkbox" {% if advertInfo.garant == 3 %}checked="checked"{% endif %} />
+                                            <button onclick="resetGarant($(this).parent(), event)">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff" />
+                                                    <path d="M15 9L9 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 9L15 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <div class="label guarantee {% if advertInfo.garant == 7 %}is-active{% endif %}" onclick="selectGarant($(this))">
+                                            <span>7</span> {% trans %}Гарантия{% endtrans %}
+                                            <input name="garant" value="7" type="checkbox" {% if advertInfo.garant == 7 %}checked="checked"{% endif %} />
+                                            <button onclick="resetGarant($(this).parent(), event)">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff" />
+                                                    <path d="M15 9L9 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 9L15 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <a href="javascript: void(0)" onclick="if (checkForProfanity($('textarea[name=\'description\']')) && checkAddAdvertFields($('.step-details-inner'), '{% trans %}Форма не заполнена полностью{% endtrans %}', '{% trans %}Заполните обязательные поля{% endtrans %}', '{% trans %}Закрыть{% endtrans %}')) {getStep5('{{ locale.code }}');}" class="add-next-btn def-btn">
+                        {% trans %}Следующий шаг{% endtrans %}
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="add-nav-track">
+        {% include 'DashboardCommonBundle:Product:add/steps.html.twig' with {'locale' : locale, 'advertInfo' : advertInfo} %}
+    </div>
+{% endif %}

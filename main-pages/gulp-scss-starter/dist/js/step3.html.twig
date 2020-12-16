@@ -1,0 +1,71 @@
+{% if category %}
+    <div class="add-main">
+        <h1 class="add-main__title">
+            {% if categories %}
+                {% for cat in categories %}
+                    {% if cat.image %}{{ cat.image | raw }}{% endif %}
+                {% endfor %}
+                <span>
+                    {% set i = 0 %}
+                    {% for cat in categories %}
+                        {{ cat.title }} {% if i != categories | length - 1 %}/{% endif %}
+                        {% set i = i + 1 %}
+                    {% endfor %}
+                    {% if modification %}{{ modification.label }}{% endif %}
+                </span>
+            {% else %}
+                {% if category.image %}{{ category.image | raw }}{% endif %}
+                <span>{{ category.title }} {% if modification %}{{ modification.label }}{% endif %}</span>
+            {% endif %}
+        </h1>
+
+        <div class="add-main-steps">
+            <div class="add-main__step step-checks is-active">
+                <div class="add-main__step-manage">
+                    <a href="javascript:void(0)" onclick="getStep2({{ category.id }}, '{{ locale.code }}')" class="add-main__step-back">
+                        {% trans %}Вернуться назад{% endtrans %}
+                    </a>
+                    <a href="javascript:void(0)" onclick="removeSession()" class="add-main__step-clear">{% trans %}Очистить{% endtrans %}</a>
+                </div>
+
+                <div class="step-checks-inner">
+
+                    {% if baseCategory.filters | length > 0 %}
+                        {% set first = true %}
+                        {% for filter in baseCategory.filters %}
+                            {% if filter.step == '3' %}
+                                <div class="accordion accordion--def {% if first %}is-opened{% endif %}">
+                                    <div class="accordion-head step-checks-inner__title">{{ filter.name }}</div>
+                                    <div class="accordion-body step-checks-inner__list">
+                                        <div class="step-checks-inner__list-main">
+                                            {% if filter.values | length > 0 %}
+                                                {% for value in filter.values %}
+                                                    <label class="add-row__check">
+                                                        <input name="filter[]" type="checkbox" value="{{ value.id }}" {% if value.id in filters | keys %}checked="checked"{% endif %}/>
+                                                        <span>{{ value.value }}</span>
+                                                    </label>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% set first = false %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <div class="step-checks-inner__next">
+                        <a href="javascript: void(0)" onclick="getStep4('{{ locale.code }}')" class="add-next-btn def-btn">
+                            {% trans %}Следующий шаг{% endtrans %}
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-nav-track">
+        {% include 'DashboardCommonBundle:Product:add/steps.html.twig' with {'locale' : locale, 'advertInfo' : advertInfo} %}
+    </div>
+{% endif %}

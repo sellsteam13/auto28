@@ -1,5 +1,7 @@
-var target = window.location.hash;
-window.location.hash = "";
+if (document.querySelector('.info')) {
+    var target = window.location.hash;
+    window.location.hash = "";
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.info-tabs')) {
@@ -10,18 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const setLocalHash = () => {
     const allTriggers = document.querySelectorAll('.info-tabs .tabs-triggers a');
-    if (target.length > 0 && document.querySelector(target)) {
-        document.querySelector(target).style.display = 'block';
-        if (allTriggers) {
-            allTriggers.forEach(each => {
-                if (each.getAttribute('href') == target) {
-                    each.classList.add('is-active');
-                }
-            });
+    if (document.querySelector('.info')) {
+        if (target.length > 0 && document.querySelector(target)) {
+            document.querySelector(target).style.display = 'block';
+            if (allTriggers) {
+                allTriggers.forEach(each => {
+                    if (each.getAttribute('href') == target) {
+                        each.classList.add('is-active');
+                    }
+                });
+            }
+        } else {
+            document.querySelector('.info-tabs-block').style.display = 'block';
+            allTriggers[0].classList.add('is-active');
         }
-    } else {
-        document.querySelector('.info-tabs-block').style.display = 'block';
-        allTriggers[0].classList.add('is-active');
     }
     tabsBinding();
 };
@@ -45,13 +49,12 @@ const tabsBinding = () => {
             }
         });
     });
-    if (footerLinks.length > 0) {
+    if (footerLinks.length > 0 && document.querySelector('.info')) {
         footerLinks.forEach(each => {
             each.addEventListener('click', () => {
                 setTimeout(() => {
                     let localHash = location.hash;
                     const block = document.querySelector(localHash);
-                    console.log(localHash);
                     allBlocks.forEach(block => {
                         block.style.display = 'none';
                     });

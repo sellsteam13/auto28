@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         newDisabler()
     });
     commentaryRowsAmount();
-    console.log(123);
 });
 
 
